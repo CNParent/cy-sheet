@@ -8,5 +8,7 @@
 
 <TextInput bind:content={model.name}>Name</TextInput>
 <TextInput bind:content={model.className}>Class</TextInput>
+<TextInput bind:content={model.creds}>Creds</TextInput>
+<TextInput bind:content={model.debt}>Debt</TextInput>
 <hr />
 <TextArea bind:content={model.info}>Info</TextArea>
