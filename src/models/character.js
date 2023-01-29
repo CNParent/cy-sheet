@@ -1,5 +1,5 @@
 const character = () => ({
-    name: 'New character',
+    name: '',
     glitches: {
         die: 'd2',
         current: 0
@@ -17,12 +17,15 @@ const character = () => ({
     },
     creds: 0,
     debt: 0,
-    class: '',
+    className: '',
     nano: [],
     infestations: [],
     apps: [],
     armor: '-',
     weapons: [],
     equipment: [],
-    cybertech: []
+    cybertech: [],
+    info: ''
 });
+
+export default character;

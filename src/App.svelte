@@ -3,6 +3,14 @@
 
 	import { theme } from './lib/styles.js'
 
+	import Abilities from "./components/Abilities.svelte";
+	import Bio from "./components/Bio.svelte";
+	import Details from "./components/Details.svelte";
+    import Equipment from "./components/Equipment.svelte";
+	import Nano from "./components/Nano.svelte";
+	import Navbar from "./components/Navbar.svelte";
+	import Status from "./components/Status.svelte";
+
 	let model = character();
 </script>
 
@@ -15,5 +23,11 @@
 </svelte:head>
 
 <main id="app">
-	Content goes here
+	<Navbar bind:model={model}></Navbar>
+	<div class="row m-2">
+		<Details title="Bio" open="open"><Bio model={model}></Bio></Details>
+		<Details title="Status" open="open"><Status model={model}></Status></Details>
+		<Details title="Equipment"><Equipment model={model}></Equipment></Details>
+		<Details title="Nano/Apps"><Nano model={model}></Nano></Details>
+	</div>
 </main>
