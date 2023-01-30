@@ -29,5 +29,6 @@
 		<Details title="Status" open="open"><Status model={model}></Status></Details>
 		<Details title="Equipment"><Equipment model={model}></Equipment></Details>
 		<Details title="Nano/Apps"><Nano model={model}></Nano></Details>
+		<Details title="Infestations"></Details>
 	</div>
 </main>

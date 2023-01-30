@@ -17,6 +17,6 @@
     <span class="ml-2 align-self-center">Hit Points</span>
     <button on:click={() => handleCurrent({shiftKey: true})} class="ml-auto btn btn-dark align-self-center">+</button>
     <button on:click={() => handleCurrent({shiftKey: false})} class="btn btn-dark align-self-center">-</button>
-    <button on:click={() => handleMax({shiftKey: true})} class="btn btn-dark align-self-center">+max</button>
+    <button on:click={() => handleMax({shiftKey: false})} class="btn btn-dark align-self-center">+max</button>
     <button on:click={() => handleMax({shiftKey: true})} class="btn btn-dark align-self-center">-max</button>
 </div>
