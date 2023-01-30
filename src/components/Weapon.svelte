@@ -57,9 +57,9 @@
                 </label>
             </div>
         {:else}
-            <button class="btn btn-dark badge" on:click={magsClick}>{weapon.mags} mags</button>
+            {#if !weapon.melee}<button class="btn btn-dark badge" on:click={magsClick}>{weapon.mags} mags</button>{/if}
             <span class="btn btn-dark badge ml-1">{weapon.damage} damage</span>
-            {#if weapon.automatic}<span class="btn btn-dark badge ml-1">auto</span>{/if}
+            {#if weapon.automatic && !weapon.melee}<span class="btn btn-dark badge ml-1">auto</span>{/if}
             {#if weapon.melee}<span class="btn btn-dark badge ml-1">melee</span>{/if}
         {/if}
     </div>
