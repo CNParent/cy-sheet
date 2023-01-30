@@ -10,6 +10,7 @@
 	import Nano from "./components/Nano.svelte";
 	import Navbar from "./components/Navbar.svelte";
 	import Status from "./components/Status.svelte";
+    import Infestations from "./components/Infestations.svelte";
 
 	let model = character();
 </script>
@@ -30,7 +31,7 @@
 		<Details title="Equipment"><Equipment model={model}></Equipment></Details>
 		<Details title="Apps"><Apps model={model}></Apps></Details>
 		<Details title="Nano"><Nano model={model}></Nano></Details>
-		<Details title="Infestations"></Details>
+		<Details title="Infestations"><Infestations model={model}></Infestations></Details>
 		<Details title="Cybertech"></Details>
 	</div>
 </main>
