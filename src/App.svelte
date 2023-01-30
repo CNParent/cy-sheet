@@ -3,6 +3,7 @@
 
 	import { theme } from './lib/styles.js'
 
+	import Apps from "./components/Apps.svelte";
 	import Bio from "./components/Bio.svelte";
 	import Details from "./components/Details.svelte";
     import Equipment from "./components/Equipment.svelte";
@@ -27,8 +28,8 @@
 		<Details title="Bio" open="open"><Bio model={model}></Bio></Details>
 		<Details title="Status" open="open"><Status model={model}></Status></Details>
 		<Details title="Equipment"><Equipment model={model}></Equipment></Details>
-		<Details title="Apps"><Nano model={model}></Nano></Details>
-		<Details title="Nano"></Details>
+		<Details title="Apps"><Apps model={model}></Apps></Details>
+		<Details title="Nano"><Nano model={model}></Nano></Details>
 		<Details title="Infestations"></Details>
 		<Details title="Cybertech"></Details>
 	</div>
