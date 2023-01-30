@@ -1,5 +1,5 @@
 const app = () => ({
-    name: '',
+    name: 'App',
     description: ''
 });
 

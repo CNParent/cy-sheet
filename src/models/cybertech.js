@@ -1,5 +1,5 @@
 const cybertech = () => ({
-    name: '',
+    name: 'Cybertech',
     description: ''
 });
 

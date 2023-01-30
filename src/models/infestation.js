@@ -1,5 +1,5 @@
 const infestation = () => ({
-    name: '',
+    name: 'Infestation',
     persistent: '',
     trigger: ''
 });
