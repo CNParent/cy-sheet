@@ -26,7 +26,8 @@ const character = () => ({
     weapons: [],
     equipment: [],
     cybertech: [],
-    info: ''
+    info: '',
+    notes: []
 });
 
 export default character;
