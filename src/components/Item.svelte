@@ -15,5 +15,5 @@
     <input bind:this={control} class="form-control flex-grow-1" bind:value={item}>
     <button on:click={() => isEditing = false} class="btn btn-light">Close</button>
 {:else}
-    <button on:click={() => isEditing = true} class="btn btn-light text-left flex-grow-1">{item}</button>
+    <button on:click={() => isEditing = true} class="btn btn-dark text-left flex-grow-1">{item}</button>
 {/if}

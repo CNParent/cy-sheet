@@ -5,11 +5,13 @@
 
 </script>
 
-<div class="d-flex m-1">
+<div class="d-flex m-1 align-self-start">
     <div class="flex-grow-1 d-flex mr-1"><slot></slot></div>
-    <div class="btn-group ml-auto">
-        <button on:click={() => move(-1, item)} class="btn btn-light">&uarr;</button>
-        <button on:click={() => move(1, item)} class="btn btn-light">&darr;</button>
+    <div class="align-self-start ml-auto">
+        <div class="btn-group">
+            <button on:click={() => move(-1, item)} class="btn btn-light">&uarr;</button>
+            <button on:click={() => move(1, item)} class="btn btn-light">&darr;</button>
+        </div>
+        <button on:click={() => remove(item)} class="btn btn-danger">Delete</button>
     </div>
-    <button on:click={() => remove(item)} class="btn btn-danger ml-1">Delete</button>
 </div>

@@ -32,7 +32,7 @@
     class="flex-grow-1 form-control"></textarea>
 {:else}
 <span class="py-2 font-weight-bold"><slot></slot></span>
-<button class="btn btn-light text-left align-top wrap w-100" style="min-height: 2.5em;" on:click={() => active = true}>
+<button class="btn btn-dark text-left align-top wrap w-100" style="min-height: 2.5em;" on:click={() => active = true}>
     {#if matches.length == 0}
         {content}
     {:else}
