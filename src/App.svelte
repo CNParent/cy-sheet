@@ -11,6 +11,7 @@
 	import Navbar from "./components/Navbar.svelte";
 	import Status from "./components/Status.svelte";
     import Infestations from "./components/Infestations.svelte";
+    import Cybertech from "./components/Cybertech.svelte";
 
 	let model = character();
 </script>
@@ -32,6 +33,6 @@
 		<Details title="Apps"><Apps model={model}></Apps></Details>
 		<Details title="Nano"><Nano model={model}></Nano></Details>
 		<Details title="Infestations"><Infestations model={model}></Infestations></Details>
-		<Details title="Cybertech"></Details>
+		<Details title="Cybertech"><Cybertech model={model}></Cybertech></Details>
 	</div>
 </main>
