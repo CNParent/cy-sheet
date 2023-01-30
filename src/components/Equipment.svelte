@@ -75,7 +75,7 @@
 </script>
 
 <div class="position-topright">
-    <span class="badge  {itemCountStyle}">{itemCount} / {model.abilities.strength + 8}</span>
+    <span class="badge {itemCountStyle}">{itemCount} / {model.abilities.strength + 8}</span>
 </div>
 <span>Armor</span>
 <div class="d-flex mb-1">
@@ -88,10 +88,10 @@
                 {/each}
             </select>
         </div>
-        <button on:click={() => isEditingArmor = false} class="btn btn-light ml-1">Done</button>
+        <button on:click={() => isEditingArmor = false} class="btn btn-light ml-1 border-dark">Done</button>
     {:else}
-        <button on:click={() => isEditingArmor = true} class="btn btn-dark text-left flex-grow-1">{model.armor}</button>
-        <button on:click={() => isEditingArmor = true} class="btn btn-dark text-left ml-1">{model.armorValue}</button>
+        <button on:click={() => isEditingArmor = true} class="btn btn-light border text-left flex-grow-1">{model.armor}</button>
+        <button on:click={() => isEditingArmor = true} class="btn btn-light border text-left ml-1">{model.armorValue}</button>
     {/if}
 </div>
 <hr/>

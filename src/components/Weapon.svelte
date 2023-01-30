@@ -27,43 +27,40 @@
     <div class="d-flex">
         {#if isEditing}
             <input bind:this={control} bind:value={weapon.name} class="form-control flex-grow-1">
-            <button on:click={() => isEditing = false} class="btn btn-dark ml-auto">Close</button>
+            <button on:click={() => isEditing = false} class="btn btn-light border-dark ml-auto">Close</button>
         {:else}
-            <button on:click={() => isEditing = true}  class="flex-grow-1 btn btn-dark text-left">{weapon.name}</button>
+            <button on:click={() => isEditing = true}  class="flex-grow-1 btn btn-light text-left border">{weapon.name}</button>
         {/if}
     </div>
     <div class="d-flex mt-1">
-        <div class="border-right d-flex">
-            {#if isEditing}
+        {#if isEditing}
+            <div class="border-right d-flex">
                 <input type="number" min={0} class="form-control" bind:value={weapon.mags}>
-            {:else}
-                <h4><button class="btn btn-dark badge" style="width: 2.0em" on:click={magsClick}>{weapon.mags}</button></h4>
-            {/if}
-            <span class="align-self-center ml-1 mr-1">Mags</span>
-        </div>
-        <div class="border-right d-flex ml-1">
-            {#if isEditing}
+            </div>
+            <div class="border-right d-flex ml-1">
                 <select class="form-control" bind:value={weapon.damage}>
                     {#each damage as d}
                         <option value={d}>{d}</option>
                     {/each}
                 </select>
-            {:else}
-                <span class="align-self-center">{weapon.damage}</span>
-            {/if}            
-            <span class="align-self-center ml-1 mr-1">Damage</span>
-        </div>
-        <div class="border-right d-flex ml-1">
-            <label class="align-self-center d-flex align-items-center m-0">
-                <input type="checkbox" bind:checked={weapon.automatic}>
-                <span class="ml-1 mr-1">Auto</span>
-            </label>
-        </div>
-        <div class="d-flex ml-1">
-            <label class="align-self-center d-flex align-items-center m-0">
-                <input type="checkbox" bind:checked={weapon.melee}>
-                <span class="ml-1 mr-1">Melee</span>
-            </label>
-        </div>
+            </div>
+            <div class="border-right d-flex ml-1">
+                <label class="align-self-center d-flex align-items-center m-0">
+                    <input type="checkbox" bind:checked={weapon.automatic}>
+                    <span class="ml-1 mr-1">Auto</span>
+                </label>
+            </div>
+            <div class="d-flex ml-1">
+                <label class="align-self-center d-flex align-items-center m-0">
+                    <input type="checkbox" bind:checked={weapon.melee}>
+                    <span class="ml-1 mr-1">Melee</span>
+                </label>
+            </div>
+        {:else}
+            <button class="btn btn-dark badge" on:click={magsClick}>{weapon.mags} mags</button>
+            <span class="btn btn-dark badge ml-1">{weapon.damage} damage</span>
+            {#if weapon.automatic}<span class="btn btn-dark badge ml-1">auto</span>{/if}
+            {#if weapon.melee}<span class="btn btn-dark badge ml-1">melee</span>{/if}
+        {/if}
     </div>
 </div>

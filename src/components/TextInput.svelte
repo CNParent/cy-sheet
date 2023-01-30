@@ -19,6 +19,6 @@
 {:else}
 <div class="d-flex mb-1 border-bottom">
     <span class="align-self-center text-right border-right pr-1 py-2 font-weight-bold" style="width: 5.5em;"><slot></slot></span>
-    <button class="flex-grow-1 btn btn-dark text-left" on:click={() => active = true}>{content}</button>
+    <button class="flex-grow-1 btn btn-light text-left" on:click={() => active = true}>{content}</button>
 </div>
 {/if}
