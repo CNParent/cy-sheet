@@ -44,7 +44,7 @@ export default {
     },
     load: (model, key) => {
         let name = key;
-        if(name == model.name) return { model };
+        if(name == `${model.name}.cybrg`) return { model };
 
         let alert = '';
         if(model.name && confirm(`Save ${model.name} before changing characters?`)) {
@@ -59,6 +59,7 @@ export default {
     },
     loadList: () => {
         let characters = [...new Array(window.localStorage.length)].map((x,i) => window.localStorage.key(i));
+        characters = characters.filter(c => c.endsWith('.cybrg'));
         characters.sort((a,b) => a.localeCompare(b));
         return characters;
     },
@@ -66,7 +67,7 @@ export default {
         if(!model.name)
             return { error: 'Cannot save an unnamed character' };
 
-        localStorage.setItem(model.name, JSON.stringify(model));
+        localStorage.setItem(`${model.name}.cybrg`, JSON.stringify(model));
         return { success: `${model.name} saved` };
     }
 };
