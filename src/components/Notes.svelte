@@ -52,33 +52,23 @@
     }
 </script>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex">
-                        <button on:click={add} class="btn btn-light border mb-1 mr-1">Add note</button>
-                        <div class="dropdown">
-                            <button on:blur={clearMenu} on:click={() => menu = 'sort'} class="dropdown-toggle btn btn-light border mb-1">Sort</button>
-                            <div class="dropdown-menu" style="{`display: ${menu == 'sort' ? 'block' : 'none'}`}">
-                                <button on:blur={clearMenu} on:click={() => sort("newest")} class="dropdown-item">Newest</button>
-                                <button on:blur={clearMenu} on:click={() => sort("oldest")} class="dropdown-item">Oldest</button>
-                                <button on:blur={clearMenu} on:click={() => sort("alpha")} class="dropdown-item">A &rarr; Z</button>
-                                <button on:blur={clearMenu} on:click={() => sort("ralpha")} class="dropdown-item">Z &rarr; A</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <input class="form-control" placeholder="filter" bind:value={filter}>
-                    </div>
-                    <div class="row mt-2">
-                        {#each filtered as note (note.id)}
-                        <Note note={note} actions={actions} highlight={filter} />
-                        {/each}
-                    </div>
-                </div>
-            </div>
+<div class="d-flex">
+    <button on:click={add} class="btn btn-light border mb-1 mr-1">Add note</button>
+    <div class="dropdown">
+        <button on:blur={clearMenu} on:click={() => menu = 'sort'} class="dropdown-toggle btn btn-light border mb-1">Sort</button>
+        <div class="dropdown-menu" style="{`display: ${menu == 'sort' ? 'block' : 'none'}`}">
+            <button on:blur={clearMenu} on:click={() => sort("newest")} class="dropdown-item">Newest</button>
+            <button on:blur={clearMenu} on:click={() => sort("oldest")} class="dropdown-item">Oldest</button>
+            <button on:blur={clearMenu} on:click={() => sort("alpha")} class="dropdown-item">A &rarr; Z</button>
+            <button on:blur={clearMenu} on:click={() => sort("ralpha")} class="dropdown-item">Z &rarr; A</button>
         </div>
     </div>
+</div>
+<div class="d-flex">
+    <input class="form-control" placeholder="filter" bind:value={filter}>
+</div>
+<div class="row mt-2">
+    {#each filtered as note (note.id)}
+    <Note note={note} actions={actions} highlight={filter} />
+    {/each}
 </div>
