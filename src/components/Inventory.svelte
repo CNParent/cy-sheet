@@ -4,6 +4,10 @@
     import Weapons from './Weapons.svelte';
 
     export let model;
+
+    function update() {
+        model = model;
+    }
     
     $:itemCount = model.weapons.length + model.equipment.length;
     $:itemCountStyle = itemCount > (model.abilities.strength + 8) * 2 ?
@@ -18,6 +22,6 @@
 </div>
 <Armor model={model}></Armor>
 <hr/>
-<Weapons model={model}></Weapons>
+<Weapons model={model} update={update}></Weapons>
 <hr/>
-<Equipment model={model}></Equipment>
+<Equipment model={model} update={update}></Equipment>

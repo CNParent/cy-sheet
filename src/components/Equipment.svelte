@@ -4,10 +4,12 @@
     import listActions from "../lib/listActions.js";
 
     export let model;
+    export let update;
 
     function addEquipment() {
         model.equipment.push('');
         model.equipment = model.equipment;
+        update();
     }
 
     function moveEquipment(n, item) {
@@ -18,6 +20,7 @@
     function removeEquipment(item) {
         listActions.remove(model.equipment, item);
         model.equipment = model.equipment;
+        update();
     }
 </script>
 

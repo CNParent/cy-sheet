@@ -5,10 +5,12 @@
     import weapon from '../models/weapon.js';
 
     export let model;
+    export let update;
     
     function addWeapon() {
         model.weapons.push(weapon())
         model.weapons = model.weapons;
+        update();
     }
 
     function moveWeapon(n, weapon) {
@@ -19,6 +21,7 @@
     function removeWeapon(weapon) {
         listActions.remove(model.weapons, weapon);
         model.weapons = model.weapons;
+        update();
     }
 </script>
 
