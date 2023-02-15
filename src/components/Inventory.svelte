@@ -5,11 +5,17 @@
 
     export let model;
 
+    model.equipment = model.equipment.map(i => {
+        if (typeof(i) != 'string') return i;
+
+        return { name: i, size: 1 };
+    })
+
     function update() {
         model = model;
     }
     
-    $:itemCount = model.weapons.length + model.equipment.length;
+    $:itemCount = model.weapons.length + model.equipment.reduce((a,b) => a + b.size, 0);
     $:itemCountStyle = itemCount > (model.abilities.strength + 8) * 2 ?
         'badge-danger' :
         itemCount > model.abilities.strength + 8 ?

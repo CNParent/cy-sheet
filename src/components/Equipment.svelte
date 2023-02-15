@@ -7,7 +7,7 @@
     export let update;
 
     function addEquipment() {
-        model.equipment.push('');
+        model.equipment.push({ name: '', size: 1 });
         model.equipment = model.equipment;
         update();
     }
@@ -30,6 +30,6 @@
 </div>
 {#each model.equipment as item}
     <ListItem item={item} move={moveEquipment} remove={removeEquipment}>
-        <Item bind:item={item}></Item>
+        <Item bind:item={item} update={update}></Item>
     </ListItem>
 {/each}

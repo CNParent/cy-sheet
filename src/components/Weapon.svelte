@@ -1,6 +1,4 @@
 <script>
-    import { afterUpdate } from 'svelte';
-
     export let weapon;
 
     const damage = ['1', 'd2', 'd3', 'd4', 'd6', 'd8', 'd10', 'd12'];
@@ -15,18 +13,12 @@
 
     if (!weapon.name) weapon.name = "New Weapon";
     if (weapon.mags == null) weapon.mags = 0;
-
-    let control;
-
-    afterUpdate(() => {
-        if (isEditing) control.focus();
-    });
 </script>
 
 <div class="d-flex flex-column flex-grow-1">
     <div class="d-flex">
         {#if isEditing}
-            <input bind:this={control} bind:value={weapon.name} class="form-control flex-grow-1">
+            <input bind:value={weapon.name} class="form-control flex-grow-1">
             <button on:click={() => isEditing = false} class="btn btn-light border-dark ml-auto">Close</button>
         {:else}
             <button on:click={() => isEditing = true}  class="flex-grow-1 btn btn-light text-left border">{weapon.name}</button>
