@@ -1,2 +1,9606 @@
-var app=function(){"use strict";function t(){}function e(t){return t()}function n(){return Object.create(null)}function o(t){t.forEach(e)}function l(t){return"function"==typeof t}function c(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function r(t,e,n,o){if(t){const l=s(t,e,n,o);return t[0](l)}}function s(t,e,n,o){return t[1]&&o?function(t,e){for(const n in e)t[n]=e[n];return t}(n.ctx.slice(),t[1](o(e))):n.ctx}function i(t,e,n,o){if(t[2]&&o){const l=t[2](o(n));if(void 0===e.dirty)return l;if("object"==typeof l){const t=[],n=Math.max(e.dirty.length,l.length);for(let o=0;o<n;o+=1)t[o]=e.dirty[o]|l[o];return t}return e.dirty|l}return e.dirty}function a(t,e,n,o,l,c){if(l){const r=s(e,n,o,c);t.p(r,l)}}function u(t){if(t.ctx.length>32){const e=[],n=t.ctx.length/32;for(let t=0;t<n;t++)e[t]=-1;return e}return-1}function d(t,e){t.appendChild(e)}function f(t,e,n){t.insertBefore(e,n||null)}function m(t){t.parentNode&&t.parentNode.removeChild(t)}function $(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}function p(t){return document.createElement(t)}function g(t){return document.createTextNode(t)}function h(){return g(" ")}function b(){return g("")}function x(t,e,n,o){return t.addEventListener(e,n,o),()=>t.removeEventListener(e,n,o)}function w(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function v(t){return""===t?null:+t}function y(t,e){e=""+e,t.data!==e&&(t.data=e)}function k(t,e){t.value=null==e?"":e}function C(t,e,n,o){null==n?t.style.removeProperty(e):t.style.setProperty(e,n,o?"important":"")}function _(t,e,n){for(let n=0;n<t.options.length;n+=1){const o=t.options[n];if(o.__value===e)return void(o.selected=!0)}n&&void 0===e||(t.selectedIndex=-1)}function N(t){const e=t.querySelector(":checked");return e&&e.__value}function q(t,e,n){t.classList[n?"add":"remove"](e)}let S;function E(t){S=t}function O(){if(!S)throw new Error("Function called outside component initialization");return S}function A(t){O().$$.after_update.push(t)}const D=[],I=[];let K=[];const L=[],z=Promise.resolve();let M=!1;function P(t){K.push(t)}function j(t){L.push(t)}const B=new Set;let U=0;function T(){if(0!==U)return;const t=S;do{try{for(;U<D.length;){const t=D[U];U++,E(t),J(t.$$)}}catch(t){throw D.length=0,U=0,t}for(E(null),D.length=0,U=0;I.length;)I.pop()();for(let t=0;t<K.length;t+=1){const e=K[t];B.has(e)||(B.add(e),e())}K.length=0}while(D.length);for(;L.length;)L.pop()();M=!1,B.clear(),E(t)}function J(t){if(null!==t.fragment){t.update(),o(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(P)}}const R=new Set;let V;function F(){V={r:0,c:[],p:V}}function G(){V.r||o(V.c),V=V.p}function H(t,e){t&&t.i&&(R.delete(t),t.i(e))}function W(t,e,n,o){if(t&&t.o){if(R.has(t))return;R.add(t),V.c.push((()=>{R.delete(t),o&&(n&&t.d(1),o())})),t.o(e)}else o&&o()}function Z(t,e){W(t,1,1,(()=>{e.delete(t.key)}))}function Q(t,e,n){const o=t.$$.props[e];void 0!==o&&(t.$$.bound[o]=n,n(t.$$.ctx[o]))}function Y(t){t&&t.c()}function X(t,n,c,r){const{fragment:s,after_update:i}=t.$$;s&&s.m(n,c),r||P((()=>{const n=t.$$.on_mount.map(e).filter(l);t.$$.on_destroy?t.$$.on_destroy.push(...n):o(n),t.$$.on_mount=[]})),i.forEach(P)}function tt(t,e){const n=t.$$;null!==n.fragment&&(!function(t){const e=[],n=[];K.forEach((o=>-1===t.indexOf(o)?e.push(o):n.push(o))),n.forEach((t=>t())),K=e}(n.after_update),o(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function et(t,e){-1===t.$$.dirty[0]&&(D.push(t),M||(M=!0,z.then(T)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function nt(e,l,c,r,s,i,a,u=[-1]){const d=S;E(e);const f=e.$$={fragment:null,ctx:[],props:i,update:t,not_equal:s,bound:n(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(l.context||(d?d.$$.context:[])),callbacks:n(),dirty:u,skip_bound:!1,root:l.target||d.$$.root};a&&a(f.root);let $=!1;if(f.ctx=c?c(e,l.props||{},((t,n,...o)=>{const l=o.length?o[0]:n;return f.ctx&&s(f.ctx[t],f.ctx[t]=l)&&(!f.skip_bound&&f.bound[t]&&f.bound[t](l),$&&et(e,t)),n})):[],f.update(),$=!0,o(f.before_update),f.fragment=!!r&&r(f.ctx),l.target){if(l.hydrate){const t=function(t){return Array.from(t.childNodes)}(l.target);f.fragment&&f.fragment.l(t),t.forEach(m)}else f.fragment&&f.fragment.c();l.intro&&H(e.$$.fragment),X(e,l.target,l.anchor,l.customElement),T()}E(d)}class ot{$destroy(){tt(this,1),this.$destroy=t}$on(e,n){if(!l(n))return t;const o=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return o.push(n),()=>{const t=o.indexOf(n);-1!==t&&o.splice(t,1)}}$set(t){var e;this.$$set&&(e=t,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}}const lt=()=>({name:"",glitches:{die:"d2",current:0},hp:{current:0,max:0},abilities:{strength:0,agility:0,presence:0,toughness:0,knowledge:0},creds:0,debt:0,className:"",apps:[],nano:[],infestations:[],armor:"None",armorValue:"-",weapons:[],equipment:[],cybertech:[],info:"",notes:[]}),ct=new URLSearchParams(window.location.search).get("theme")??(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");function rt(t,e,n){const o=t.slice();return o[15]=e[n],o[17]=n,o}function st(t){let e,n,o,l,c,s;const d=t[10].default,$=r(d,t,t[9],null);function g(t,e){return 0==t[1].length?ut:at}let b=g(t),v=b(t);return{c(){e=p("span"),$&&$.c(),n=h(),o=p("button"),v.c(),w(e,"class","py-2 font-weight-bold"),w(o,"class","btn btn-light border text-left align-top wrap w-100"),C(o,"min-height","2.5em")},m(r,i){f(r,e,i),$&&$.m(e,null),f(r,n,i),f(r,o,i),v.m(o,null),l=!0,c||(s=x(o,"click",t[14]),c=!0)},p(t,e){$&&$.p&&(!l||512&e)&&a($,d,t,t[9],l?i(d,t[9],e,null):u(t[9]),null),b===(b=g(t))&&v?v.p(t,e):(v.d(1),v=b(t),v&&(v.c(),v.m(o,null)))},i(t){l||(H($,t),l=!0)},o(t){W($,t),l=!1},d(t){t&&m(e),$&&$.d(t),t&&m(n),t&&m(o),v.d(),c=!1,s()}}}function it(t){let e,n,l,c,s,d;const $=t[10].default,g=r($,t,t[9],null);return{c(){e=p("span"),g&&g.c(),n=h(),l=p("textarea"),w(e,"class","py-2 font-weight-bold"),w(l,"class","flex-grow-1 form-control")},m(o,r){f(o,e,r),g&&g.m(e,null),f(o,n,r),f(o,l,r),t[11](l),k(l,t[0]),c=!0,s||(d=[x(l,"input",t[12]),x(l,"blur",t[13]),x(l,"focus",t[6]),x(l,"keyup",t[6])],s=!0)},p(t,e){g&&g.p&&(!c||512&e)&&a(g,$,t,t[9],c?i($,t[9],e,null):u(t[9]),null),1&e&&k(l,t[0])},i(t){c||(H(g,t),c=!0)},o(t){W(g,t),c=!1},d(c){c&&m(e),g&&g.d(c),c&&m(n),c&&m(l),t[11](null),s=!1,o(d)}}}function at(t){let e,n=t[1],o=[];for(let e=0;e<n.length;e+=1)o[e]=mt(rt(t,n,e));return{c(){for(let t=0;t<o.length;t+=1)o[t].c();e=b()},m(t,n){for(let e=0;e<o.length;e+=1)o[e]&&o[e].m(t,n);f(t,e,n)},p(t,l){if(51&l){let c;for(n=t[1],c=0;c<n.length;c+=1){const r=rt(t,n,c);o[c]?o[c].p(r,l):(o[c]=mt(r),o[c].c(),o[c].m(e.parentNode,e))}for(;c<o.length;c+=1)o[c].d(1);o.length=n.length}},d(t){$(o,t),t&&m(e)}}}function ut(t){let e;return{c(){e=g(t[0])},m(t,n){f(t,e,n)},p(t,n){1&n&&y(e,t[0])},d(t){t&&m(e)}}}function dt(t){let e;return{c(){e=g(t[4])},m(t,n){f(t,e,n)},p(t,n){16&n&&y(e,t[4])},d(t){t&&m(e)}}}function ft(t){let e,n=t[0].substring(t[15].index+t[15][0].length,t[1][t[17]+1].index)+"";return{c(){e=g(n)},m(t,n){f(t,e,n)},p(t,o){3&o&&n!==(n=t[0].substring(t[15].index+t[15][0].length,t[1][t[17]+1].index)+"")&&y(e,n)},d(t){t&&m(e)}}}function mt(t){let e,n,o,l=t[15][0]+"",c=0==t[17]&&function(t){let e;return{c(){e=g(t[5])},m(t,n){f(t,e,n)},p(t,n){32&n&&y(e,t[5])},d(t){t&&m(e)}}}(t);function r(t,e){return t[17]<t[1].length-1?ft:dt}let s=r(t),i=s(t);return{c(){c&&c.c(),e=p("span"),n=g(l),i.c(),o=b(),w(e,"class","bg-info")},m(t,l){c&&c.m(t,l),f(t,e,l),d(e,n),i.m(t,l),f(t,o,l)},p(t,e){0==t[17]&&c.p(t,e),2&e&&l!==(l=t[15][0]+"")&&y(n,l),s===(s=r(t))&&i?i.p(t,e):(i.d(1),i=s(t),i&&(i.c(),i.m(o.parentNode,o)))},d(t){c&&c.d(t),t&&m(e),i.d(t),t&&m(o)}}}function $t(t){let e,n,o,l;const c=[it,st],r=[];function s(t,e){return t[2]?0:1}return e=s(t),n=r[e]=c[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),f(t,o,n),l=!0},p(t,[l]){let i=e;e=s(t),e===i?r[e].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),n=r[e],n?n.p(t,l):(n=r[e]=c[e](t),n.c()),H(n,1),n.m(o.parentNode,o))},i(t){l||(H(n),l=!0)},o(t){W(n),l=!1},d(t){r[e].d(t),t&&m(o)}}}function pt(t,e,n){let o,l,c,r,s,{$$slots:i={},$$scope:a}=e,{content:u=""}=e,{highlight:d=""}=e,f=!1;A((()=>{f&&s.focus()}));return t.$$set=t=>{"content"in t&&n(0,u=t.content),"highlight"in t&&n(7,d=t.highlight),"$$scope"in t&&n(9,a=t.$$scope)},t.$$.update=()=>{128&t.$$.dirty&&n(8,o=new RegExp(d,"gi")),257&t.$$.dirty&&n(1,l=[...u.matchAll(o)]),3&t.$$.dirty&&n(5,c=0==l.length?"":u.substring(0,l[0].index)),3&t.$$.dirty&&n(4,r=0==l.length?"":u.substring(l[l.length-1].index+l[l.length-1][0].length))},[u,l,f,s,r,c,function(){s&&n(3,s.style.height=`${s.scrollHeight+2}px`,s)},d,o,a,i,function(t){I[t?"unshift":"push"]((()=>{s=t,n(3,s)}))},function(){u=this.value,n(0,u)},()=>n(2,f=!1),()=>n(2,f=!0)]}class gt extends ot{constructor(t){super(),nt(this,t,pt,$t,c,{content:0,highlight:7})}}function ht(e){let n,o,l,c,r=e[0].name+"";return{c(){n=p("button"),o=g(r),w(n,"class","btn btn-light border text-left flex-grow-1")},m(t,r){f(t,n,r),d(n,o),l||(c=x(n,"click",e[5]),l=!0)},p(t,e){1&e&&r!==(r=t[0].name+"")&&y(o,r)},i:t,o:t,d(t){t&&m(n),l=!1,c()}}}function bt(t){let e,n,l,c,r,s,i,a,u,$,g;function b(e){t[4](e)}let v={};return void 0!==t[0].description&&(v.content=t[0].description),i=new gt({props:v}),I.push((()=>Q(i,"content",b))),{c(){e=p("div"),n=p("input"),l=h(),c=p("button"),c.textContent="Close",r=h(),s=p("div"),Y(i.$$.fragment),w(n,"class","flex-grow-1 form-control"),w(c,"class","btn btn-light border"),w(e,"class","d-flex flex-grow-1"),w(s,"class","d-flex")},m(o,a){f(o,e,a),d(e,n),k(n,t[0].name),d(e,l),d(e,c),f(o,r,a),f(o,s,a),X(i,s,null),u=!0,$||(g=[x(n,"input",t[2]),x(c,"click",t[3])],$=!0)},p(t,e){1&e&&n.value!==t[0].name&&k(n,t[0].name);const o={};!a&&1&e&&(a=!0,o.content=t[0].description,j((()=>a=!1))),i.$set(o)},i(t){u||(H(i.$$.fragment,t),u=!0)},o(t){W(i.$$.fragment,t),u=!1},d(t){t&&m(e),t&&m(r),t&&m(s),tt(i),$=!1,o(g)}}}function xt(t){let e,n,o,l;const c=[bt,ht],r=[];function s(t,e){return t[1]?0:1}return n=s(t),o=r[n]=c[n](t),{c(){e=p("div"),o.c(),w(e,"class","d-flex flex-column flex-grow-1")},m(t,o){f(t,e,o),r[n].m(e,null),l=!0},p(t,[l]){let i=n;n=s(t),n===i?r[n].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),o=r[n],o?o.p(t,l):(o=r[n]=c[n](t),o.c()),H(o,1),o.m(e,null))},i(t){l||(H(o),l=!0)},o(t){W(o),l=!1},d(t){t&&m(e),r[n].d()}}}function wt(t,e,n){let o,{app:l}=e;return t.$$set=t=>{"app"in t&&n(0,l=t.app)},[l,o,function(){l.name=this.value,n(0,l)},()=>n(1,o=!1),function(e){t.$$.not_equal(l.description,e)&&(l.description=e,n(0,l))},()=>n(1,o=!0)]}class vt extends ot{constructor(t){super(),nt(this,t,wt,xt,c,{app:0})}}function yt(t){let e,n,l,c,s,$,g,b,v,y,k,C,_;const N=t[4].default,q=r(N,t,t[3],null);return{c(){e=p("div"),n=p("div"),q&&q.c(),l=h(),c=p("div"),s=p("div"),$=p("button"),$.textContent="↑",g=h(),b=p("button"),b.textContent="↓",v=h(),y=p("button"),y.textContent="Delete",w(n,"class","flex-grow-1 d-flex mr-1"),w($,"class","btn btn-light border-dark"),w(b,"class","btn btn-light border-dark"),w(s,"class","btn-group"),w(y,"class","btn btn-danger"),w(c,"class","align-self-start ml-auto"),w(e,"class","d-flex m-1 align-self-start")},m(o,r){f(o,e,r),d(e,n),q&&q.m(n,null),d(e,l),d(e,c),d(c,s),d(s,$),d(s,g),d(s,b),d(c,v),d(c,y),k=!0,C||(_=[x($,"click",t[5]),x(b,"click",t[6]),x(y,"click",t[7])],C=!0)},p(t,[e]){q&&q.p&&(!k||8&e)&&a(q,N,t,t[3],k?i(N,t[3],e,null):u(t[3]),null)},i(t){k||(H(q,t),k=!0)},o(t){W(q,t),k=!1},d(t){t&&m(e),q&&q.d(t),C=!1,o(_)}}}function kt(t,e,n){let{$$slots:o={},$$scope:l}=e,{move:c}=e,{remove:r}=e,{item:s}=e;return t.$$set=t=>{"move"in t&&n(0,c=t.move),"remove"in t&&n(1,r=t.remove),"item"in t&&n(2,s=t.item),"$$scope"in t&&n(3,l=t.$$scope)},[c,r,s,l,o,()=>c(-1,s),()=>c(1,s),()=>r(s)]}class Ct extends ot{constructor(t){super(),nt(this,t,kt,yt,c,{move:0,remove:1,item:2})}}function _t(t,e,n){const o=t.slice();return o[4]=e[n],o}function Nt(t){let e,n,o;return e=new vt({props:{app:t[4]}}),{c(){Y(e.$$.fragment),n=h()},m(t,l){X(e,t,l),f(t,n,l),o=!0},p(t,n){const o={};1&n&&(o.app=t[4]),e.$set(o)},i(t){o||(H(e.$$.fragment,t),o=!0)},o(t){W(e.$$.fragment,t),o=!1},d(t){tt(e,t),t&&m(n)}}}function qt(t){let e,n;return e=new Ct({props:{item:t[4],move:t[2],remove:t[3],$$slots:{default:[Nt]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[4]),129&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function St(t){let e,n,o,l,c,r,s=t[0].apps,i=[];for(let e=0;e<s.length;e+=1)i[e]=qt(_t(t,s,e));const a=t=>W(i[t],1,1,(()=>{i[t]=null}));return{c(){e=p("button"),e.textContent="Add",n=h();for(let t=0;t<i.length;t+=1)i[t].c();o=b(),w(e,"class","btn btn-dark")},m(s,a){f(s,e,a),f(s,n,a);for(let t=0;t<i.length;t+=1)i[t]&&i[t].m(s,a);f(s,o,a),l=!0,c||(r=x(e,"click",t[1]),c=!0)},p(t,[e]){if(13&e){let n;for(s=t[0].apps,n=0;n<s.length;n+=1){const l=_t(t,s,n);i[n]?(i[n].p(l,e),H(i[n],1)):(i[n]=qt(l),i[n].c(),H(i[n],1),i[n].m(o.parentNode,o))}for(F(),n=s.length;n<i.length;n+=1)a(n);G()}},i(t){if(!l){for(let t=0;t<s.length;t+=1)H(i[t]);l=!0}},o(t){i=i.filter(Boolean);for(let t=0;t<i.length;t+=1)W(i[t]);l=!1},d(t){t&&m(e),t&&m(n),$(i,t),t&&m(o),c=!1,r()}}}function Et(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(){o.apps.push({name:"App",description:""}),n(0,o)},function(t,e){let l=o.apps.indexOf(e);o.apps.splice(l,1),l+=t,l<0?l=o.apps.length:l>o.apps.length&&(l=0),o.apps.splice(l,0,e),n(0,o)},function(t){let e=o.apps.indexOf(t);o.apps.splice(e,1),n(0,o)}]}class Ot extends ot{constructor(t){super(),nt(this,t,Et,St,c,{model:0})}}function At(t){let e,n,o,l,c,s,$,b;const v=t[4].default,k=r(v,t,t[3],null);return{c(){e=p("div"),n=p("span"),k&&k.c(),o=h(),l=p("button"),c=g(t[0]),w(n,"class","align-self-center text-right border-right pr-1 py-2 font-weight-bold"),C(n,"width","5.5em"),w(l,"class","flex-grow-1 btn btn-light text-left"),w(e,"class","d-flex mb-1 border-bottom")},m(r,i){f(r,e,i),d(e,n),k&&k.m(n,null),d(e,o),d(e,l),d(l,c),s=!0,$||(b=x(l,"click",t[8]),$=!0)},p(t,e){k&&k.p&&(!s||8&e)&&a(k,v,t,t[3],s?i(v,t[3],e,null):u(t[3]),null),(!s||1&e)&&y(c,t[0])},i(t){s||(H(k,t),s=!0)},o(t){W(k,t),s=!1},d(t){t&&m(e),k&&k.d(t),$=!1,b()}}}function Dt(t){let e,n,l,c,s,$,g;const b=t[4].default,v=r(b,t,t[3],null);return{c(){e=p("div"),n=p("span"),v&&v.c(),l=h(),c=p("input"),w(n,"class","align-self-center text-right mr-1 py-2 font-weight-bold"),C(n,"width","5.5em"),C(n,"height","2.5em"),w(c,"class","flex-grow-1 form-control"),w(e,"class","d-flex mb-1 border-bottom")},m(o,r){f(o,e,r),d(e,n),v&&v.m(n,null),d(e,l),d(e,c),t[5](c),k(c,t[0]),s=!0,$||(g=[x(c,"input",t[6]),x(c,"blur",t[7])],$=!0)},p(t,e){v&&v.p&&(!s||8&e)&&a(v,b,t,t[3],s?i(b,t[3],e,null):u(t[3]),null),1&e&&c.value!==t[0]&&k(c,t[0])},i(t){s||(H(v,t),s=!0)},o(t){W(v,t),s=!1},d(n){n&&m(e),v&&v.d(n),t[5](null),$=!1,o(g)}}}function It(t){let e,n,o,l;const c=[Dt,At],r=[];function s(t,e){return t[1]?0:1}return e=s(t),n=r[e]=c[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),f(t,o,n),l=!0},p(t,[l]){let i=e;e=s(t),e===i?r[e].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),n=r[e],n?n.p(t,l):(n=r[e]=c[e](t),n.c()),H(n,1),n.m(o.parentNode,o))},i(t){l||(H(n),l=!0)},o(t){W(n),l=!1},d(t){r[e].d(t),t&&m(o)}}}function Kt(t,e,n){let o,{$$slots:l={},$$scope:c}=e,{content:r=""}=e,s=!1;A((()=>{s&&o.focus()}));return t.$$set=t=>{"content"in t&&n(0,r=t.content),"$$scope"in t&&n(3,c=t.$$scope)},[r,s,o,c,l,function(t){I[t?"unshift":"push"]((()=>{o=t,n(2,o)}))},function(){r=this.value,n(0,r)},()=>n(1,s=!1),()=>n(1,s=!0)]}class Lt extends ot{constructor(t){super(),nt(this,t,Kt,It,c,{content:0})}}function zt(t){let e;return{c(){e=g("Name")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function Mt(t){let e;return{c(){e=g("Class")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function Pt(t){let e;return{c(){e=g("Credits")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function jt(t){let e;return{c(){e=g("Debt")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function Bt(t){let e;return{c(){e=g("Info")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function Ut(t){let e,n,o,l,c,r,s,i,a,u,d,$,g,b,x,w,v;function y(e){t[1](e)}let k={$$slots:{default:[zt]},$$scope:{ctx:t}};function C(e){t[2](e)}void 0!==t[0].name&&(k.content=t[0].name),e=new Lt({props:k}),I.push((()=>Q(e,"content",y)));let _={$$slots:{default:[Mt]},$$scope:{ctx:t}};function N(e){t[3](e)}void 0!==t[0].className&&(_.content=t[0].className),l=new Lt({props:_}),I.push((()=>Q(l,"content",C)));let q={$$slots:{default:[Pt]},$$scope:{ctx:t}};function S(e){t[4](e)}void 0!==t[0].creds&&(q.content=t[0].creds),s=new Lt({props:q}),I.push((()=>Q(s,"content",N)));let E={$$slots:{default:[jt]},$$scope:{ctx:t}};function O(e){t[5](e)}void 0!==t[0].debt&&(E.content=t[0].debt),u=new Lt({props:E}),I.push((()=>Q(u,"content",S)));let A={$$slots:{default:[Bt]},$$scope:{ctx:t}};return void 0!==t[0].info&&(A.content=t[0].info),x=new gt({props:A}),I.push((()=>Q(x,"content",O))),{c(){Y(e.$$.fragment),o=h(),Y(l.$$.fragment),r=h(),Y(s.$$.fragment),a=h(),Y(u.$$.fragment),$=h(),g=p("hr"),b=h(),Y(x.$$.fragment)},m(t,n){X(e,t,n),f(t,o,n),X(l,t,n),f(t,r,n),X(s,t,n),f(t,a,n),X(u,t,n),f(t,$,n),f(t,g,n),f(t,b,n),X(x,t,n),v=!0},p(t,[o]){const r={};64&o&&(r.$$scope={dirty:o,ctx:t}),!n&&1&o&&(n=!0,r.content=t[0].name,j((()=>n=!1))),e.$set(r);const a={};64&o&&(a.$$scope={dirty:o,ctx:t}),!c&&1&o&&(c=!0,a.content=t[0].className,j((()=>c=!1))),l.$set(a);const f={};64&o&&(f.$$scope={dirty:o,ctx:t}),!i&&1&o&&(i=!0,f.content=t[0].creds,j((()=>i=!1))),s.$set(f);const m={};64&o&&(m.$$scope={dirty:o,ctx:t}),!d&&1&o&&(d=!0,m.content=t[0].debt,j((()=>d=!1))),u.$set(m);const $={};64&o&&($.$$scope={dirty:o,ctx:t}),!w&&1&o&&(w=!0,$.content=t[0].info,j((()=>w=!1))),x.$set($)},i(t){v||(H(e.$$.fragment,t),H(l.$$.fragment,t),H(s.$$.fragment,t),H(u.$$.fragment,t),H(x.$$.fragment,t),v=!0)},o(t){W(e.$$.fragment,t),W(l.$$.fragment,t),W(s.$$.fragment,t),W(u.$$.fragment,t),W(x.$$.fragment,t),v=!1},d(t){tt(e,t),t&&m(o),tt(l,t),t&&m(r),tt(s,t),t&&m(a),tt(u,t),t&&m($),t&&m(g),t&&m(b),tt(x,t)}}}function Tt(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(e){t.$$.not_equal(o.name,e)&&(o.name=e,n(0,o))},function(e){t.$$.not_equal(o.className,e)&&(o.className=e,n(0,o))},function(e){t.$$.not_equal(o.creds,e)&&(o.creds=e,n(0,o))},function(e){t.$$.not_equal(o.debt,e)&&(o.debt=e,n(0,o))},function(e){t.$$.not_equal(o.info,e)&&(o.info=e,n(0,o))}]}class Jt extends ot{constructor(t){super(),nt(this,t,Tt,Ut,c,{model:0})}}function Rt(t){let e,n,o,l;const c=t[3].default,s=r(c,t,t[2],null);return{c(){e=p("div"),n=p("div"),o=p("div"),s&&s.c(),w(o,"class","card-body"),w(n,"class","card"),w(e,"class","container-fluid m-0 p-0")},m(t,c){f(t,e,c),d(e,n),d(n,o),s&&s.m(o,null),l=!0},p(t,e){s&&s.p&&(!l||4&e)&&a(s,c,t,t[2],l?i(c,t[2],e,null):u(t[2]),null)},i(t){l||(H(s,t),l=!0)},o(t){W(s,t),l=!1},d(t){t&&m(e),s&&s.d(t)}}}function Vt(t){let e,n,o,l,c,r,s,i=t[0]&&Rt(t);return{c(){e=p("div"),n=p("button"),o=g(t[1]),l=h(),i&&i.c(),w(n,"class","btn btn-light border w-100 text-left align-top"),w(e,"class","col-lg-6 col-12 p-1")},m(a,u){f(a,e,u),d(e,n),d(n,o),d(e,l),i&&i.m(e,null),c=!0,r||(s=x(n,"click",t[4]),r=!0)},p(t,[n]){(!c||2&n)&&y(o,t[1]),t[0]?i?(i.p(t,n),1&n&&H(i,1)):(i=Rt(t),i.c(),H(i,1),i.m(e,null)):i&&(F(),W(i,1,1,(()=>{i=null})),G())},i(t){c||(H(i),c=!0)},o(t){W(i),c=!1},d(t){t&&m(e),i&&i.d(),r=!1,s()}}}function Ft(t,e,n){let{$$slots:o={},$$scope:l}=e,{title:c}=e,{open:r=!1}=e;return t.$$set=t=>{"title"in t&&n(1,c=t.title),"open"in t&&n(0,r=t.open),"$$scope"in t&&n(2,l=t.$$scope)},[r,c,l,o,()=>n(0,r=!r)]}class Gt extends ot{constructor(t){super(),nt(this,t,Ft,Vt,c,{title:1,open:0})}}function Ht(t,e,n){const o=t.slice();return o[8]=e[n],o}function Wt(t){let e,n,l,c,r,s,i,a=t[0].armor+"",u=t[0].armorValue+"";return{c(){e=p("button"),n=g(a),l=h(),c=p("button"),r=g(u),w(e,"class","btn btn-light border text-left flex-grow-1"),w(c,"class","btn btn-light border text-left ml-1")},m(o,a){f(o,e,a),d(e,n),f(o,l,a),f(o,c,a),d(c,r),s||(i=[x(e,"click",t[6]),x(c,"click",t[7])],s=!0)},p(t,e){1&e&&a!==(a=t[0].armor+"")&&y(n,a),1&e&&u!==(u=t[0].armorValue+"")&&y(r,u)},d(t){t&&m(e),t&&m(l),t&&m(c),s=!1,o(i)}}}function Zt(t){let e,n,l,c,r,s,i,a,u=t[2],g=[];for(let e=0;e<u.length;e+=1)g[e]=Qt(Ht(t,u,e));return{c(){e=p("input"),n=h(),l=p("div"),c=p("select");for(let t=0;t<g.length;t+=1)g[t].c();r=h(),s=p("button"),s.textContent="Done",w(e,"class","form-control flex-grow-1"),w(c,"class","form-control"),void 0===t[0].armorValue&&P((()=>t[4].call(c))),w(l,"class","pl-1 pr-1"),w(s,"class","btn btn-light ml-1 border-dark")},m(o,u){f(o,e,u),k(e,t[0].armor),f(o,n,u),f(o,l,u),d(l,c);for(let t=0;t<g.length;t+=1)g[t]&&g[t].m(c,null);_(c,t[0].armorValue,!0),f(o,r,u),f(o,s,u),i||(a=[x(e,"input",t[3]),x(c,"change",t[4]),x(s,"click",t[5])],i=!0)},p(t,n){if(5&n&&e.value!==t[0].armor&&k(e,t[0].armor),4&n){let e;for(u=t[2],e=0;e<u.length;e+=1){const o=Ht(t,u,e);g[e]?g[e].p(o,n):(g[e]=Qt(o),g[e].c(),g[e].m(c,null))}for(;e<g.length;e+=1)g[e].d(1);g.length=u.length}5&n&&_(c,t[0].armorValue)},d(t){t&&m(e),t&&m(n),t&&m(l),$(g,t),t&&m(r),t&&m(s),i=!1,o(a)}}}function Qt(e){let n,o,l=e[8]+"";return{c(){n=p("option"),o=g(l),n.__value=e[8],n.value=n.__value},m(t,e){f(t,n,e),d(n,o)},p:t,d(t){t&&m(n)}}}function Yt(e){let n,o,l;function c(t,e){return t[1]?Zt:Wt}let r=c(e),s=r(e);return{c(){n=p("span"),n.textContent="Armor",o=h(),l=p("div"),s.c(),w(l,"class","d-flex mb-1")},m(t,e){f(t,n,e),f(t,o,e),f(t,l,e),s.m(l,null)},p(t,[e]){r===(r=c(t))&&s?s.p(t,e):(s.d(1),s=r(t),s&&(s.c(),s.m(l,null)))},i:t,o:t,d(t){t&&m(n),t&&m(o),t&&m(l),s.d()}}}function Xt(t,e,n){let{model:o}=e;const l=["-","-d2","-d4","-d6","-d8"];let c;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,c,l,function(){o.armor=this.value,n(0,o),n(2,l)},function(){o.armorValue=N(this),n(0,o),n(2,l)},()=>n(1,c=!1),()=>n(1,c=!0),()=>n(1,c=!0)]}class te extends ot{constructor(t){super(),nt(this,t,Xt,Yt,c,{model:0})}}function ee(t){let e,n,l,c,r,s,i,a=t[0].name+"",u=t[0].size+"";return{c(){e=p("button"),n=g(a),l=h(),c=p("button"),r=g(u),w(e,"class","btn btn-light border text-left flex-grow-1"),w(c,"class","btn btn-dark border ml-1")},m(o,a){f(o,e,a),d(e,n),f(o,l,a),f(o,c,a),d(c,r),s||(i=[x(e,"click",t[6]),x(c,"click",t[7])],s=!0)},p(t,e){1&e&&a!==(a=t[0].name+"")&&y(n,a),1&e&&u!==(u=t[0].size+"")&&y(r,u)},d(t){t&&m(e),t&&m(l),t&&m(c),s=!1,o(i)}}}function ne(t){let e,n,l,c,r,s,i,a;return{c(){e=p("input"),n=h(),l=p("div"),c=p("input"),r=h(),s=p("button"),s.textContent="Close",w(e,"class","form-control flex-grow-1"),w(c,"class","form-control ml-1"),w(c,"type","number"),w(c,"min","0"),w(s,"class","btn btn-light border-dark ml-1")},m(o,u){f(o,e,u),k(e,t[0].name),f(o,n,u),f(o,l,u),d(l,c),k(c,t[0].size),f(o,r,u),f(o,s,u),i||(a=[x(e,"input",t[3]),x(c,"input",t[4]),x(s,"click",t[5])],i=!0)},p(t,n){1&n&&e.value!==t[0].name&&k(e,t[0].name),1&n&&v(c.value)!==t[0].size&&k(c,t[0].size)},d(t){t&&m(e),t&&m(n),t&&m(l),t&&m(r),t&&m(s),i=!1,o(a)}}}function oe(e){let n;function o(t,e){return t[1]?ne:ee}let l=o(e),c=l(e);return{c(){c.c(),n=b()},m(t,e){c.m(t,e),f(t,n,e)},p(t,[e]){l===(l=o(t))&&c?c.p(t,e):(c.d(1),c=l(t),c&&(c.c(),c.m(n.parentNode,n)))},i:t,o:t,d(t){c.d(t),t&&m(n)}}}function le(t,e,n){let{item:o}=e,{isEditing:l}=e,{update:c}=e;return t.$$set=t=>{"item"in t&&n(0,o=t.item),"isEditing"in t&&n(1,l=t.isEditing),"update"in t&&n(2,c=t.update)},[o,l,c,function(){o.name=this.value,n(0,o)},function(){o.size=v(this.value),n(0,o)},()=>{n(1,l=!1),c()},()=>n(1,l=!0),()=>n(1,l=!0)]}class ce extends ot{constructor(t){super(),nt(this,t,le,oe,c,{item:0,isEditing:1,update:2})}}var re=(t,e,n)=>{let o=t.indexOf(n);t.splice(o,1),o+=e,o<0?o=t.length:o>t.length&&(o=0),t.splice(o,0,n)},se=(t,e)=>{let n=t.indexOf(e);t.splice(n,1)};function ie(t,e,n){const o=t.slice();return o[6]=e[n],o[7]=e,o[8]=n,o}function ae(t){let e,n,o,l;function c(e){t[5](e,t[6],t[7],t[8])}let r={update:t[1]};return void 0!==t[6]&&(r.item=t[6]),e=new ce({props:r}),I.push((()=>Q(e,"item",c))),{c(){Y(e.$$.fragment),o=h()},m(t,n){X(e,t,n),f(t,o,n),l=!0},p(o,l){t=o;const c={};2&l&&(c.update=t[1]),!n&&1&l&&(n=!0,c.item=t[6],j((()=>n=!1))),e.$set(c)},i(t){l||(H(e.$$.fragment,t),l=!0)},o(t){W(e.$$.fragment,t),l=!1},d(t){tt(e,t),t&&m(o)}}}function ue(t){let e,n;return e=new Ct({props:{item:t[6],move:t[3],remove:t[4],$$slots:{default:[ae]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[6]),515&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function de(t){let e,n,o,l,c,r,s,i,a,u=t[0].equipment,g=[];for(let e=0;e<u.length;e+=1)g[e]=ue(ie(t,u,e));const v=t=>W(g[t],1,1,(()=>{g[t]=null}));return{c(){e=p("div"),n=p("span"),n.textContent="Equipment",o=h(),l=p("button"),l.textContent="Add",c=h();for(let t=0;t<g.length;t+=1)g[t].c();r=b(),w(l,"class","ml-auto btn btn-dark"),w(e,"class","d-flex align-items-end")},m(u,m){f(u,e,m),d(e,n),d(e,o),d(e,l),f(u,c,m);for(let t=0;t<g.length;t+=1)g[t]&&g[t].m(u,m);f(u,r,m),s=!0,i||(a=x(l,"click",t[2]),i=!0)},p(t,[e]){if(27&e){let n;for(u=t[0].equipment,n=0;n<u.length;n+=1){const o=ie(t,u,n);g[n]?(g[n].p(o,e),H(g[n],1)):(g[n]=ue(o),g[n].c(),H(g[n],1),g[n].m(r.parentNode,r))}for(F(),n=u.length;n<g.length;n+=1)v(n);G()}},i(t){if(!s){for(let t=0;t<u.length;t+=1)H(g[t]);s=!0}},o(t){g=g.filter(Boolean);for(let t=0;t<g.length;t+=1)W(g[t]);s=!1},d(t){t&&m(e),t&&m(c),$(g,t),t&&m(r),i=!1,a()}}}function fe(t,e,n){let{model:o}=e,{update:l}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model),"update"in t&&n(1,l=t.update)},[o,l,function(){o.equipment.push({name:"",size:1}),n(0,o),l()},function(t,e){re(o.equipment,t,e),n(0,o)},function(t){se(o.equipment,t),n(0,o),l()},function(t,e,l,c){l[c]=t,n(0,o)}]}class me extends ot{constructor(t){super(),nt(this,t,fe,de,c,{model:0,update:1})}}function $e(t,e,n){const o=t.slice();return o[11]=e[n],o}function pe(t){let e,n,o,l,c=t[0].name+"";return{c(){e=p("button"),n=g(c),w(e,"class","flex-grow-1 btn btn-light text-left border")},m(c,r){f(c,e,r),d(e,n),o||(l=x(e,"click",t[6]),o=!0)},p(t,e){1&e&&c!==(c=t[0].name+"")&&y(n,c)},d(t){t&&m(e),o=!1,l()}}}function ge(t){let e,n,l,c,r;return{c(){e=p("input"),n=h(),l=p("button"),l.textContent="Close",w(e,"class","form-control flex-grow-1"),w(l,"class","btn btn-light border-dark ml-auto")},m(o,s){f(o,e,s),k(e,t[0].name),f(o,n,s),f(o,l,s),c||(r=[x(e,"input",t[4]),x(l,"click",t[5])],c=!0)},p(t,n){5&n&&e.value!==t[0].name&&k(e,t[0].name)},d(t){t&&m(e),t&&m(n),t&&m(l),c=!1,o(r)}}}function he(t){let e,n,o,l,c,r,s,i=t[0].damage+"",a=!t[0].melee&&xe(t),u=t[0].automatic&&!t[0].melee&&we(),$=t[0].melee&&ve();return{c(){a&&a.c(),e=h(),n=p("span"),o=g(i),l=g(" damage"),c=h(),u&&u.c(),r=h(),$&&$.c(),s=b(),w(n,"class","btn btn-dark badge ml-1")},m(t,i){a&&a.m(t,i),f(t,e,i),f(t,n,i),d(n,o),d(n,l),f(t,c,i),u&&u.m(t,i),f(t,r,i),$&&$.m(t,i),f(t,s,i)},p(t,n){t[0].melee?a&&(a.d(1),a=null):a?a.p(t,n):(a=xe(t),a.c(),a.m(e.parentNode,e)),1&n&&i!==(i=t[0].damage+"")&&y(o,i),t[0].automatic&&!t[0].melee?u||(u=we(),u.c(),u.m(r.parentNode,r)):u&&(u.d(1),u=null),t[0].melee?$||($=ve(),$.c(),$.m(s.parentNode,s)):$&&($.d(1),$=null)},d(t){a&&a.d(t),t&&m(e),t&&m(n),t&&m(c),u&&u.d(t),t&&m(r),$&&$.d(t),t&&m(s)}}}function be(t){let e,n,l,c,r,s,i,a,u,g,b,y,C,N,q,S,E,O,A,D=t[2],I=[];for(let e=0;e<D.length;e+=1)I[e]=ye($e(t,D,e));return{c(){e=p("div"),n=p("input"),l=h(),c=p("div"),r=p("select");for(let t=0;t<I.length;t+=1)I[t].c();s=h(),i=p("div"),a=p("label"),u=p("input"),g=h(),b=p("span"),b.textContent="Auto",y=h(),C=p("div"),N=p("label"),q=p("input"),S=h(),E=p("span"),E.textContent="Melee",w(n,"type","number"),w(n,"min",0),w(n,"class","form-control"),w(e,"class","border-right d-flex"),w(r,"class","form-control"),void 0===t[0].damage&&P((()=>t[8].call(r))),w(c,"class","border-right d-flex ml-1"),w(u,"type","checkbox"),w(b,"class","ml-1 mr-1"),w(a,"class","align-self-center d-flex align-items-center m-0"),w(i,"class","border-right d-flex ml-1"),w(q,"type","checkbox"),w(E,"class","ml-1 mr-1"),w(N,"class","align-self-center d-flex align-items-center m-0"),w(C,"class","d-flex ml-1")},m(o,m){f(o,e,m),d(e,n),k(n,t[0].mags),f(o,l,m),f(o,c,m),d(c,r);for(let t=0;t<I.length;t+=1)I[t]&&I[t].m(r,null);_(r,t[0].damage,!0),f(o,s,m),f(o,i,m),d(i,a),d(a,u),u.checked=t[0].automatic,d(a,g),d(a,b),f(o,y,m),f(o,C,m),d(C,N),d(N,q),q.checked=t[0].melee,d(N,S),d(N,E),O||(A=[x(n,"input",t[7]),x(r,"change",t[8]),x(u,"change",t[9]),x(q,"change",t[10])],O=!0)},p(t,e){if(5&e&&v(n.value)!==t[0].mags&&k(n,t[0].mags),4&e){let n;for(D=t[2],n=0;n<D.length;n+=1){const o=$e(t,D,n);I[n]?I[n].p(o,e):(I[n]=ye(o),I[n].c(),I[n].m(r,null))}for(;n<I.length;n+=1)I[n].d(1);I.length=D.length}5&e&&_(r,t[0].damage),5&e&&(u.checked=t[0].automatic),5&e&&(q.checked=t[0].melee)},d(t){t&&m(e),t&&m(l),t&&m(c),$(I,t),t&&m(s),t&&m(i),t&&m(y),t&&m(C),O=!1,o(A)}}}function xe(t){let e,n,o,l,c,r=t[0].mags+"";return{c(){e=p("button"),n=g(r),o=g(" mags"),w(e,"class","btn btn-dark badge")},m(r,s){f(r,e,s),d(e,n),d(e,o),l||(c=x(e,"click",t[3]),l=!0)},p(t,e){1&e&&r!==(r=t[0].mags+"")&&y(n,r)},d(t){t&&m(e),l=!1,c()}}}function we(t){let e;return{c(){e=p("span"),e.textContent="auto",w(e,"class","btn btn-dark badge ml-1")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function ve(t){let e;return{c(){e=p("span"),e.textContent="melee",w(e,"class","btn btn-dark badge ml-1")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function ye(e){let n,o,l=e[11]+"";return{c(){n=p("option"),o=g(l),n.__value=e[11],n.value=n.__value},m(t,e){f(t,n,e),d(n,o)},p:t,d(t){t&&m(n)}}}function ke(e){let n,o,l,c;function r(t,e){return t[1]?ge:pe}let s=r(e),i=s(e);function a(t,e){return t[1]?be:he}let u=a(e),$=u(e);return{c(){n=p("div"),o=p("div"),i.c(),l=h(),c=p("div"),$.c(),w(o,"class","d-flex"),w(c,"class","d-flex mt-1"),w(n,"class","d-flex flex-column flex-grow-1")},m(t,e){f(t,n,e),d(n,o),i.m(o,null),d(n,l),d(n,c),$.m(c,null)},p(t,[e]){s===(s=r(t))&&i?i.p(t,e):(i.d(1),i=s(t),i&&(i.c(),i.m(o,null))),u===(u=a(t))&&$?$.p(t,e):($.d(1),$=u(t),$&&($.c(),$.m(c,null)))},i:t,o:t,d(t){t&&m(n),i.d(),$.d()}}}function Ce(t,e,n){let{weapon:o}=e;const l=["1","d2","d3","d4","d6","d8","d10","d12"];let c=!1;o.name||(o.name="New Weapon"),null==o.mags&&(o.mags=0);return t.$$set=t=>{"weapon"in t&&n(0,o=t.weapon)},[o,c,l,function(t){let e=t.shiftKey?1:-1;n(0,o.mags+=e,o),o.mags<0&&n(0,o.mags=0,o)},function(){o.name=this.value,n(0,o),n(2,l)},()=>n(1,c=!1),()=>n(1,c=!0),function(){o.mags=v(this.value),n(0,o),n(2,l)},function(){o.damage=N(this),n(0,o),n(2,l)},function(){o.automatic=this.checked,n(0,o),n(2,l)},function(){o.melee=this.checked,n(0,o),n(2,l)}]}class _e extends ot{constructor(t){super(),nt(this,t,Ce,ke,c,{weapon:0})}}function Ne(t,e,n){const o=t.slice();return o[5]=e[n],o}function qe(t){let e,n,o;return e=new _e({props:{weapon:t[5]}}),{c(){Y(e.$$.fragment),n=h()},m(t,l){X(e,t,l),f(t,n,l),o=!0},p(t,n){const o={};1&n&&(o.weapon=t[5]),e.$set(o)},i(t){o||(H(e.$$.fragment,t),o=!0)},o(t){W(e.$$.fragment,t),o=!1},d(t){tt(e,t),t&&m(n)}}}function Se(t){let e,n;return e=new Ct({props:{item:t[5],move:t[2],remove:t[3],$$slots:{default:[qe]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[5]),257&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function Ee(t){let e,n,o,l,c,r,s,i,a,u=t[0].weapons,g=[];for(let e=0;e<u.length;e+=1)g[e]=Se(Ne(t,u,e));const v=t=>W(g[t],1,1,(()=>{g[t]=null}));return{c(){e=p("div"),n=p("span"),n.textContent="Weapons",o=h(),l=p("button"),l.textContent="Add",c=h();for(let t=0;t<g.length;t+=1)g[t].c();r=b(),w(l,"class","ml-auto btn btn-dark"),w(e,"class","d-flex align-items-end")},m(u,m){f(u,e,m),d(e,n),d(e,o),d(e,l),f(u,c,m);for(let t=0;t<g.length;t+=1)g[t]&&g[t].m(u,m);f(u,r,m),s=!0,i||(a=x(l,"click",t[1]),i=!0)},p(t,[e]){if(13&e){let n;for(u=t[0].weapons,n=0;n<u.length;n+=1){const o=Ne(t,u,n);g[n]?(g[n].p(o,e),H(g[n],1)):(g[n]=Se(o),g[n].c(),H(g[n],1),g[n].m(r.parentNode,r))}for(F(),n=u.length;n<g.length;n+=1)v(n);G()}},i(t){if(!s){for(let t=0;t<u.length;t+=1)H(g[t]);s=!0}},o(t){g=g.filter(Boolean);for(let t=0;t<g.length;t+=1)W(g[t]);s=!1},d(t){t&&m(e),t&&m(c),$(g,t),t&&m(r),i=!1,a()}}}function Oe(t,e,n){let{model:o}=e,{update:l}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model),"update"in t&&n(4,l=t.update)},[o,function(){o.weapons.push({name:"",mags:0,damage:"d4",automatic:!1,melee:!1,notes:""}),n(0,o),l()},function(t,e){re(o.weapons,t,e),n(0,o)},function(t){se(o.weapons,t),n(0,o),l()},l]}class Ae extends ot{constructor(t){super(),nt(this,t,Oe,Ee,c,{model:0,update:4})}}function De(t){let e,n,o,l,c,r,s,i,a,u,$,b,x,v,k,C,_,N=t[0].abilities.strength+8+"";return i=new te({props:{model:t[0]}}),b=new Ae({props:{model:t[0],update:t[3]}}),C=new me({props:{model:t[0],update:t[3]}}),{c(){e=p("div"),n=p("span"),o=g(t[1]),l=g(" / "),c=g(N),s=h(),Y(i.$$.fragment),a=h(),u=p("hr"),$=h(),Y(b.$$.fragment),x=h(),v=p("hr"),k=h(),Y(C.$$.fragment),w(n,"class",r="badge "+t[2]),w(e,"class","position-topright")},m(t,r){f(t,e,r),d(e,n),d(n,o),d(n,l),d(n,c),f(t,s,r),X(i,t,r),f(t,a,r),f(t,u,r),f(t,$,r),X(b,t,r),f(t,x,r),f(t,v,r),f(t,k,r),X(C,t,r),_=!0},p(t,[e]){(!_||2&e)&&y(o,t[1]),(!_||1&e)&&N!==(N=t[0].abilities.strength+8+"")&&y(c,N),(!_||4&e&&r!==(r="badge "+t[2]))&&w(n,"class",r);const l={};1&e&&(l.model=t[0]),i.$set(l);const s={};1&e&&(s.model=t[0]),b.$set(s);const a={};1&e&&(a.model=t[0]),C.$set(a)},i(t){_||(H(i.$$.fragment,t),H(b.$$.fragment,t),H(C.$$.fragment,t),_=!0)},o(t){W(i.$$.fragment,t),W(b.$$.fragment,t),W(C.$$.fragment,t),_=!1},d(t){t&&m(e),t&&m(s),tt(i,t),t&&m(a),t&&m(u),t&&m($),tt(b,t),t&&m(x),t&&m(v),t&&m(k),tt(C,t)}}}function Ie(t,e,n){let o,l,{model:c}=e;return c.equipment=c.equipment.map((t=>"string"!=typeof t?t:{name:t,size:1})),t.$$set=t=>{"model"in t&&n(0,c=t.model)},t.$$.update=()=>{1&t.$$.dirty&&n(1,o=c.weapons.length+c.equipment.reduce(((t,e)=>t+e.size),0)),3&t.$$.dirty&&n(2,l=o>2*(c.abilities.strength+8)?"badge-danger":o>c.abilities.strength+8?"badge-warning":"badge-dark")},[c,o,l,function(){n(0,c)}]}class Ke extends ot{constructor(t){super(),nt(this,t,Ie,De,c,{model:0})}}function Le(e){let n,o,l,c,r=e[0].name+"";return{c(){n=p("button"),o=g(r),w(n,"class","btn btn-light border text-left flex-grow-1")},m(t,r){f(t,n,r),d(n,o),l||(c=x(n,"click",e[6]),l=!0)},p(t,e){1&e&&r!==(r=t[0].name+"")&&y(o,r)},i:t,o:t,d(t){t&&m(n),l=!1,c()}}}function ze(t){let e,n,l,c,r,s,i,a,u,$,g,b,v,y,C,_,N,q,S;function E(e){t[4](e)}let O={};function A(e){t[5](e)}void 0!==t[0].persistent&&(O.content=t[0].persistent),u=new gt({props:O}),I.push((()=>Q(u,"content",E)));let D={};return void 0!==t[0].trigger&&(D.content=t[0].trigger),C=new gt({props:D}),I.push((()=>Q(C,"content",A))),{c(){e=p("div"),n=p("input"),l=h(),c=p("button"),c.textContent="Close",r=h(),s=p("span"),s.textContent="Persistent",i=h(),a=p("div"),Y(u.$$.fragment),g=h(),b=p("span"),b.textContent="Trigger",v=h(),y=p("div"),Y(C.$$.fragment),w(n,"class","flex-grow-1 form-control"),w(c,"class","btn btn-light border"),w(e,"class","d-flex flex-grow-1"),w(a,"class","d-flex"),w(y,"class","d-flex")},m(o,m){f(o,e,m),d(e,n),k(n,t[0].name),d(e,l),d(e,c),f(o,r,m),f(o,s,m),f(o,i,m),f(o,a,m),X(u,a,null),f(o,g,m),f(o,b,m),f(o,v,m),f(o,y,m),X(C,y,null),N=!0,q||(S=[x(n,"input",t[2]),x(c,"click",t[3])],q=!0)},p(t,e){1&e&&n.value!==t[0].name&&k(n,t[0].name);const o={};!$&&1&e&&($=!0,o.content=t[0].persistent,j((()=>$=!1))),u.$set(o);const l={};!_&&1&e&&(_=!0,l.content=t[0].trigger,j((()=>_=!1))),C.$set(l)},i(t){N||(H(u.$$.fragment,t),H(C.$$.fragment,t),N=!0)},o(t){W(u.$$.fragment,t),W(C.$$.fragment,t),N=!1},d(t){t&&m(e),t&&m(r),t&&m(s),t&&m(i),t&&m(a),tt(u),t&&m(g),t&&m(b),t&&m(v),t&&m(y),tt(C),q=!1,o(S)}}}function Me(t){let e,n,o,l;const c=[ze,Le],r=[];function s(t,e){return t[1]?0:1}return n=s(t),o=r[n]=c[n](t),{c(){e=p("div"),o.c(),w(e,"class","d-flex flex-column flex-grow-1")},m(t,o){f(t,e,o),r[n].m(e,null),l=!0},p(t,[l]){let i=n;n=s(t),n===i?r[n].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),o=r[n],o?o.p(t,l):(o=r[n]=c[n](t),o.c()),H(o,1),o.m(e,null))},i(t){l||(H(o),l=!0)},o(t){W(o),l=!1},d(t){t&&m(e),r[n].d()}}}function Pe(t,e,n){let{infestation:o}=e,l=!1;return t.$$set=t=>{"infestation"in t&&n(0,o=t.infestation)},[o,l,function(){o.name=this.value,n(0,o)},()=>n(1,l=!1),function(e){t.$$.not_equal(o.persistent,e)&&(o.persistent=e,n(0,o))},function(e){t.$$.not_equal(o.trigger,e)&&(o.trigger=e,n(0,o))},()=>n(1,l=!0)]}class je extends ot{constructor(t){super(),nt(this,t,Pe,Me,c,{infestation:0})}}function Be(e){let n,l,c,r,s,i,a,u,$,b=e[0].name+"",v=e[0].used+"";return{c(){n=p("button"),l=g(b),c=h(),r=p("button"),s=g(v),i=h(),a=p("button"),a.textContent="Reset",w(n,"class","btn btn-light border text-left flex-grow-1"),w(r,"class","btn btn-dark ml-1"),w(a,"class","btn btn-light border ml-1")},m(t,o){f(t,n,o),d(n,l),f(t,c,o),f(t,r,o),d(r,s),f(t,i,o),f(t,a,o),u||($=[x(n,"click",e[7]),x(r,"click",e[2]),x(a,"click",e[8])],u=!0)},p(t,e){1&e&&b!==(b=t[0].name+"")&&y(l,b),1&e&&v!==(v=t[0].used+"")&&y(s,v)},i:t,o:t,d(t){t&&m(n),t&&m(c),t&&m(r),t&&m(i),t&&m(a),u=!1,o($)}}}function Ue(t){let e,n,l,c,r,s,i,a,u,$,b,v,C,_,N,q,S,E,O,A,D,K,L=t[0].used+"";function z(e){t[6](e)}let M={};return void 0!==t[0].description&&(M.content=t[0].description),C=new gt({props:M}),I.push((()=>Q(C,"content",z))),O=new je({props:{infestation:t[0].infestation}}),{c(){e=p("div"),n=p("div"),l=p("input"),c=h(),r=p("button"),r.textContent="Close",s=h(),i=p("button"),a=g(L),u=h(),$=p("button"),$.textContent="Reset",b=h(),v=p("div"),Y(C.$$.fragment),N=h(),q=p("span"),q.textContent="Linked Infestation",S=h(),E=p("div"),Y(O.$$.fragment),w(l,"class","flex-grow-1 form-control"),w(r,"class","btn btn-light border"),w(i,"class","btn btn-dark ml-1"),w($,"class","btn btn-light border ml-1"),w(n,"class","d-flex flex-grow-1"),w(v,"class","d-flex"),w(E,"class","pl-3"),w(e,"class","d-flex flex-column flex-grow-1")},m(o,m){f(o,e,m),d(e,n),d(n,l),k(l,t[0].name),d(n,c),d(n,r),d(n,s),d(n,i),d(i,a),d(n,u),d(n,$),d(e,b),d(e,v),X(C,v,null),d(e,N),d(e,q),d(e,S),d(e,E),X(O,E,null),A=!0,D||(K=[x(l,"input",t[3]),x(r,"click",t[4]),x(i,"click",t[2]),x($,"click",t[5])],D=!0)},p(t,e){1&e&&l.value!==t[0].name&&k(l,t[0].name),(!A||1&e)&&L!==(L=t[0].used+"")&&y(a,L);const n={};!_&&1&e&&(_=!0,n.content=t[0].description,j((()=>_=!1))),C.$set(n);const o={};1&e&&(o.infestation=t[0].infestation),O.$set(o)},i(t){A||(H(C.$$.fragment,t),H(O.$$.fragment,t),A=!0)},o(t){W(C.$$.fragment,t),W(O.$$.fragment,t),A=!1},d(t){t&&m(e),tt(C),tt(O),D=!1,o(K)}}}function Te(t){let e,n,o,l;const c=[Ue,Be],r=[];function s(t,e){return t[1]?0:1}return n=s(t),o=r[n]=c[n](t),{c(){e=p("div"),o.c(),w(e,"class","d-flex flex-grow-1")},m(t,o){f(t,e,o),r[n].m(e,null),l=!0},p(t,[l]){let i=n;n=s(t),n===i?r[n].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),o=r[n],o?o.p(t,l):(o=r[n]=c[n](t),o.c()),H(o,1),o.m(e,null))},i(t){l||(H(o),l=!0)},o(t){W(o),l=!1},d(t){t&&m(e),r[n].d()}}}function Je(t,e,n){let o,{nano:l}=e;return t.$$set=t=>{"nano"in t&&n(0,l=t.nano)},[l,o,function(t){let e=t.shiftKey?-1:1;n(0,l.used+=e,l),l.used<0&&n(0,l.used=0,l)},function(){l.name=this.value,n(0,l)},()=>n(1,o=!1),()=>n(0,l.used=0,l),function(e){t.$$.not_equal(l.description,e)&&(l.description=e,n(0,l))},()=>n(1,o=!0),()=>n(0,l.used=0,l)]}class Re extends ot{constructor(t){super(),nt(this,t,Je,Te,c,{nano:0})}}function Ve(t,e,n){const o=t.slice();return o[4]=e[n],o}function Fe(t){let e,n,o;return e=new Re({props:{nano:t[4]}}),{c(){Y(e.$$.fragment),n=h()},m(t,l){X(e,t,l),f(t,n,l),o=!0},p(t,n){const o={};1&n&&(o.nano=t[4]),e.$set(o)},i(t){o||(H(e.$$.fragment,t),o=!0)},o(t){W(e.$$.fragment,t),o=!1},d(t){tt(e,t),t&&m(n)}}}function Ge(t){let e,n;return e=new Ct({props:{item:t[4],move:t[2],remove:t[3],$$slots:{default:[Fe]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[4]),129&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function He(t){let e,n,o,l,c,r,s=t[0].nano,i=[];for(let e=0;e<s.length;e+=1)i[e]=Ge(Ve(t,s,e));const a=t=>W(i[t],1,1,(()=>{i[t]=null}));return{c(){e=p("button"),e.textContent="Add",n=h();for(let t=0;t<i.length;t+=1)i[t].c();o=b(),w(e,"class","btn btn-dark")},m(s,a){f(s,e,a),f(s,n,a);for(let t=0;t<i.length;t+=1)i[t]&&i[t].m(s,a);f(s,o,a),l=!0,c||(r=x(e,"click",t[1]),c=!0)},p(t,[e]){if(13&e){let n;for(s=t[0].nano,n=0;n<s.length;n+=1){const l=Ve(t,s,n);i[n]?(i[n].p(l,e),H(i[n],1)):(i[n]=Ge(l),i[n].c(),H(i[n],1),i[n].m(o.parentNode,o))}for(F(),n=s.length;n<i.length;n+=1)a(n);G()}},i(t){if(!l){for(let t=0;t<s.length;t+=1)H(i[t]);l=!0}},o(t){i=i.filter(Boolean);for(let t=0;t<i.length;t+=1)W(i[t]);l=!1},d(t){t&&m(e),t&&m(n),$(i,t),t&&m(o),c=!1,r()}}}function We(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(){o.nano.push({name:"Nano power",description:"",used:0,infestation:{name:"Infestation",persistent:"",trigger:""}}),n(0,o)},function(t,e){let l=o.nano.indexOf(e);o.nano.splice(l,1),l+=t,l<0?l=o.nano.length:l>o.nano.length&&(l=0),o.nano.splice(l,0,e),n(0,o)},function(t){let e=o.nano.indexOf(t);o.nano.splice(e,1),n(0,o)}]}class Ze extends ot{constructor(t){super(),nt(this,t,We,He,c,{model:0})}}const Qe=(t,e)=>{for(let n in e)t[n]||(t[n]=e[n]),"object"==typeof t[n]&&Qe(t[n],e[n])};var Ye=t=>{if(confirm(`Delete ${t.name}?`))return localStorage.removeItem(t.name),{success:`${t.name} deleted from character storage`}},Xe=()=>{if(confirm("Delete all saved characters?"))return localStorage.clear(),{success:"All characters deleted from character storage"}},tn=t=>{let e=URL.createObjectURL(new Blob([JSON.stringify(t)])),n=document.createElement("a");n.href=e,n.download=`${t.name}.cybrg`,n.click()},en=t=>{let e=document.createElement("input");e.type="file",e.accept=".cybrg",e.onchange=e=>{e.target.files[0].text().then((e=>{let n=JSON.parse(e).name;localStorage.setItem(n,e),t(`${n} added to character storage`)}))},e.click()},nn=(t,e)=>{let n=e;if(n==`${t.name}.cybrg`)return{model:t};let o="";return t.name&&confirm(`Save ${t.name} before changing characters?`)&&(localStorage.setItem(t.name,JSON.stringify(t)),o+=`${t.name} saved, `),t=JSON.parse(localStorage.getItem(n)),Qe(t,lt()),{model:t,alert:{success:`${o}${t.name} opened`}}},on=()=>{let t=[...new Array(window.localStorage.length)].map(((t,e)=>window.localStorage.key(e)));return t=t.filter((t=>t.endsWith(".cybrg"))),t.sort(((t,e)=>t.localeCompare(e))),t},ln=t=>t.name?(localStorage.setItem(`${t.name}.cybrg`,JSON.stringify(t)),{success:`${t.name} saved`}):{error:"Cannot save an unnamed character"};function cn(t,e,n){const o=t.slice();return o[27]=e[n],o}function rn(t){let e,n,l,c,r=t[27]+"";function s(){return t[16](t[27])}return{c(){e=p("button"),n=g(r),w(e,"class","dropdown-item")},m(o,r){f(o,e,r),d(e,n),l||(c=[x(e,"blur",t[6]),x(e,"click",s)],l=!0)},p(e,o){t=e,4&o&&r!==(r=t[27]+"")&&y(n,r)},d(t){t&&m(e),l=!1,o(c)}}}function sn(t){let e,n,l,c,r,s=t[3].error+"";return{c(){e=p("button"),n=p("strong"),l=g(s),w(e,"class","alert alert-static alert-danger btn text-center w-100")},m(o,s){f(o,e,s),d(e,n),d(n,l),t[22](e),c||(r=[x(e,"blur",t[23]),x(e,"click",t[24])],c=!0)},p(t,e){8&e&&s!==(s=t[3].error+"")&&y(l,s)},d(n){n&&m(e),t[22](null),c=!1,o(r)}}}function an(t){let e,n,l,c,r,s=t[3].success+"";return{c(){e=p("button"),n=p("strong"),l=g(s),w(e,"class","alert alert-static alert-success btn text-center w-100")},m(o,s){f(o,e,s),d(e,n),d(n,l),t[19](e),c||(r=[x(e,"blur",t[20]),x(e,"click",t[21])],c=!0)},p(t,e){8&e&&s!==(s=t[3].success+"")&&y(l,s)},d(n){n&&m(e),t[19](null),c=!1,o(r)}}}function un(e){let n,l,c,r,s,i,a,u,g,v,y,k,_,N,S,E,O,A,D,I,K,L,z,M,P,j,B,U,T,J,R,V,F=e[2],G=[];for(let t=0;t<F.length;t+=1)G[t]=rn(cn(e,F,t));function H(t,e){return t[3]?.success?an:t[3]?.error?sn:void 0}let W=H(e),Z=W&&W(e);return{c(){n=p("nav"),l=p("button"),l.innerHTML='<span class="navbar-toggler-icon"></span>',c=h(),r=p("div"),s=p("ul"),i=p("li"),a=p("a"),a.textContent="Characters",u=h(),g=p("div");for(let t=0;t<G.length;t+=1)G[t].c();y=h(),k=p("div"),_=p("div"),N=p("button"),N.textContent="Options",S=h(),E=p("div"),O=p("button"),O.textContent="Save",A=h(),D=p("button"),D.textContent="Export",I=h(),K=p("button"),K.textContent="Import",L=h(),z=p("button"),z.textContent="Delete",M=h(),P=p("button"),P.textContent="Delete all",j=h(),B=p("button"),B.textContent=("dark"==ct?"Light":"Dark")+" mode",T=h(),Z&&Z.c(),J=b(),w(l,"class","navbar-toggler"),w(l,"type","button"),w(a,"href","#"),w(a,"class","nav-link dropdown-toggle"),q(a,"disabled",!e[2].length),w(g,"class","dropdown-menu"),w(g,"style",v="display: "+("characters"==e[1]?"block":"none")),w(i,"class","nav-item dropdown"),w(s,"class","navbar-nav mr-auto"),w(N,"href","#"),w(N,"class","dropdown-toggle btn btn-light border border-dark"),w(O,"class","dropdown-item"),w(D,"class","dropdown-item"),w(K,"class","dropdown-item"),w(z,"class","dropdown-item"),w(P,"class","dropdown-item"),w(B,"class","dropdown-item"),w(E,"class","dropdown-menu"),w(E,"style",U="display: "+("options"==e[1]?"block":"none")),w(_,"class","nav-item dropdown"),w(k,"class","navbar-nav"),w(r,"class","collapse navbar-collapse"),C(r,"display",e[0]),w(n,"class","navbar navbar-expand-md navbar-light bg-light")},m(t,o){f(t,n,o),d(n,l),d(n,c),d(n,r),d(r,s),d(s,i),d(i,a),d(i,u),d(i,g);for(let t=0;t<G.length;t+=1)G[t]&&G[t].m(g,null);d(r,y),d(r,k),d(k,_),d(_,N),d(_,S),d(_,E),d(E,O),d(E,A),d(E,D),d(E,I),d(E,K),d(E,L),d(E,z),d(E,M),d(E,P),d(E,j),d(E,B),f(t,T,o),Z&&Z.m(t,o),f(t,J,o),R||(V=[x(l,"click",e[12]),x(a,"blur",e[6]),x(a,"click",e[15]),x(N,"blur",e[6]),x(N,"click",e[17]),x(O,"click",e[10]),x(O,"blur",e[6]),x(D,"click",e[9]),x(D,"blur",e[6]),x(K,"click",e[13]),x(K,"blur",e[6]),x(z,"click",e[7]),x(z,"blur",e[6]),x(P,"click",e[8]),x(P,"blur",e[6]),x(B,"click",e[18])],R=!0)},p(t,[e]){if(4&e&&q(a,"disabled",!t[2].length),100&e){let n;for(F=t[2],n=0;n<F.length;n+=1){const o=cn(t,F,n);G[n]?G[n].p(o,e):(G[n]=rn(o),G[n].c(),G[n].m(g,null))}for(;n<G.length;n+=1)G[n].d(1);G.length=F.length}2&e&&v!==(v="display: "+("characters"==t[1]?"block":"none"))&&w(g,"style",v),2&e&&U!==(U="display: "+("options"==t[1]?"block":"none"))&&w(E,"style",U),1&e&&C(r,"display",t[0]),W===(W=H(t))&&Z?Z.p(t,e):(Z&&Z.d(1),Z=W&&W(t),Z&&(Z.c(),Z.m(J.parentNode,J)))},i:t,o:t,d(t){t&&m(n),$(G,t),t&&m(T),Z&&Z.d(t),t&&m(J),R=!1,o(V)}}}function dn(t,e,n){let o,l,{model:c=lt()}=e,r="none",s="",i=[];function a(t){let e=nn(c,t);n(14,c=e.model),n(3,o=e.alert),f()}function u(){n(2,i=on())}function d(t){n(1,s=t)}function f(){n(0,r="none"==r?"block":"none")}u();let m=window.setInterval((()=>{console.log(`Autosave (${c.name})`),null!=i.find((t=>t==c.name))&&ln(c)}),1e4);var $;A((()=>{l&&l.focus()})),$=()=>{clearInterval(m)},O().$$.on_destroy.push($);return t.$$set=t=>{"model"in t&&n(14,c=t.model)},[r,s,i,o,l,a,function(t){t.relatedTarget?.className.includes("dropdown-item")||n(1,s="")},function(){n(3,o=Ye(c)),u(),f()},function(){n(3,o=Xe()),u(),f()},function(){tn(c),f()},function(){n(3,o=ln(c)),n(2,i=on()),f()},d,f,function(){en((t=>{n(3,o={success:t}),n(2,i=on())})),f()},c,()=>d("characters"),t=>a(t),()=>d("options"),()=>{return t="dark"==ct?"light":"dark",void(window.location.search=`theme=${t}`);var t},function(t){I[t?"unshift":"push"]((()=>{l=t,n(4,l)}))},()=>n(3,o=null),()=>n(3,o=null),function(t){I[t?"unshift":"push"]((()=>{l=t,n(4,l)}))},()=>n(3,o=null),()=>n(3,o=null)]}class fn extends ot{constructor(t){super(),nt(this,t,dn,un,c,{model:14})}}function mn(t){let e,n,o,l,c,s,$,b,v;const k=t[4].default,_=r(k,t,t[3],null);return{c(){e=p("div"),n=p("h4"),o=p("button"),l=g(t[0]),c=h(),s=p("span"),_&&_.c(),w(o,"class","btn btn-dark badge"),C(o,"width","2.0em"),w(s,"class","align-self-center ml-1"),w(e,"class","d-flex")},m(r,i){f(r,e,i),d(e,n),d(n,o),d(o,l),d(e,c),d(e,s),_&&_.m(s,null),$=!0,b||(v=x(o,"click",t[1]),b=!0)},p(t,[e]){(!$||1&e)&&y(l,t[0]),_&&_.p&&(!$||8&e)&&a(_,k,t,t[3],$?i(k,t[3],e,null):u(t[3]),null)},i(t){$||(H(_,t),$=!0)},o(t){W(_,t),$=!1},d(t){t&&m(e),_&&_.d(t),b=!1,v()}}}function $n(t,e,n){let o,{$$slots:l={},$$scope:c}=e,{score:r}=e;return t.$$set=t=>{"score"in t&&n(2,r=t.score),"$$scope"in t&&n(3,c=t.$$scope)},t.$$.update=()=>{4&t.$$.dirty&&n(0,o=r>0?`+${r}`:`${r}`)},[o,function(t){n(2,r+=t.shiftKey?-1:1),r<-3&&n(2,r=3),r>3&&n(2,r=-3)},r,c,l]}class pn extends ot{constructor(t){super(),nt(this,t,$n,mn,c,{score:2})}}function gn(t){let e;return{c(){e=g("Strength")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function hn(t){let e;return{c(){e=g("Agility")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function bn(t){let e;return{c(){e=g("Presence")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function xn(t){let e;return{c(){e=g("Toughness")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function wn(t){let e;return{c(){e=g("Knowledge")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function vn(t){let e,n,o,l,c,r,s,i,a,u,d,$,p,g,b;function x(e){t[1](e)}let w={$$slots:{default:[gn]},$$scope:{ctx:t}};function v(e){t[2](e)}void 0!==t[0].abilities.strength&&(w.score=t[0].abilities.strength),e=new pn({props:w}),I.push((()=>Q(e,"score",x)));let y={$$slots:{default:[hn]},$$scope:{ctx:t}};function k(e){t[3](e)}void 0!==t[0].abilities.agility&&(y.score=t[0].abilities.agility),l=new pn({props:y}),I.push((()=>Q(l,"score",v)));let C={$$slots:{default:[bn]},$$scope:{ctx:t}};function _(e){t[4](e)}void 0!==t[0].abilities.presence&&(C.score=t[0].abilities.presence),s=new pn({props:C}),I.push((()=>Q(s,"score",k)));let N={$$slots:{default:[xn]},$$scope:{ctx:t}};function q(e){t[5](e)}void 0!==t[0].abilities.toughness&&(N.score=t[0].abilities.toughness),u=new pn({props:N}),I.push((()=>Q(u,"score",_)));let S={$$slots:{default:[wn]},$$scope:{ctx:t}};return void 0!==t[0].abilities.knowledge&&(S.score=t[0].abilities.knowledge),p=new pn({props:S}),I.push((()=>Q(p,"score",q))),{c(){Y(e.$$.fragment),o=h(),Y(l.$$.fragment),r=h(),Y(s.$$.fragment),a=h(),Y(u.$$.fragment),$=h(),Y(p.$$.fragment)},m(t,n){X(e,t,n),f(t,o,n),X(l,t,n),f(t,r,n),X(s,t,n),f(t,a,n),X(u,t,n),f(t,$,n),X(p,t,n),b=!0},p(t,[o]){const r={};64&o&&(r.$$scope={dirty:o,ctx:t}),!n&&1&o&&(n=!0,r.score=t[0].abilities.strength,j((()=>n=!1))),e.$set(r);const a={};64&o&&(a.$$scope={dirty:o,ctx:t}),!c&&1&o&&(c=!0,a.score=t[0].abilities.agility,j((()=>c=!1))),l.$set(a);const f={};64&o&&(f.$$scope={dirty:o,ctx:t}),!i&&1&o&&(i=!0,f.score=t[0].abilities.presence,j((()=>i=!1))),s.$set(f);const m={};64&o&&(m.$$scope={dirty:o,ctx:t}),!d&&1&o&&(d=!0,m.score=t[0].abilities.toughness,j((()=>d=!1))),u.$set(m);const $={};64&o&&($.$$scope={dirty:o,ctx:t}),!g&&1&o&&(g=!0,$.score=t[0].abilities.knowledge,j((()=>g=!1))),p.$set($)},i(t){b||(H(e.$$.fragment,t),H(l.$$.fragment,t),H(s.$$.fragment,t),H(u.$$.fragment,t),H(p.$$.fragment,t),b=!0)},o(t){W(e.$$.fragment,t),W(l.$$.fragment,t),W(s.$$.fragment,t),W(u.$$.fragment,t),W(p.$$.fragment,t),b=!1},d(t){tt(e,t),t&&m(o),tt(l,t),t&&m(r),tt(s,t),t&&m(a),tt(u,t),t&&m($),tt(p,t)}}}function yn(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(e){t.$$.not_equal(o.abilities.strength,e)&&(o.abilities.strength=e,n(0,o))},function(e){t.$$.not_equal(o.abilities.agility,e)&&(o.abilities.agility=e,n(0,o))},function(e){t.$$.not_equal(o.abilities.presence,e)&&(o.abilities.presence=e,n(0,o))},function(e){t.$$.not_equal(o.abilities.toughness,e)&&(o.abilities.toughness=e,n(0,o))},function(e){t.$$.not_equal(o.abilities.knowledge,e)&&(o.abilities.knowledge=e,n(0,o))}]}class kn extends ot{constructor(t){super(),nt(this,t,yn,vn,c,{model:0})}}function Cn(t,e,n){const o=t.slice();return o[9]=e[n],o}function _n(t){let e,n,o,l,c=t[0].die+"";return{c(){e=p("button"),n=g(c),w(e,"class","btn btn-light border ml-1")},m(c,r){f(c,e,r),d(e,n),o||(l=x(e,"click",t[6]),o=!0)},p(t,e){1&e&&c!==(c=t[0].die+"")&&y(n,c)},d(t){t&&m(e),o=!1,l()}}}function Nn(t){let e,n,l,c,r,s,i=t[2],a=[];for(let e=0;e<i.length;e+=1)a[e]=qn(Cn(t,i,e));return{c(){e=p("div"),n=p("select");for(let t=0;t<a.length;t+=1)a[t].c();l=h(),c=p("button"),c.textContent="Close",w(n,"class","form-control"),void 0===t[0].die&&P((()=>t[4].call(n))),w(e,"class","ml-1"),w(c,"class","btn btn-light border ml-1")},m(o,i){f(o,e,i),d(e,n);for(let t=0;t<a.length;t+=1)a[t]&&a[t].m(n,null);_(n,t[0].die,!0),f(o,l,i),f(o,c,i),r||(s=[x(n,"change",t[4]),x(c,"click",t[5])],r=!0)},p(t,e){if(4&e){let o;for(i=t[2],o=0;o<i.length;o+=1){const l=Cn(t,i,o);a[o]?a[o].p(l,e):(a[o]=qn(l),a[o].c(),a[o].m(n,null))}for(;o<a.length;o+=1)a[o].d(1);a.length=i.length}5&e&&_(n,t[0].die)},d(t){t&&m(e),$(a,t),t&&m(l),t&&m(c),r=!1,o(s)}}}function qn(e){let n,o,l=e[9]+"";return{c(){n=p("option"),o=g(l),n.__value=e[9],n.value=n.__value},m(t,e){f(t,n,e),d(n,o)},p:t,d(t){t&&m(n)}}}function Sn(e){let n,l,c,r,s,i,a,u,$,b,v,k,C,_,N,q=e[0].current+"";function S(t,e){return t[1]?Nn:_n}let E=S(e),O=E(e);return{c(){n=p("div"),l=p("button"),c=g(q),r=h(),s=p("span"),s.textContent="Glitches",i=h(),a=p("span"),a.textContent="Die",u=h(),O.c(),$=h(),b=p("div"),v=p("button"),v.textContent="+",k=h(),C=p("button"),C.textContent="-",w(l,"class","btn btn-dark"),w(s,"class","align-self-center ml-1"),w(a,"class","align-self-center ml-auto"),w(v,"class","btn btn-dark"),w(C,"class","btn btn-dark"),w(b,"class","btn-group ml-1"),w(n,"class","d-flex")},m(t,o){f(t,n,o),d(n,l),d(l,c),d(n,r),d(n,s),d(n,i),d(n,a),d(n,u),O.m(n,null),d(n,$),d(n,b),d(b,v),d(b,k),d(b,C),_||(N=[x(l,"click",e[3]),x(v,"click",e[7]),x(C,"click",e[8])],_=!0)},p(t,[e]){1&e&&q!==(q=t[0].current+"")&&y(c,q),E===(E=S(t))&&O?O.p(t,e):(O.d(1),O=E(t),O&&(O.c(),O.m(n,$)))},i:t,o:t,d(t){t&&m(n),O.d(),_=!1,o(N)}}}function En(t,e,n){let{glitches:o}=e;const l=["d2","d3","d4"];function c(t){let e=t.shiftKey?1:-1;n(0,o.current+=e,o),o.current<0&&n(0,o.current=0,o)}let r=!1;return t.$$set=t=>{"glitches"in t&&n(0,o=t.glitches)},[o,r,l,c,function(){o.die=N(this),n(0,o),n(2,l)},()=>n(1,r=!1),()=>n(1,r=!0),()=>c({shiftKey:!0}),()=>c({shiftKey:!1})]}class On extends ot{constructor(t){super(),nt(this,t,En,Sn,c,{glitches:0})}}function An(e){let n,l,c,r,s,i,a,u,$,b,v,k,C,_,N,q,S,E,O,A,D,I,K,L,z=e[0].current+"",M=e[0].max+"";return{c(){n=p("div"),l=p("h3"),c=p("button"),r=g(z),s=h(),i=p("span"),i.textContent="/",a=h(),u=p("h3"),$=p("button"),b=g(M),v=h(),k=p("span"),k.textContent="Hit Points",C=h(),_=p("div"),N=p("button"),N.textContent="+",q=h(),S=p("button"),S.textContent="-",E=h(),O=p("div"),A=p("button"),A.textContent="+max",D=h(),I=p("button"),I.textContent="-max",w(c,"class","btn-dark badge"),w(i,"class","ml-2 mr-2 align-self-center"),w($,"class","btn-dark badge"),w(k,"class","ml-2 align-self-center"),w(N,"class","btn btn-dark align-self-center"),w(S,"class","btn btn-dark align-self-center"),w(_,"class","btn-group ml-auto"),w(A,"class","btn btn-dark align-self-center"),w(I,"class","btn btn-dark align-self-center"),w(O,"class","btn-group ml-1"),w(n,"class","d-flex")},m(t,o){f(t,n,o),d(n,l),d(l,c),d(c,r),d(n,s),d(n,i),d(n,a),d(n,u),d(u,$),d($,b),d(n,v),d(n,k),d(n,C),d(n,_),d(_,N),d(_,q),d(_,S),d(n,E),d(n,O),d(O,A),d(O,D),d(O,I),K||(L=[x(c,"click",e[1]),x($,"click",e[2]),x(N,"click",e[3]),x(S,"click",e[4]),x(A,"click",e[5]),x(I,"click",e[6])],K=!0)},p(t,[e]){1&e&&z!==(z=t[0].current+"")&&y(r,z),1&e&&M!==(M=t[0].max+"")&&y(b,M)},i:t,o:t,d(t){t&&m(n),K=!1,o(L)}}}function Dn(t,e,n){let{hp:o}=e;function l(t){n(0,o.current+=t.shiftKey?1:-1,o)}function c(t){n(0,o.max+=t.shiftKey?-1:1,o)}return t.$$set=t=>{"hp"in t&&n(0,o=t.hp)},[o,l,c,()=>l({shiftKey:!0}),()=>l({shiftKey:!1}),()=>c({shiftKey:!1}),()=>c({shiftKey:!0})]}class In extends ot{constructor(t){super(),nt(this,t,Dn,An,c,{hp:0})}}function Kn(t){let e,n,o,l,c,r,s,i;return e=new In({props:{hp:t[0].hp}}),o=new On({props:{glitches:t[0].glitches}}),s=new kn({props:{model:t[0]}}),{c(){Y(e.$$.fragment),n=h(),Y(o.$$.fragment),l=h(),c=p("hr"),r=h(),Y(s.$$.fragment)},m(t,a){X(e,t,a),f(t,n,a),X(o,t,a),f(t,l,a),f(t,c,a),f(t,r,a),X(s,t,a),i=!0},p(t,[n]){const l={};1&n&&(l.hp=t[0].hp),e.$set(l);const c={};1&n&&(c.glitches=t[0].glitches),o.$set(c);const r={};1&n&&(r.model=t[0]),s.$set(r)},i(t){i||(H(e.$$.fragment,t),H(o.$$.fragment,t),H(s.$$.fragment,t),i=!0)},o(t){W(e.$$.fragment,t),W(o.$$.fragment,t),W(s.$$.fragment,t),i=!1},d(t){tt(e,t),t&&m(n),tt(o,t),t&&m(l),t&&m(c),t&&m(r),tt(s,t)}}}function Ln(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o]}class zn extends ot{constructor(t){super(),nt(this,t,Ln,Kn,c,{model:0})}}function Mn(t,e,n){const o=t.slice();return o[4]=e[n],o}function Pn(t){let e,n,o;return e=new je({props:{infestation:t[4]}}),{c(){Y(e.$$.fragment),n=h()},m(t,l){X(e,t,l),f(t,n,l),o=!0},p(t,n){const o={};1&n&&(o.infestation=t[4]),e.$set(o)},i(t){o||(H(e.$$.fragment,t),o=!0)},o(t){W(e.$$.fragment,t),o=!1},d(t){tt(e,t),t&&m(n)}}}function jn(t){let e,n;return e=new Ct({props:{item:t[4],move:t[2],remove:t[3],$$slots:{default:[Pn]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[4]),129&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function Bn(t){let e,n,o,l,c,r,s=t[0].infestations,i=[];for(let e=0;e<s.length;e+=1)i[e]=jn(Mn(t,s,e));const a=t=>W(i[t],1,1,(()=>{i[t]=null}));return{c(){e=p("button"),e.textContent="Add",n=h();for(let t=0;t<i.length;t+=1)i[t].c();o=b(),w(e,"class","btn btn-dark")},m(s,a){f(s,e,a),f(s,n,a);for(let t=0;t<i.length;t+=1)i[t]&&i[t].m(s,a);f(s,o,a),l=!0,c||(r=x(e,"click",t[1]),c=!0)},p(t,[e]){if(13&e){let n;for(s=t[0].infestations,n=0;n<s.length;n+=1){const l=Mn(t,s,n);i[n]?(i[n].p(l,e),H(i[n],1)):(i[n]=jn(l),i[n].c(),H(i[n],1),i[n].m(o.parentNode,o))}for(F(),n=s.length;n<i.length;n+=1)a(n);G()}},i(t){if(!l){for(let t=0;t<s.length;t+=1)H(i[t]);l=!0}},o(t){i=i.filter(Boolean);for(let t=0;t<i.length;t+=1)W(i[t]);l=!1},d(t){t&&m(e),t&&m(n),$(i,t),t&&m(o),c=!1,r()}}}function Un(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(){o.infestations.push({name:"Infestation",persistent:"",trigger:""}),n(0,o)},function(t,e){let l=o.infestations.indexOf(e);o.infestations.splice(l,1),l+=t,l<0?l=o.infestations.length:l>o.infestations.length&&(l=0),o.infestations.splice(l,0,e),n(0,o)},function(t){let e=o.infestations.indexOf(t);o.infestations.splice(e,1),n(0,o)}]}class Tn extends ot{constructor(t){super(),nt(this,t,Un,Bn,c,{model:0})}}function Jn(e){let n,o,l,c,r=e[0].name+"";return{c(){n=p("button"),o=g(r),w(n,"class","btn btn-light border text-left flex-grow-1")},m(t,r){f(t,n,r),d(n,o),l||(c=x(n,"click",e[5]),l=!0)},p(t,e){1&e&&r!==(r=t[0].name+"")&&y(o,r)},i:t,o:t,d(t){t&&m(n),l=!1,c()}}}function Rn(t){let e,n,l,c,r,s,i,a,u,$,g;function b(e){t[4](e)}let v={};return void 0!==t[0].description&&(v.content=t[0].description),i=new gt({props:v}),I.push((()=>Q(i,"content",b))),{c(){e=p("div"),n=p("input"),l=h(),c=p("button"),c.textContent="Close",r=h(),s=p("div"),Y(i.$$.fragment),w(n,"class","flex-grow-1 form-control"),w(c,"class","btn btn-light border"),w(e,"class","d-flex flex-grow-1"),w(s,"class","d-flex")},m(o,a){f(o,e,a),d(e,n),k(n,t[0].name),d(e,l),d(e,c),f(o,r,a),f(o,s,a),X(i,s,null),u=!0,$||(g=[x(n,"input",t[2]),x(c,"click",t[3])],$=!0)},p(t,e){1&e&&n.value!==t[0].name&&k(n,t[0].name);const o={};!a&&1&e&&(a=!0,o.content=t[0].description,j((()=>a=!1))),i.$set(o)},i(t){u||(H(i.$$.fragment,t),u=!0)},o(t){W(i.$$.fragment,t),u=!1},d(t){t&&m(e),t&&m(r),t&&m(s),tt(i),$=!1,o(g)}}}function Vn(t){let e,n,o,l;const c=[Rn,Jn],r=[];function s(t,e){return t[1]?0:1}return n=s(t),o=r[n]=c[n](t),{c(){e=p("div"),o.c(),w(e,"class","d-flex flex-column flex-grow-1")},m(t,o){f(t,e,o),r[n].m(e,null),l=!0},p(t,[l]){let i=n;n=s(t),n===i?r[n].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),o=r[n],o?o.p(t,l):(o=r[n]=c[n](t),o.c()),H(o,1),o.m(e,null))},i(t){l||(H(o),l=!0)},o(t){W(o),l=!1},d(t){t&&m(e),r[n].d()}}}function Fn(t,e,n){let o,{cyberware:l}=e;return t.$$set=t=>{"cyberware"in t&&n(0,l=t.cyberware)},[l,o,function(){l.name=this.value,n(0,l)},()=>n(1,o=!1),function(e){t.$$.not_equal(l.description,e)&&(l.description=e,n(0,l))},()=>n(1,o=!0)]}class Gn extends ot{constructor(t){super(),nt(this,t,Fn,Vn,c,{cyberware:0})}}function Hn(t,e,n){const o=t.slice();return o[4]=e[n],o}function Wn(t){let e,n,o;return e=new Gn({props:{cyberware:t[4]}}),{c(){Y(e.$$.fragment),n=h()},m(t,l){X(e,t,l),f(t,n,l),o=!0},p(t,n){const o={};1&n&&(o.cyberware=t[4]),e.$set(o)},i(t){o||(H(e.$$.fragment,t),o=!0)},o(t){W(e.$$.fragment,t),o=!1},d(t){tt(e,t),t&&m(n)}}}function Zn(t){let e,n;return e=new Ct({props:{item:t[4],move:t[2],remove:t[3],$$slots:{default:[Wn]},$$scope:{ctx:t}}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.item=t[4]),129&n&&(o.$$scope={dirty:n,ctx:t}),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function Qn(t){let e,n,o,l,c,r,s=t[0].cybertech,i=[];for(let e=0;e<s.length;e+=1)i[e]=Zn(Hn(t,s,e));const a=t=>W(i[t],1,1,(()=>{i[t]=null}));return{c(){e=p("button"),e.textContent="Add",n=h();for(let t=0;t<i.length;t+=1)i[t].c();o=b(),w(e,"class","btn btn-dark")},m(s,a){f(s,e,a),f(s,n,a);for(let t=0;t<i.length;t+=1)i[t]&&i[t].m(s,a);f(s,o,a),l=!0,c||(r=x(e,"click",t[1]),c=!0)},p(t,[e]){if(13&e){let n;for(s=t[0].cybertech,n=0;n<s.length;n+=1){const l=Hn(t,s,n);i[n]?(i[n].p(l,e),H(i[n],1)):(i[n]=Zn(l),i[n].c(),H(i[n],1),i[n].m(o.parentNode,o))}for(F(),n=s.length;n<i.length;n+=1)a(n);G()}},i(t){if(!l){for(let t=0;t<s.length;t+=1)H(i[t]);l=!0}},o(t){i=i.filter(Boolean);for(let t=0;t<i.length;t+=1)W(i[t]);l=!1},d(t){t&&m(e),t&&m(n),$(i,t),t&&m(o),c=!1,r()}}}function Yn(t,e,n){let{model:o}=e;return t.$$set=t=>{"model"in t&&n(0,o=t.model)},[o,function(){o.cybertech.push({name:"Cyberware",description:""}),n(0,o)},function(t,e){let l=o.cybertech.indexOf(e);o.cybertech.splice(l,1),l+=t,l<0?l=o.cybertech.length:l>o.cybertech.length&&(l=0),o.cybertech.splice(l,0,e),n(0,o)},function(t){let e=o.cybertech.indexOf(t);o.cybertech.splice(e,1),n(0,o)}]}class Xn extends ot{constructor(t){super(),nt(this,t,Yn,Qn,c,{model:0})}}var to={shortDate:(t=new Date)=>{let e=t.getDate().toString();1==e.length&&(e=`0${e}`);let n=(t.getMonth()+1).toString();1==n.length&&(n=`0${n}`);let o=t.getFullYear();for(;o.length<4;)o=`0${o}`;return`${o}-${n}-${e}`}};function eo(t){let e,n,l,c,r,s,i,a,u,$,g,b,v,y,k;function C(t,e){return t[3]?lo:oo}let _=C(t),N=_(t);function q(e){t[15](e)}let S={highlight:t[2]};return void 0!==t[0].content&&(S.content=t[0].content),g=new gt({props:S}),I.push((()=>Q(g,"content",q))),{c(){e=p("div"),n=p("div"),l=p("div"),c=p("div"),N.c(),r=h(),s=p("button"),s.textContent="hide",i=h(),a=p("button"),a.textContent="delete",u=h(),$=p("div"),Y(g.$$.fragment),w(s,"class","badge btn btn-light border ml-1 p-2"),w(a,"class","badge btn btn-light border ml-1 p-2"),w(c,"class","d-flex"),w($,"class","d-flex"),w(l,"class","card-body"),w(n,"class","card"),w(e,"class","col-12")},m(o,m){f(o,e,m),d(e,n),d(n,l),d(l,c),N.m(c,null),d(c,r),d(c,s),d(c,i),d(c,a),d(l,u),d(l,$),X(g,$,null),v=!0,y||(k=[x(s,"click",t[13]),x(a,"click",t[14])],y=!0)},p(t,e){_===(_=C(t))&&N?N.p(t,e):(N.d(1),N=_(t),N&&(N.c(),N.m(c,r)));const n={};4&e&&(n.highlight=t[2]),!b&&1&e&&(b=!0,n.content=t[0].content,j((()=>b=!1))),g.$set(n)},i(t){v||(H(g.$$.fragment,t),v=!0)},o(t){W(g.$$.fragment,t),v=!1},d(t){t&&m(e),N.d(),tt(g),y=!1,o(k)}}}function no(e){let n,l,c,r,s,i,a,u,$,b=e[0].title+"",v=to.shortDate(e[5])+"";return{c(){n=p("div"),l=p("h4"),c=p("button"),r=g(b),s=h(),i=p("button"),a=g(v),w(c,"class","badge btn btn-light w-100 text-left"),C(c,"min-height","2.2em"),w(l,"class","flex-grow-1 m-0"),w(i,"class","badge btn btn-light border ml-1 p-2"),w(n,"class","col-12 d-flex")},m(t,o){f(t,n,o),d(n,l),d(l,c),d(c,r),d(n,s),d(n,i),d(i,a),u||($=[x(c,"click",e[7]),x(i,"click",e[8])],u=!0)},p(t,e){1&e&&b!==(b=t[0].title+"")&&y(r,b),32&e&&v!==(v=to.shortDate(t[5])+"")&&y(a,v)},i:t,o:t,d(t){t&&m(n),u=!1,o($)}}}function oo(t){let e,n,o,l,c=t[0].title+"";return{c(){e=p("button"),n=g(c),w(e,"class","btn btn-light w-100 text-left font-weight-bold"),C(e,"min-height","2.2em")},m(c,r){f(c,e,r),d(e,n),o||(l=x(e,"click",t[12]),o=!0)},p(t,e){1&e&&c!==(c=t[0].title+"")&&y(n,c)},d(t){t&&m(e),o=!1,l()}}}function lo(t){let e,n,l;return{c(){e=p("input"),w(e,"class","form-control")},m(o,c){f(o,e,c),t[10](e),k(e,t[0].title),n||(l=[x(e,"blur",t[9]),x(e,"input",t[11])],n=!0)},p(t,n){1&n&&e.value!==t[0].title&&k(e,t[0].title)},d(c){c&&m(e),t[10](null),n=!1,o(l)}}}function co(t){let e,n,o,l;const c=[no,eo],r=[];function s(t,e){return t[6]?0:1}return e=s(t),n=r[e]=c[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),f(t,o,n),l=!0},p(t,[l]){let i=e;e=s(t),e===i?r[e].p(t,l):(F(),W(r[i],1,1,(()=>{r[i]=null})),G(),n=r[e],n?n.p(t,l):(n=r[e]=c[e](t),n.c()),H(n,1),n.m(o.parentNode,o))},i(t){l||(H(n),l=!0)},o(t){W(n),l=!1},d(t){r[e].d(t),t&&m(o)}}}function ro(t,e,n){let o,l,c,{actions:r}=e,{note:s}=e,{highlight:i}=e,a=!1;A((()=>{c&&c.focus()}));return t.$$set=t=>{"actions"in t&&n(1,r=t.actions),"note"in t&&n(0,s=t.note),"highlight"in t&&n(2,i=t.highlight)},t.$$.update=()=>{4&t.$$.dirty&&n(6,o=""==i),1&t.$$.dirty&&n(5,l=new Date(s.date))},[s,r,i,a,c,l,o,()=>n(6,o=!1),()=>n(6,o=!1),()=>n(3,a=!1),function(t){I[t?"unshift":"push"]((()=>{c=t,n(4,c)}))},function(){s.title=this.value,n(0,s)},()=>n(3,a=!0),()=>n(6,o=!0),()=>r.delete(s),function(e){t.$$.not_equal(s.content,e)&&(s.content=e,n(0,s))}]}class so extends ot{constructor(t){super(),nt(this,t,ro,co,c,{actions:1,note:0,highlight:2})}}function io(t,e,n){const o=t.slice();return o[14]=e[n],o}function ao(t,e){let n,o,l;return o=new so({props:{note:e[14],actions:e[3],highlight:e[0]}}),{key:t,first:null,c(){n=b(),Y(o.$$.fragment),this.first=n},m(t,e){f(t,n,e),X(o,t,e),l=!0},p(t,n){e=t;const l={};4&n&&(l.note=e[14]),1&n&&(l.highlight=e[0]),o.$set(l)},i(t){l||(H(o.$$.fragment,t),l=!0)},o(t){W(o.$$.fragment,t),l=!1},d(t){t&&m(n),tt(o,t)}}}function uo(t){let e,n,l,c,r,s,i,a,u,$,g,b,v,y,C,_,N,q,S,E,O,A,D,I=[],K=new Map,L=t[2];const z=t=>t[14].id;for(let e=0;e<L.length;e+=1){let n=io(t,L,e),o=z(n);K.set(o,I[e]=ao(o,n))}return{c(){e=p("div"),n=p("button"),n.textContent="Add note",l=h(),c=p("div"),r=p("button"),r.textContent="Sort",s=h(),i=p("div"),a=p("button"),a.textContent="Newest",u=h(),$=p("button"),$.textContent="Oldest",g=h(),b=p("button"),b.textContent="A → Z",v=h(),y=p("button"),y.textContent="Z → A",_=h(),N=p("div"),q=p("input"),S=h(),E=p("div");for(let t=0;t<I.length;t+=1)I[t].c();w(n,"class","btn btn-light border mb-1 mr-1"),w(r,"class","dropdown-toggle btn btn-light border mb-1"),w(a,"class","dropdown-item"),w($,"class","dropdown-item"),w(b,"class","dropdown-item"),w(y,"class","dropdown-item"),w(i,"class","dropdown-menu"),w(i,"style",C="display: "+("sort"==t[1]?"block":"none")),w(c,"class","dropdown"),w(e,"class","d-flex"),w(q,"class","form-control"),w(q,"placeholder","filter"),w(N,"class","d-flex"),w(E,"class","row mt-2")},m(o,m){f(o,e,m),d(e,n),d(e,l),d(e,c),d(c,r),d(c,s),d(c,i),d(i,a),d(i,u),d(i,$),d(i,g),d(i,b),d(i,v),d(i,y),f(o,_,m),f(o,N,m),d(N,q),k(q,t[0]),f(o,S,m),f(o,E,m);for(let t=0;t<I.length;t+=1)I[t]&&I[t].m(E,null);O=!0,A||(D=[x(n,"click",t[4]),x(r,"blur",t[5]),x(r,"click",t[8]),x(a,"blur",t[5]),x(a,"click",t[9]),x($,"blur",t[5]),x($,"click",t[10]),x(b,"blur",t[5]),x(b,"click",t[11]),x(y,"blur",t[5]),x(y,"click",t[12]),x(q,"input",t[13])],A=!0)},p(t,[e]){(!O||2&e&&C!==(C="display: "+("sort"==t[1]?"block":"none")))&&w(i,"style",C),1&e&&q.value!==t[0]&&k(q,t[0]),13&e&&(L=t[2],F(),I=function(t,e,n,l,c,r,s,i,a,u,d,f){let m=t.length,$=r.length,p=m;const g={};for(;p--;)g[t[p].key]=p;const h=[],b=new Map,x=new Map,w=[];for(p=$;p--;){const t=f(c,r,p),o=n(t);let i=s.get(o);i?l&&w.push((()=>i.p(t,e))):(i=u(o,t),i.c()),b.set(o,h[p]=i),o in g&&x.set(o,Math.abs(p-g[o]))}const v=new Set,y=new Set;function k(t){H(t,1),t.m(i,d),s.set(t.key,t),d=t.first,$--}for(;m&&$;){const e=h[$-1],n=t[m-1],o=e.key,l=n.key;e===n?(d=e.first,m--,$--):b.has(l)?!s.has(o)||v.has(o)?k(e):y.has(l)?m--:x.get(o)>x.get(l)?(y.add(o),k(e)):(v.add(l),m--):(a(n,s),m--)}for(;m--;){const e=t[m];b.has(e.key)||a(e,s)}for(;$;)k(h[$-1]);return o(w),h}(I,e,z,1,t,L,K,E,Z,ao,null,io),G())},i(t){if(!O){for(let t=0;t<L.length;t+=1)H(I[t]);O=!0}},o(t){for(let t=0;t<I.length;t+=1)W(I[t]);O=!1},d(t){t&&m(e),t&&m(_),t&&m(N),t&&m(S),t&&m(E);for(let t=0;t<I.length;t+=1)I[t].d();A=!1,o(D)}}}function fo(t,e,n){let o,{notes:l}=e;const c={delete:t=>{if(!confirm(`Delete ${t.title}?`))return;let e=l.indexOf(t);l.splice(e,1),n(7,l)}};let r="",s="";function i(t){"alpha"==t?l.sort(((t,e)=>t.title.localeCompare(e.title))):"ralpha"==t?l.sort(((t,e)=>e.title.localeCompare(t.title))):"oldest"==t?l.sort(((t,e)=>t.date>e.date)):"newest"==t&&l.sort(((t,e)=>t.date<e.date)),n(7,l)}return t.$$set=t=>{"notes"in t&&n(7,l=t.notes)},t.$$.update=()=>{129&t.$$.dirty&&n(2,o=l.filter((t=>!r||t.title.toLowerCase().includes(r.toLowerCase())||t.content.toLowerCase().includes(r.toLowerCase())))),128&t.$$.dirty&&l.forEach((t=>{t.id||(t.id=crypto.randomUUID())}))},[r,s,o,c,function(){l.splice(0,0,{id:crypto.randomUUID(),title:"New note",date:(new Date).toISOString(),content:"Enter your notes here"}),n(7,l)},function(t){t.relatedTarget?.className.includes("dropdown-item")||n(1,s="")},i,l,()=>n(1,s="sort"),()=>i("newest"),()=>i("oldest"),()=>i("alpha"),()=>i("ralpha"),function(){r=this.value,n(0,r)}]}class mo extends ot{constructor(t){super(),nt(this,t,fo,uo,c,{notes:7})}}function $o(t){let e;return{c(){e=p("link"),w(e,"rel","stylesheet"),w(e,"href","https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"),w(e,"integrity","sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"),w(e,"crossorigin","anonymous")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function po(t){let e;return{c(){e=p("link"),w(e,"rel","stylesheet"),w(e,"href","https://cdn.jsdelivr.net/gh/vinorodrigues/bootstrap-dark@0.6.1/dist/bootstrap-dark.min.css")},m(t,n){f(t,e,n)},d(t){t&&m(e)}}}function go(t){let e,n;return e=new Jt({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function ho(t){let e,n;return e=new zn({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function bo(t){let e,n;return e=new Ke({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function xo(t){let e,n;return e=new Ot({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function wo(t){let e,n;return e=new Ze({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function vo(t){let e,n;return e=new Tn({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function yo(t){let e,n;return e=new Xn({props:{model:t[0]}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.model=t[0]),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function ko(t){let e,n;return e=new mo({props:{notes:t[0].notes}}),{c(){Y(e.$$.fragment)},m(t,o){X(e,t,o),n=!0},p(t,n){const o={};1&n&&(o.notes=t[0].notes),e.$set(o)},i(t){n||(H(e.$$.fragment,t),n=!0)},o(t){W(e.$$.fragment,t),n=!1},d(t){tt(e,t)}}}function Co(t){let e,n,o,l,c,r,s,i,a,u,$,g,x,v,y,k,C,_,N,q,S,E,O;let A=("dark"==ct?po:$o)(t);function D(e){t[1](e)}let K={};return void 0!==t[0]&&(K.model=t[0]),l=new fn({props:K}),I.push((()=>Q(l,"model",D))),i=new Gt({props:{title:"Bio",open:"open",$$slots:{default:[go]},$$scope:{ctx:t}}}),u=new Gt({props:{title:"Status",open:"open",$$slots:{default:[ho]},$$scope:{ctx:t}}}),g=new Gt({props:{title:"Inventory",$$slots:{default:[bo]},$$scope:{ctx:t}}}),v=new Gt({props:{title:"Apps",$$slots:{default:[xo]},$$scope:{ctx:t}}}),k=new Gt({props:{title:"Nano",$$slots:{default:[wo]},$$scope:{ctx:t}}}),_=new Gt({props:{title:"Infestations",$$slots:{default:[vo]},$$scope:{ctx:t}}}),q=new Gt({props:{title:"Cybertech",$$slots:{default:[yo]},$$scope:{ctx:t}}}),E=new Gt({props:{title:"Notes",$$slots:{default:[ko]},$$scope:{ctx:t}}}),{c(){A.c(),e=b(),n=h(),o=p("main"),Y(l.$$.fragment),r=h(),s=p("div"),Y(i.$$.fragment),a=h(),Y(u.$$.fragment),$=h(),Y(g.$$.fragment),x=h(),Y(v.$$.fragment),y=h(),Y(k.$$.fragment),C=h(),Y(_.$$.fragment),N=h(),Y(q.$$.fragment),S=h(),Y(E.$$.fragment),w(s,"class","row m-2"),w(o,"id","app")},m(t,c){A.m(document.head,null),d(document.head,e),f(t,n,c),f(t,o,c),X(l,o,null),d(o,r),d(o,s),X(i,s,null),d(s,a),X(u,s,null),d(s,$),X(g,s,null),d(s,x),X(v,s,null),d(s,y),X(k,s,null),d(s,C),X(_,s,null),d(s,N),X(q,s,null),d(s,S),X(E,s,null),O=!0},p(t,[e]){const n={};!c&&1&e&&(c=!0,n.model=t[0],j((()=>c=!1))),l.$set(n);const o={};5&e&&(o.$$scope={dirty:e,ctx:t}),i.$set(o);const r={};5&e&&(r.$$scope={dirty:e,ctx:t}),u.$set(r);const s={};5&e&&(s.$$scope={dirty:e,ctx:t}),g.$set(s);const a={};5&e&&(a.$$scope={dirty:e,ctx:t}),v.$set(a);const d={};5&e&&(d.$$scope={dirty:e,ctx:t}),k.$set(d);const f={};5&e&&(f.$$scope={dirty:e,ctx:t}),_.$set(f);const m={};5&e&&(m.$$scope={dirty:e,ctx:t}),q.$set(m);const $={};5&e&&($.$$scope={dirty:e,ctx:t}),E.$set($)},i(t){O||(H(l.$$.fragment,t),H(i.$$.fragment,t),H(u.$$.fragment,t),H(g.$$.fragment,t),H(v.$$.fragment,t),H(k.$$.fragment,t),H(_.$$.fragment,t),H(q.$$.fragment,t),H(E.$$.fragment,t),O=!0)},o(t){W(l.$$.fragment,t),W(i.$$.fragment,t),W(u.$$.fragment,t),W(g.$$.fragment,t),W(v.$$.fragment,t),W(k.$$.fragment,t),W(_.$$.fragment,t),W(q.$$.fragment,t),W(E.$$.fragment,t),O=!1},d(t){A.d(t),m(e),t&&m(n),t&&m(o),tt(l),tt(i),tt(u),tt(g),tt(v),tt(k),tt(_),tt(q),tt(E)}}}function _o(t,e,n){let o=lt();return[o,function(t){o=t,n(0,o)}]}return new class extends ot{constructor(t){super(),nt(this,t,_o,Co,c,{})}}({target:document.body,props:{}})}();
-//# sourceMappingURL=bundle.js.map
+(function () {
+	'use strict';
+
+	/** @returns {void} */
+	function noop() {}
+
+	/**
+	 * @template T
+	 * @template S
+	 * @param {T} tar
+	 * @param {S} src
+	 * @returns {T & S}
+	 */
+	function assign(tar, src) {
+		// @ts-ignore
+		for (const k in src) tar[k] = src[k];
+		return /** @type {T & S} */ (tar);
+	}
+
+	function run(fn) {
+		return fn();
+	}
+
+	function blank_object() {
+		return Object.create(null);
+	}
+
+	/**
+	 * @param {Function[]} fns
+	 * @returns {void}
+	 */
+	function run_all(fns) {
+		fns.forEach(run);
+	}
+
+	/**
+	 * @param {any} thing
+	 * @returns {thing is Function}
+	 */
+	function is_function(thing) {
+		return typeof thing === 'function';
+	}
+
+	/** @returns {boolean} */
+	function safe_not_equal(a, b) {
+		return a != a ? b == b : a !== b || (a && typeof a === 'object') || typeof a === 'function';
+	}
+
+	/** @returns {boolean} */
+	function is_empty(obj) {
+		return Object.keys(obj).length === 0;
+	}
+
+	function create_slot(definition, ctx, $$scope, fn) {
+		if (definition) {
+			const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
+			return definition[0](slot_ctx);
+		}
+	}
+
+	function get_slot_context(definition, ctx, $$scope, fn) {
+		return definition[1] && fn ? assign($$scope.ctx.slice(), definition[1](fn(ctx))) : $$scope.ctx;
+	}
+
+	function get_slot_changes(definition, $$scope, dirty, fn) {
+		if (definition[2] && fn) {
+			const lets = definition[2](fn(dirty));
+			if ($$scope.dirty === undefined) {
+				return lets;
+			}
+			if (typeof lets === 'object') {
+				const merged = [];
+				const len = Math.max($$scope.dirty.length, lets.length);
+				for (let i = 0; i < len; i += 1) {
+					merged[i] = $$scope.dirty[i] | lets[i];
+				}
+				return merged;
+			}
+			return $$scope.dirty | lets;
+		}
+		return $$scope.dirty;
+	}
+
+	/** @returns {void} */
+	function update_slot_base(
+		slot,
+		slot_definition,
+		ctx,
+		$$scope,
+		slot_changes,
+		get_slot_context_fn
+	) {
+		if (slot_changes) {
+			const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
+			slot.p(slot_context, slot_changes);
+		}
+	}
+
+	/** @returns {any[] | -1} */
+	function get_all_dirty_from_scope($$scope) {
+		if ($$scope.ctx.length > 32) {
+			const dirty = [];
+			const length = $$scope.ctx.length / 32;
+			for (let i = 0; i < length; i++) {
+				dirty[i] = -1;
+			}
+			return dirty;
+		}
+		return -1;
+	}
+
+	/**
+	 * @param {Node} target
+	 * @param {Node} node
+	 * @returns {void}
+	 */
+	function append(target, node) {
+		target.appendChild(node);
+	}
+
+	/**
+	 * @param {Node} target
+	 * @param {Node} node
+	 * @param {Node} [anchor]
+	 * @returns {void}
+	 */
+	function insert(target, node, anchor) {
+		target.insertBefore(node, anchor || null);
+	}
+
+	/**
+	 * @param {Node} node
+	 * @returns {void}
+	 */
+	function detach(node) {
+		if (node.parentNode) {
+			node.parentNode.removeChild(node);
+		}
+	}
+
+	/**
+	 * @returns {void} */
+	function destroy_each(iterations, detaching) {
+		for (let i = 0; i < iterations.length; i += 1) {
+			if (iterations[i]) iterations[i].d(detaching);
+		}
+	}
+
+	/**
+	 * @template {keyof HTMLElementTagNameMap} K
+	 * @param {K} name
+	 * @returns {HTMLElementTagNameMap[K]}
+	 */
+	function element(name) {
+		return document.createElement(name);
+	}
+
+	/**
+	 * @param {string} data
+	 * @returns {Text}
+	 */
+	function text(data) {
+		return document.createTextNode(data);
+	}
+
+	/**
+	 * @returns {Text} */
+	function space() {
+		return text(' ');
+	}
+
+	/**
+	 * @returns {Text} */
+	function empty() {
+		return text('');
+	}
+
+	/**
+	 * @param {EventTarget} node
+	 * @param {string} event
+	 * @param {EventListenerOrEventListenerObject} handler
+	 * @param {boolean | AddEventListenerOptions | EventListenerOptions} [options]
+	 * @returns {() => void}
+	 */
+	function listen(node, event, handler, options) {
+		node.addEventListener(event, handler, options);
+		return () => node.removeEventListener(event, handler, options);
+	}
+
+	/**
+	 * @param {Element} node
+	 * @param {string} attribute
+	 * @param {string} [value]
+	 * @returns {void}
+	 */
+	function attr(node, attribute, value) {
+		if (value == null) node.removeAttribute(attribute);
+		else if (node.getAttribute(attribute) !== value) node.setAttribute(attribute, value);
+	}
+
+	/** @returns {number} */
+	function to_number(value) {
+		return value === '' ? null : +value;
+	}
+
+	/**
+	 * @param {Element} element
+	 * @returns {ChildNode[]}
+	 */
+	function children(element) {
+		return Array.from(element.childNodes);
+	}
+
+	/**
+	 * @param {Text} text
+	 * @param {unknown} data
+	 * @returns {void}
+	 */
+	function set_data(text, data) {
+		data = '' + data;
+		if (text.data === data) return;
+		text.data = /** @type {string} */ (data);
+	}
+
+	/**
+	 * @returns {void} */
+	function set_input_value(input, value) {
+		input.value = value == null ? '' : value;
+	}
+
+	/**
+	 * @returns {void} */
+	function set_style(node, key, value, important) {
+		if (value == null) {
+			node.style.removeProperty(key);
+		} else {
+			node.style.setProperty(key, value, important ? 'important' : '');
+		}
+	}
+
+	/**
+	 * @returns {void} */
+	function select_option(select, value, mounting) {
+		for (let i = 0; i < select.options.length; i += 1) {
+			const option = select.options[i];
+			if (option.__value === value) {
+				option.selected = true;
+				return;
+			}
+		}
+		if (!mounting || value !== undefined) {
+			select.selectedIndex = -1; // no option should be selected
+		}
+	}
+
+	function select_value(select) {
+		const selected_option = select.querySelector(':checked');
+		return selected_option && selected_option.__value;
+	}
+
+	/**
+	 * @returns {void} */
+	function toggle_class(element, name, toggle) {
+		// The `!!` is required because an `undefined` flag means flipping the current state.
+		element.classList.toggle(name, !!toggle);
+	}
+
+	/**
+	 * @typedef {Node & {
+	 * 	claim_order?: number;
+	 * 	hydrate_init?: true;
+	 * 	actual_end_child?: NodeEx;
+	 * 	childNodes: NodeListOf<NodeEx>;
+	 * }} NodeEx
+	 */
+
+	/** @typedef {ChildNode & NodeEx} ChildNodeEx */
+
+	/** @typedef {NodeEx & { claim_order: number }} NodeEx2 */
+
+	/**
+	 * @typedef {ChildNodeEx[] & {
+	 * 	claim_info?: {
+	 * 		last_index: number;
+	 * 		total_claimed: number;
+	 * 	};
+	 * }} ChildNodeArray
+	 */
+
+	let current_component;
+
+	/** @returns {void} */
+	function set_current_component(component) {
+		current_component = component;
+	}
+
+	function get_current_component() {
+		if (!current_component) throw new Error('Function called outside component initialization');
+		return current_component;
+	}
+
+	/**
+	 * Schedules a callback to run immediately after the component has been updated.
+	 *
+	 * The first time the callback runs will be after the initial `onMount`
+	 *
+	 * https://svelte.dev/docs/svelte#afterupdate
+	 * @param {() => any} fn
+	 * @returns {void}
+	 */
+	function afterUpdate(fn) {
+		get_current_component().$$.after_update.push(fn);
+	}
+
+	/**
+	 * Schedules a callback to run immediately before the component is unmounted.
+	 *
+	 * Out of `onMount`, `beforeUpdate`, `afterUpdate` and `onDestroy`, this is the
+	 * only one that runs inside a server-side component.
+	 *
+	 * https://svelte.dev/docs/svelte#ondestroy
+	 * @param {() => any} fn
+	 * @returns {void}
+	 */
+	function onDestroy(fn) {
+		get_current_component().$$.on_destroy.push(fn);
+	}
+
+	const dirty_components = [];
+	const binding_callbacks = [];
+
+	let render_callbacks = [];
+
+	const flush_callbacks = [];
+
+	const resolved_promise = /* @__PURE__ */ Promise.resolve();
+
+	let update_scheduled = false;
+
+	/** @returns {void} */
+	function schedule_update() {
+		if (!update_scheduled) {
+			update_scheduled = true;
+			resolved_promise.then(flush);
+		}
+	}
+
+	/** @returns {void} */
+	function add_render_callback(fn) {
+		render_callbacks.push(fn);
+	}
+
+	/** @returns {void} */
+	function add_flush_callback(fn) {
+		flush_callbacks.push(fn);
+	}
+
+	// flush() calls callbacks in this order:
+	// 1. All beforeUpdate callbacks, in order: parents before children
+	// 2. All bind:this callbacks, in reverse order: children before parents.
+	// 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+	//    for afterUpdates called during the initial onMount, which are called in
+	//    reverse order: children before parents.
+	// Since callbacks might update component values, which could trigger another
+	// call to flush(), the following steps guard against this:
+	// 1. During beforeUpdate, any updated components will be added to the
+	//    dirty_components array and will cause a reentrant call to flush(). Because
+	//    the flush index is kept outside the function, the reentrant call will pick
+	//    up where the earlier call left off and go through all dirty components. The
+	//    current_component value is saved and restored so that the reentrant call will
+	//    not interfere with the "parent" flush() call.
+	// 2. bind:this callbacks cannot trigger new flush() calls.
+	// 3. During afterUpdate, any updated components will NOT have their afterUpdate
+	//    callback called a second time; the seen_callbacks set, outside the flush()
+	//    function, guarantees this behavior.
+	const seen_callbacks = new Set();
+
+	let flushidx = 0; // Do *not* move this inside the flush() function
+
+	/** @returns {void} */
+	function flush() {
+		// Do not reenter flush while dirty components are updated, as this can
+		// result in an infinite loop. Instead, let the inner flush handle it.
+		// Reentrancy is ok afterwards for bindings etc.
+		if (flushidx !== 0) {
+			return;
+		}
+		const saved_component = current_component;
+		do {
+			// first, call beforeUpdate functions
+			// and update components
+			try {
+				while (flushidx < dirty_components.length) {
+					const component = dirty_components[flushidx];
+					flushidx++;
+					set_current_component(component);
+					update(component.$$);
+				}
+			} catch (e) {
+				// reset dirty state to not end up in a deadlocked state and then rethrow
+				dirty_components.length = 0;
+				flushidx = 0;
+				throw e;
+			}
+			set_current_component(null);
+			dirty_components.length = 0;
+			flushidx = 0;
+			while (binding_callbacks.length) binding_callbacks.pop()();
+			// then, once components are updated, call
+			// afterUpdate functions. This may cause
+			// subsequent updates...
+			for (let i = 0; i < render_callbacks.length; i += 1) {
+				const callback = render_callbacks[i];
+				if (!seen_callbacks.has(callback)) {
+					// ...so guard against infinite loops
+					seen_callbacks.add(callback);
+					callback();
+				}
+			}
+			render_callbacks.length = 0;
+		} while (dirty_components.length);
+		while (flush_callbacks.length) {
+			flush_callbacks.pop()();
+		}
+		update_scheduled = false;
+		seen_callbacks.clear();
+		set_current_component(saved_component);
+	}
+
+	/** @returns {void} */
+	function update($$) {
+		if ($$.fragment !== null) {
+			$$.update();
+			run_all($$.before_update);
+			const dirty = $$.dirty;
+			$$.dirty = [-1];
+			$$.fragment && $$.fragment.p($$.ctx, dirty);
+			$$.after_update.forEach(add_render_callback);
+		}
+	}
+
+	/**
+	 * Useful for example to execute remaining `afterUpdate` callbacks before executing `destroy`.
+	 * @param {Function[]} fns
+	 * @returns {void}
+	 */
+	function flush_render_callbacks(fns) {
+		const filtered = [];
+		const targets = [];
+		render_callbacks.forEach((c) => (fns.indexOf(c) === -1 ? filtered.push(c) : targets.push(c)));
+		targets.forEach((c) => c());
+		render_callbacks = filtered;
+	}
+
+	const outroing = new Set();
+
+	/**
+	 * @type {Outro}
+	 */
+	let outros;
+
+	/**
+	 * @returns {void} */
+	function group_outros() {
+		outros = {
+			r: 0,
+			c: [],
+			p: outros // parent group
+		};
+	}
+
+	/**
+	 * @returns {void} */
+	function check_outros() {
+		if (!outros.r) {
+			run_all(outros.c);
+		}
+		outros = outros.p;
+	}
+
+	/**
+	 * @param {import('./private.js').Fragment} block
+	 * @param {0 | 1} [local]
+	 * @returns {void}
+	 */
+	function transition_in(block, local) {
+		if (block && block.i) {
+			outroing.delete(block);
+			block.i(local);
+		}
+	}
+
+	/**
+	 * @param {import('./private.js').Fragment} block
+	 * @param {0 | 1} local
+	 * @param {0 | 1} [detach]
+	 * @param {() => void} [callback]
+	 * @returns {void}
+	 */
+	function transition_out(block, local, detach, callback) {
+		if (block && block.o) {
+			if (outroing.has(block)) return;
+			outroing.add(block);
+			outros.c.push(() => {
+				outroing.delete(block);
+				if (callback) {
+					if (detach) block.d(1);
+					callback();
+				}
+			});
+			block.o(local);
+		} else if (callback) {
+			callback();
+		}
+	}
+
+	/** @typedef {1} INTRO */
+	/** @typedef {0} OUTRO */
+	/** @typedef {{ direction: 'in' | 'out' | 'both' }} TransitionOptions */
+	/** @typedef {(node: Element, params: any, options: TransitionOptions) => import('../transition/public.js').TransitionConfig} TransitionFn */
+
+	/**
+	 * @typedef {Object} Outro
+	 * @property {number} r
+	 * @property {Function[]} c
+	 * @property {Object} p
+	 */
+
+	/**
+	 * @typedef {Object} PendingProgram
+	 * @property {number} start
+	 * @property {INTRO|OUTRO} b
+	 * @property {Outro} [group]
+	 */
+
+	/**
+	 * @typedef {Object} Program
+	 * @property {number} a
+	 * @property {INTRO|OUTRO} b
+	 * @property {1|-1} d
+	 * @property {number} duration
+	 * @property {number} start
+	 * @property {number} end
+	 * @property {Outro} [group]
+	 */
+
+	// general each functions:
+
+	function ensure_array_like(array_like_or_iterator) {
+		return array_like_or_iterator?.length !== undefined
+			? array_like_or_iterator
+			: Array.from(array_like_or_iterator);
+	}
+
+	/** @returns {void} */
+	function outro_and_destroy_block(block, lookup) {
+		transition_out(block, 1, 1, () => {
+			lookup.delete(block.key);
+		});
+	}
+
+	/** @returns {any[]} */
+	function update_keyed_each(
+		old_blocks,
+		dirty,
+		get_key,
+		dynamic,
+		ctx,
+		list,
+		lookup,
+		node,
+		destroy,
+		create_each_block,
+		next,
+		get_context
+	) {
+		let o = old_blocks.length;
+		let n = list.length;
+		let i = o;
+		const old_indexes = {};
+		while (i--) old_indexes[old_blocks[i].key] = i;
+		const new_blocks = [];
+		const new_lookup = new Map();
+		const deltas = new Map();
+		const updates = [];
+		i = n;
+		while (i--) {
+			const child_ctx = get_context(ctx, list, i);
+			const key = get_key(child_ctx);
+			let block = lookup.get(key);
+			if (!block) {
+				block = create_each_block(key, child_ctx);
+				block.c();
+			} else if (dynamic) {
+				// defer updates until all the DOM shuffling is done
+				updates.push(() => block.p(child_ctx, dirty));
+			}
+			new_lookup.set(key, (new_blocks[i] = block));
+			if (key in old_indexes) deltas.set(key, Math.abs(i - old_indexes[key]));
+		}
+		const will_move = new Set();
+		const did_move = new Set();
+		/** @returns {void} */
+		function insert(block) {
+			transition_in(block, 1);
+			block.m(node, next);
+			lookup.set(block.key, block);
+			next = block.first;
+			n--;
+		}
+		while (o && n) {
+			const new_block = new_blocks[n - 1];
+			const old_block = old_blocks[o - 1];
+			const new_key = new_block.key;
+			const old_key = old_block.key;
+			if (new_block === old_block) {
+				// do nothing
+				next = new_block.first;
+				o--;
+				n--;
+			} else if (!new_lookup.has(old_key)) {
+				// remove old block
+				destroy(old_block, lookup);
+				o--;
+			} else if (!lookup.has(new_key) || will_move.has(new_key)) {
+				insert(new_block);
+			} else if (did_move.has(old_key)) {
+				o--;
+			} else if (deltas.get(new_key) > deltas.get(old_key)) {
+				did_move.add(new_key);
+				insert(new_block);
+			} else {
+				will_move.add(old_key);
+				o--;
+			}
+		}
+		while (o--) {
+			const old_block = old_blocks[o];
+			if (!new_lookup.has(old_block.key)) destroy(old_block, lookup);
+		}
+		while (n) insert(new_blocks[n - 1]);
+		run_all(updates);
+		return new_blocks;
+	}
+
+	/** @returns {void} */
+	function bind(component, name, callback) {
+		const index = component.$$.props[name];
+		if (index !== undefined) {
+			component.$$.bound[index] = callback;
+			callback(component.$$.ctx[index]);
+		}
+	}
+
+	/** @returns {void} */
+	function create_component(block) {
+		block && block.c();
+	}
+
+	/** @returns {void} */
+	function mount_component(component, target, anchor) {
+		const { fragment, after_update } = component.$$;
+		fragment && fragment.m(target, anchor);
+		// onMount happens before the initial afterUpdate
+		add_render_callback(() => {
+			const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
+			// if the component was destroyed immediately
+			// it will update the `$$.on_destroy` reference to `null`.
+			// the destructured on_destroy may still reference to the old array
+			if (component.$$.on_destroy) {
+				component.$$.on_destroy.push(...new_on_destroy);
+			} else {
+				// Edge case - component was destroyed immediately,
+				// most likely as a result of a binding initialising
+				run_all(new_on_destroy);
+			}
+			component.$$.on_mount = [];
+		});
+		after_update.forEach(add_render_callback);
+	}
+
+	/** @returns {void} */
+	function destroy_component(component, detaching) {
+		const $$ = component.$$;
+		if ($$.fragment !== null) {
+			flush_render_callbacks($$.after_update);
+			run_all($$.on_destroy);
+			$$.fragment && $$.fragment.d(detaching);
+			// TODO null out other refs, including component.$$ (but need to
+			// preserve final state?)
+			$$.on_destroy = $$.fragment = null;
+			$$.ctx = [];
+		}
+	}
+
+	/** @returns {void} */
+	function make_dirty(component, i) {
+		if (component.$$.dirty[0] === -1) {
+			dirty_components.push(component);
+			schedule_update();
+			component.$$.dirty.fill(0);
+		}
+		component.$$.dirty[(i / 31) | 0] |= 1 << i % 31;
+	}
+
+	// TODO: Document the other params
+	/**
+	 * @param {SvelteComponent} component
+	 * @param {import('./public.js').ComponentConstructorOptions} options
+	 *
+	 * @param {import('./utils.js')['not_equal']} not_equal Used to compare props and state values.
+	 * @param {(target: Element | ShadowRoot) => void} [append_styles] Function that appends styles to the DOM when the component is first initialised.
+	 * This will be the `add_css` function from the compiled component.
+	 *
+	 * @returns {void}
+	 */
+	function init(
+		component,
+		options,
+		instance,
+		create_fragment,
+		not_equal,
+		props,
+		append_styles = null,
+		dirty = [-1]
+	) {
+		const parent_component = current_component;
+		set_current_component(component);
+		/** @type {import('./private.js').T$$} */
+		const $$ = (component.$$ = {
+			fragment: null,
+			ctx: [],
+			// state
+			props,
+			update: noop,
+			not_equal,
+			bound: blank_object(),
+			// lifecycle
+			on_mount: [],
+			on_destroy: [],
+			on_disconnect: [],
+			before_update: [],
+			after_update: [],
+			context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+			// everything else
+			callbacks: blank_object(),
+			dirty,
+			skip_bound: false,
+			root: options.target || parent_component.$$.root
+		});
+		append_styles && append_styles($$.root);
+		let ready = false;
+		$$.ctx = instance
+			? instance(component, options.props || {}, (i, ret, ...rest) => {
+					const value = rest.length ? rest[0] : ret;
+					if ($$.ctx && not_equal($$.ctx[i], ($$.ctx[i] = value))) {
+						if (!$$.skip_bound && $$.bound[i]) $$.bound[i](value);
+						if (ready) make_dirty(component, i);
+					}
+					return ret;
+			  })
+			: [];
+		$$.update();
+		ready = true;
+		run_all($$.before_update);
+		// `false` as a special case of no DOM component
+		$$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+		if (options.target) {
+			if (options.hydrate) {
+				// TODO: what is the correct type here?
+				// @ts-expect-error
+				const nodes = children(options.target);
+				$$.fragment && $$.fragment.l(nodes);
+				nodes.forEach(detach);
+			} else {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				$$.fragment && $$.fragment.c();
+			}
+			if (options.intro) transition_in(component.$$.fragment);
+			mount_component(component, options.target, options.anchor);
+			flush();
+		}
+		set_current_component(parent_component);
+	}
+
+	/**
+	 * Base class for Svelte components. Used when dev=false.
+	 *
+	 * @template {Record<string, any>} [Props=any]
+	 * @template {Record<string, any>} [Events=any]
+	 */
+	class SvelteComponent {
+		/**
+		 * ### PRIVATE API
+		 *
+		 * Do not use, may change at any time
+		 *
+		 * @type {any}
+		 */
+		$$ = undefined;
+		/**
+		 * ### PRIVATE API
+		 *
+		 * Do not use, may change at any time
+		 *
+		 * @type {any}
+		 */
+		$$set = undefined;
+
+		/** @returns {void} */
+		$destroy() {
+			destroy_component(this, 1);
+			this.$destroy = noop;
+		}
+
+		/**
+		 * @template {Extract<keyof Events, string>} K
+		 * @param {K} type
+		 * @param {((e: Events[K]) => void) | null | undefined} callback
+		 * @returns {() => void}
+		 */
+		$on(type, callback) {
+			if (!is_function(callback)) {
+				return noop;
+			}
+			const callbacks = this.$$.callbacks[type] || (this.$$.callbacks[type] = []);
+			callbacks.push(callback);
+			return () => {
+				const index = callbacks.indexOf(callback);
+				if (index !== -1) callbacks.splice(index, 1);
+			};
+		}
+
+		/**
+		 * @param {Partial<Props>} props
+		 * @returns {void}
+		 */
+		$set(props) {
+			if (this.$$set && !is_empty(props)) {
+				this.$$.skip_bound = true;
+				this.$$set(props);
+				this.$$.skip_bound = false;
+			}
+		}
+	}
+
+	/**
+	 * @typedef {Object} CustomElementPropDefinition
+	 * @property {string} [attribute]
+	 * @property {boolean} [reflect]
+	 * @property {'String'|'Boolean'|'Number'|'Array'|'Object'} [type]
+	 */
+
+	// generated during release, do not modify
+	const PUBLIC_VERSION = '4';
+
+	if (typeof window !== 'undefined')
+		// @ts-ignore
+		(window.__svelte || (window.__svelte = { v: new Set() })).v.add(PUBLIC_VERSION);
+
+	const character = () => ({
+	    name: '',
+	    glitches: {
+	        die: 'd2',
+	        current: 0
+	    },
+	    hp: {
+	        current: 0,
+	        max: 0
+	    },
+	    abilities: {
+	        strength: 0,
+	        agility: 0,
+	        presence: 0,
+	        toughness: 0,
+	        knowledge: 0
+	    },
+	    creds: 0,
+	    debt: 0,
+	    className: '',
+	    apps: [],
+	    nano: [],
+	    infestations: [],
+	    armor: 'None',
+	    armorValue: '-',
+	    weapons: [],
+	    equipment: [],
+	    cybertech: [],
+	    info: '',
+	    notes: []
+	});
+
+	const params = new URLSearchParams(window.location.search);
+	const theme = params.get('theme') ?? 
+	    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+	function setTheme(name) {
+	    window.location.search = `theme=${name}`;
+	}
+
+	const app$1 = () => ({
+	    name: 'App',
+	    description: ''
+	});
+
+	/* src\components\TextArea.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$b(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[15] = list[i];
+		child_ctx[17] = i;
+		return child_ctx;
+	}
+
+	// (33:0) {:else}
+	function create_else_block$b(ctx) {
+		let span;
+		let t;
+		let button;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[10].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[9], null);
+
+		function select_block_type_1(ctx, dirty) {
+			if (/*matches*/ ctx[1].length == 0) return create_if_block_1$3;
+			return create_else_block_1$2;
+		}
+
+		let current_block_type = select_block_type_1(ctx);
+		let if_block = current_block_type(ctx);
+
+		return {
+			c() {
+				span = element("span");
+				if (default_slot) default_slot.c();
+				t = space();
+				button = element("button");
+				if_block.c();
+				attr(span, "class", "py-2 font-weight-bold");
+				attr(button, "class", "btn btn-light border text-left align-top wrap w-100");
+				set_style(button, "min-height", "2.5em");
+			},
+			m(target, anchor) {
+				insert(target, span, anchor);
+
+				if (default_slot) {
+					default_slot.m(span, null);
+				}
+
+				insert(target, t, anchor);
+				insert(target, button, anchor);
+				if_block.m(button, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler*/ ctx[14]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 512)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[9],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[9])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[9], dirty, null),
+							null
+						);
+					}
+				}
+
+				if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block.d(1);
+					if_block = current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(button, null);
+					}
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+					detach(t);
+					detach(button);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				if_block.d();
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (24:0) {#if active}
+	function create_if_block$d(ctx) {
+		let span;
+		let t;
+		let textarea;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[10].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[9], null);
+
+		return {
+			c() {
+				span = element("span");
+				if (default_slot) default_slot.c();
+				t = space();
+				textarea = element("textarea");
+				attr(span, "class", "py-2 font-weight-bold");
+				attr(textarea, "class", "flex-grow-1 form-control");
+			},
+			m(target, anchor) {
+				insert(target, span, anchor);
+
+				if (default_slot) {
+					default_slot.m(span, null);
+				}
+
+				insert(target, t, anchor);
+				insert(target, textarea, anchor);
+				/*textarea_binding*/ ctx[11](textarea);
+				set_input_value(textarea, /*content*/ ctx[0]);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(textarea, "input", /*textarea_input_handler*/ ctx[12]),
+						listen(textarea, "blur", /*blur_handler*/ ctx[13]),
+						listen(textarea, "focus", /*resizeInput*/ ctx[6]),
+						listen(textarea, "keyup", /*resizeInput*/ ctx[6])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 512)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[9],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[9])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[9], dirty, null),
+							null
+						);
+					}
+				}
+
+				if (dirty & /*content*/ 1) {
+					set_input_value(textarea, /*content*/ ctx[0]);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+					detach(t);
+					detach(textarea);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				/*textarea_binding*/ ctx[11](null);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (38:4) {:else}
+	function create_else_block_1$2(ctx) {
+		let each_1_anchor;
+		let each_value = ensure_array_like(/*matches*/ ctx[1]);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+		}
+
+		return {
+			c() {
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+			},
+			m(target, anchor) {
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+			},
+			p(ctx, dirty) {
+				if (dirty & /*content, matches, lastFragment, firstFragment*/ 51) {
+					each_value = ensure_array_like(/*matches*/ ctx[1]);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$b(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+						} else {
+							each_blocks[i] = create_each_block$b(child_ctx);
+							each_blocks[i].c();
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					for (; i < each_blocks.length; i += 1) {
+						each_blocks[i].d(1);
+					}
+
+					each_blocks.length = each_value.length;
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+			}
+		};
+	}
+
+	// (36:4) {#if matches.length == 0}
+	function create_if_block_1$3(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text(/*content*/ ctx[0]);
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			p(ctx, dirty) {
+				if (dirty & /*content*/ 1) set_data(t, /*content*/ ctx[0]);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (40:12) {#if i == 0}
+	function create_if_block_3$1(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text(/*firstFragment*/ ctx[5]);
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			p(ctx, dirty) {
+				if (dirty & /*firstFragment*/ 32) set_data(t, /*firstFragment*/ ctx[5]);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (40:183) {:else}
+	function create_else_block_2(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text(/*lastFragment*/ ctx[4]);
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			p(ctx, dirty) {
+				if (dirty & /*lastFragment*/ 16) set_data(t, /*lastFragment*/ ctx[4]);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (40:83) {#if i < matches.length - 1}
+	function create_if_block_2$1(ctx) {
+		let t_value = /*content*/ ctx[0].substring(/*match*/ ctx[15].index + /*match*/ ctx[15][0].length, /*matches*/ ctx[1][/*i*/ ctx[17] + 1].index) + "";
+		let t;
+
+		return {
+			c() {
+				t = text(t_value);
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			p(ctx, dirty) {
+				if (dirty & /*content, matches*/ 3 && t_value !== (t_value = /*content*/ ctx[0].substring(/*match*/ ctx[15].index + /*match*/ ctx[15][0].length, /*matches*/ ctx[1][/*i*/ ctx[17] + 1].index) + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (39:8) {#each matches as match, i}
+	function create_each_block$b(ctx) {
+		let span;
+		let t_value = /*match*/ ctx[15][0] + "";
+		let t;
+		let if_block1_anchor;
+		let if_block0 = /*i*/ ctx[17] == 0 && create_if_block_3$1(ctx);
+
+		function select_block_type_2(ctx, dirty) {
+			if (/*i*/ ctx[17] < /*matches*/ ctx[1].length - 1) return create_if_block_2$1;
+			return create_else_block_2;
+		}
+
+		let current_block_type = select_block_type_2(ctx);
+		let if_block1 = current_block_type(ctx);
+
+		return {
+			c() {
+				if (if_block0) if_block0.c();
+				span = element("span");
+				t = text(t_value);
+				if_block1.c();
+				if_block1_anchor = empty();
+				attr(span, "class", "bg-info");
+			},
+			m(target, anchor) {
+				if (if_block0) if_block0.m(target, anchor);
+				insert(target, span, anchor);
+				append(span, t);
+				if_block1.m(target, anchor);
+				insert(target, if_block1_anchor, anchor);
+			},
+			p(ctx, dirty) {
+				if (/*i*/ ctx[17] == 0) if_block0.p(ctx, dirty);
+				if (dirty & /*matches*/ 2 && t_value !== (t_value = /*match*/ ctx[15][0] + "")) set_data(t, t_value);
+
+				if (current_block_type === (current_block_type = select_block_type_2(ctx)) && if_block1) {
+					if_block1.p(ctx, dirty);
+				} else {
+					if_block1.d(1);
+					if_block1 = current_block_type(ctx);
+
+					if (if_block1) {
+						if_block1.c();
+						if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+					}
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+					detach(if_block1_anchor);
+				}
+
+				if (if_block0) if_block0.d(detaching);
+				if_block1.d(detaching);
+			}
+		};
+	}
+
+	function create_fragment$r(ctx) {
+		let current_block_type_index;
+		let if_block;
+		let if_block_anchor;
+		let current;
+		const if_block_creators = [create_if_block$d, create_else_block$b];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*active*/ ctx[2]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				if_block.c();
+				if_block_anchor = empty();
+			},
+			m(target, anchor) {
+				if_blocks[current_block_type_index].m(target, anchor);
+				insert(target, if_block_anchor, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(if_block_anchor);
+				}
+
+				if_blocks[current_block_type_index].d(detaching);
+			}
+		};
+	}
+
+	function instance$r($$self, $$props, $$invalidate) {
+		let regexp;
+		let matches;
+		let firstFragment;
+		let lastFragment;
+		let { $$slots: slots = {}, $$scope } = $$props;
+		let { content = '' } = $$props;
+		let { highlight = '' } = $$props;
+		let active = false;
+		let control;
+
+		function resizeInput() {
+			if (control) $$invalidate(3, control.style.height = `${control.scrollHeight + 2}px`, control);
+		}
+
+		afterUpdate(() => {
+			if (active) control.focus();
+		});
+
+		function textarea_binding($$value) {
+			binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+				control = $$value;
+				$$invalidate(3, control);
+			});
+		}
+
+		function textarea_input_handler() {
+			content = this.value;
+			$$invalidate(0, content);
+		}
+
+		const blur_handler = () => $$invalidate(2, active = false);
+		const click_handler = () => $$invalidate(2, active = true);
+
+		$$self.$$set = $$props => {
+			if ('content' in $$props) $$invalidate(0, content = $$props.content);
+			if ('highlight' in $$props) $$invalidate(7, highlight = $$props.highlight);
+			if ('$$scope' in $$props) $$invalidate(9, $$scope = $$props.$$scope);
+		};
+
+		$$self.$$.update = () => {
+			if ($$self.$$.dirty & /*highlight*/ 128) {
+				$$invalidate(8, regexp = new RegExp(highlight, 'gi'));
+			}
+
+			if ($$self.$$.dirty & /*content, regexp*/ 257) {
+				$$invalidate(1, matches = [...content.matchAll(regexp)]);
+			}
+
+			if ($$self.$$.dirty & /*matches, content*/ 3) {
+				$$invalidate(5, firstFragment = matches.length == 0
+				? ''
+				: content.substring(0, matches[0].index));
+			}
+
+			if ($$self.$$.dirty & /*matches, content*/ 3) {
+				$$invalidate(4, lastFragment = matches.length == 0
+				? ''
+				: content.substring(matches[matches.length - 1].index + matches[matches.length - 1][0].length));
+			}
+		};
+
+		return [
+			content,
+			matches,
+			active,
+			control,
+			lastFragment,
+			firstFragment,
+			resizeInput,
+			highlight,
+			regexp,
+			$$scope,
+			slots,
+			textarea_binding,
+			textarea_input_handler,
+			blur_handler,
+			click_handler
+		];
+	}
+
+	class TextArea extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$r, create_fragment$r, safe_not_equal, { content: 0, highlight: 7 });
+		}
+	}
+
+	/* src\components\AppPower.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$a(ctx) {
+		let button;
+		let t_value = /*app*/ ctx[0].name + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "btn btn-light border text-left flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_1*/ ctx[5]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*app*/ 1 && t_value !== (t_value = /*app*/ ctx[0].name + "")) set_data(t, t_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (10:4) {#if isEditing}
+	function create_if_block$c(ctx) {
+		let div0;
+		let input;
+		let t0;
+		let button;
+		let t2;
+		let div1;
+		let textarea;
+		let updating_content;
+		let current;
+		let mounted;
+		let dispose;
+
+		function textarea_content_binding(value) {
+			/*textarea_content_binding*/ ctx[4](value);
+		}
+
+		let textarea_props = {};
+
+		if (/*app*/ ctx[0].description !== void 0) {
+			textarea_props.content = /*app*/ ctx[0].description;
+		}
+
+		textarea = new TextArea({ props: textarea_props });
+		binding_callbacks.push(() => bind(textarea, 'content', textarea_content_binding));
+
+		return {
+			c() {
+				div0 = element("div");
+				input = element("input");
+				t0 = space();
+				button = element("button");
+				button.textContent = "Close";
+				t2 = space();
+				div1 = element("div");
+				create_component(textarea.$$.fragment);
+				attr(input, "class", "flex-grow-1 form-control");
+				attr(button, "class", "btn btn-light border");
+				attr(div0, "class", "d-flex flex-grow-1");
+				attr(div1, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div0, anchor);
+				append(div0, input);
+				set_input_value(input, /*app*/ ctx[0].name);
+				append(div0, t0);
+				append(div0, button);
+				insert(target, t2, anchor);
+				insert(target, div1, anchor);
+				mount_component(textarea, div1, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[2]),
+						listen(button, "click", /*click_handler*/ ctx[3])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*app*/ 1 && input.value !== /*app*/ ctx[0].name) {
+					set_input_value(input, /*app*/ ctx[0].name);
+				}
+
+				const textarea_changes = {};
+
+				if (!updating_content && dirty & /*app*/ 1) {
+					updating_content = true;
+					textarea_changes.content = /*app*/ ctx[0].description;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textarea.$set(textarea_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textarea.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textarea.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div0);
+					detach(t2);
+					detach(div1);
+				}
+
+				destroy_component(textarea);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$q(ctx) {
+		let div;
+		let current_block_type_index;
+		let if_block;
+		let current;
+		const if_block_creators = [create_if_block$c, create_else_block$a];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				div = element("div");
+				if_block.c();
+				attr(div, "class", "d-flex flex-column flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				if_blocks[current_block_type_index].m(div, null);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if_blocks[current_block_type_index].d();
+			}
+		};
+	}
+
+	function instance$q($$self, $$props, $$invalidate) {
+		let { app } = $$props;
+		let isEditing;
+
+		function input_input_handler() {
+			app.name = this.value;
+			$$invalidate(0, app);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+
+		function textarea_content_binding(value) {
+			if ($$self.$$.not_equal(app.description, value)) {
+				app.description = value;
+				$$invalidate(0, app);
+			}
+		}
+
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+
+		$$self.$$set = $$props => {
+			if ('app' in $$props) $$invalidate(0, app = $$props.app);
+		};
+
+		return [
+			app,
+			isEditing,
+			input_input_handler,
+			click_handler,
+			textarea_content_binding,
+			click_handler_1
+		];
+	}
+
+	class AppPower extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$q, create_fragment$q, safe_not_equal, { app: 0 });
+		}
+	}
+
+	/* src\components\ListItem.svelte generated by Svelte v4.2.19 */
+
+	function create_fragment$p(ctx) {
+		let div3;
+		let div0;
+		let t0;
+		let div2;
+		let div1;
+		let button0;
+		let t2;
+		let button1;
+		let t4;
+		let button2;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[4].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
+
+		return {
+			c() {
+				div3 = element("div");
+				div0 = element("div");
+				if (default_slot) default_slot.c();
+				t0 = space();
+				div2 = element("div");
+				div1 = element("div");
+				button0 = element("button");
+				button0.textContent = "↑";
+				t2 = space();
+				button1 = element("button");
+				button1.textContent = "↓";
+				t4 = space();
+				button2 = element("button");
+				button2.textContent = "Delete";
+				attr(div0, "class", "flex-grow-1 d-flex mr-1");
+				attr(button0, "class", "btn btn-light border-dark");
+				attr(button1, "class", "btn btn-light border-dark");
+				attr(div1, "class", "btn-group");
+				attr(button2, "class", "btn btn-danger");
+				attr(div2, "class", "align-self-start ml-auto");
+				attr(div3, "class", "d-flex m-1 align-self-start");
+			},
+			m(target, anchor) {
+				insert(target, div3, anchor);
+				append(div3, div0);
+
+				if (default_slot) {
+					default_slot.m(div0, null);
+				}
+
+				append(div3, t0);
+				append(div3, div2);
+				append(div2, div1);
+				append(div1, button0);
+				append(div1, t2);
+				append(div1, button1);
+				append(div2, t4);
+				append(div2, button2);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler*/ ctx[5]),
+						listen(button1, "click", /*click_handler_1*/ ctx[6]),
+						listen(button2, "click", /*click_handler_2*/ ctx[7])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 8)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[3],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[3])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null),
+							null
+						);
+					}
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div3);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function instance$p($$self, $$props, $$invalidate) {
+		let { $$slots: slots = {}, $$scope } = $$props;
+		let { move } = $$props;
+		let { remove } = $$props;
+		let { item } = $$props;
+		const click_handler = () => move(-1, item);
+		const click_handler_1 = () => move(1, item);
+		const click_handler_2 = () => remove(item);
+
+		$$self.$$set = $$props => {
+			if ('move' in $$props) $$invalidate(0, move = $$props.move);
+			if ('remove' in $$props) $$invalidate(1, remove = $$props.remove);
+			if ('item' in $$props) $$invalidate(2, item = $$props.item);
+			if ('$$scope' in $$props) $$invalidate(3, $$scope = $$props.$$scope);
+		};
+
+		return [
+			move,
+			remove,
+			item,
+			$$scope,
+			slots,
+			click_handler,
+			click_handler_1,
+			click_handler_2
+		];
+	}
+
+	class ListItem extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$p, create_fragment$p, safe_not_equal, { move: 0, remove: 1, item: 2 });
+		}
+	}
+
+	/* src\components\Apps.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$a(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[4] = list[i];
+		return child_ctx;
+	}
+
+	// (35:4) <ListItem item={app} {move} {remove}>
+	function create_default_slot$8(ctx) {
+		let apppower;
+		let t;
+		let current;
+		apppower = new AppPower({ props: { app: /*app*/ ctx[4] } });
+
+		return {
+			c() {
+				create_component(apppower.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(apppower, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const apppower_changes = {};
+				if (dirty & /*model*/ 1) apppower_changes.app = /*app*/ ctx[4];
+				apppower.$set(apppower_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(apppower.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(apppower.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(apppower, detaching);
+			}
+		};
+	}
+
+	// (34:0) {#each model.apps as app}
+	function create_each_block$a(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*app*/ ctx[4],
+					move: /*move*/ ctx[2],
+					remove: /*remove*/ ctx[3],
+					$$slots: { default: [create_default_slot$8] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*app*/ ctx[4];
+
+				if (dirty & /*$$scope, model*/ 129) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$o(ctx) {
+		let button;
+		let t1;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].apps);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$a(get_each_context$a(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				button = element("button");
+				button.textContent = "Add";
+				t1 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "btn btn-dark");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				insert(target, t1, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*add*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, move, remove*/ 13) {
+					each_value = ensure_array_like(/*model*/ ctx[0].apps);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$a(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$a(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+					detach(t1);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$o($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function add() {
+			model.apps.push(app$1());
+			$$invalidate(0, model);
+		}
+
+		function move(n, item) {
+			let index = model.apps.indexOf(item);
+			model.apps.splice(index, 1);
+			index += n;
+			if (index < 0) index = model.apps.length; else if (index > model.apps.length) index = 0;
+			model.apps.splice(index, 0, item);
+			$$invalidate(0, model);
+		}
+
+		function remove(item) {
+			let index = model.apps.indexOf(item);
+			model.apps.splice(index, 1);
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [model, add, move, remove];
+	}
+
+	class Apps extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$o, create_fragment$o, safe_not_equal, { model: 0 });
+		}
+	}
+
+	/* src\components\TextInput.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$9(ctx) {
+		let div;
+		let span;
+		let t0;
+		let button;
+		let t1;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[4].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
+
+		return {
+			c() {
+				div = element("div");
+				span = element("span");
+				if (default_slot) default_slot.c();
+				t0 = space();
+				button = element("button");
+				t1 = text(/*content*/ ctx[0]);
+				attr(span, "class", "align-self-center text-right border-right pr-1 py-2 font-weight-bold");
+				set_style(span, "width", "5.5em");
+				attr(button, "class", "flex-grow-1 btn btn-light text-left");
+				attr(div, "class", "d-flex mb-1 border-bottom");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, span);
+
+				if (default_slot) {
+					default_slot.m(span, null);
+				}
+
+				append(div, t0);
+				append(div, button);
+				append(button, t1);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler*/ ctx[8]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 8)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[3],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[3])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null),
+							null
+						);
+					}
+				}
+
+				if (!current || dirty & /*content*/ 1) set_data(t1, /*content*/ ctx[0]);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (14:0) {#if active}
+	function create_if_block$b(ctx) {
+		let div;
+		let span;
+		let t;
+		let input;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[4].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
+
+		return {
+			c() {
+				div = element("div");
+				span = element("span");
+				if (default_slot) default_slot.c();
+				t = space();
+				input = element("input");
+				attr(span, "class", "align-self-center text-right mr-1 py-2 font-weight-bold");
+				set_style(span, "width", "5.5em");
+				set_style(span, "height", "2.5em");
+				attr(input, "class", "flex-grow-1 form-control");
+				attr(div, "class", "d-flex mb-1 border-bottom");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, span);
+
+				if (default_slot) {
+					default_slot.m(span, null);
+				}
+
+				append(div, t);
+				append(div, input);
+				/*input_binding*/ ctx[5](input);
+				set_input_value(input, /*content*/ ctx[0]);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[6]),
+						listen(input, "blur", /*blur_handler*/ ctx[7])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 8)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[3],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[3])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null),
+							null
+						);
+					}
+				}
+
+				if (dirty & /*content*/ 1 && input.value !== /*content*/ ctx[0]) {
+					set_input_value(input, /*content*/ ctx[0]);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				/*input_binding*/ ctx[5](null);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$n(ctx) {
+		let current_block_type_index;
+		let if_block;
+		let if_block_anchor;
+		let current;
+		const if_block_creators = [create_if_block$b, create_else_block$9];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*active*/ ctx[1]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				if_block.c();
+				if_block_anchor = empty();
+			},
+			m(target, anchor) {
+				if_blocks[current_block_type_index].m(target, anchor);
+				insert(target, if_block_anchor, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(if_block_anchor);
+				}
+
+				if_blocks[current_block_type_index].d(detaching);
+			}
+		};
+	}
+
+	function instance$n($$self, $$props, $$invalidate) {
+		let { $$slots: slots = {}, $$scope } = $$props;
+		let { content = '' } = $$props;
+		let active = false;
+		let control;
+
+		afterUpdate(() => {
+			if (active) control.focus();
+		});
+
+		function input_binding($$value) {
+			binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+				control = $$value;
+				$$invalidate(2, control);
+			});
+		}
+
+		function input_input_handler() {
+			content = this.value;
+			$$invalidate(0, content);
+		}
+
+		const blur_handler = () => $$invalidate(1, active = false);
+		const click_handler = () => $$invalidate(1, active = true);
+
+		$$self.$$set = $$props => {
+			if ('content' in $$props) $$invalidate(0, content = $$props.content);
+			if ('$$scope' in $$props) $$invalidate(3, $$scope = $$props.$$scope);
+		};
+
+		return [
+			content,
+			active,
+			control,
+			$$scope,
+			slots,
+			input_binding,
+			input_input_handler,
+			blur_handler,
+			click_handler
+		];
+	}
+
+	class TextInput extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$n, create_fragment$n, safe_not_equal, { content: 0 });
+		}
+	}
+
+	/* src\components\Bio.svelte generated by Svelte v4.2.19 */
+
+	function create_default_slot_4$2(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Name");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (10:0) <TextInput bind:content={model.className}>
+	function create_default_slot_3$2(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Class");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (11:0) <TextInput bind:content={model.creds}>
+	function create_default_slot_2$2(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Credits");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (12:0) <TextInput bind:content={model.debt}>
+	function create_default_slot_1$2(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Debt");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (14:0) <TextArea bind:content={model.info}>
+	function create_default_slot$7(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Info");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	function create_fragment$m(ctx) {
+		let textinput0;
+		let updating_content;
+		let t0;
+		let textinput1;
+		let updating_content_1;
+		let t1;
+		let textinput2;
+		let updating_content_2;
+		let t2;
+		let textinput3;
+		let updating_content_3;
+		let t3;
+		let hr;
+		let t4;
+		let textarea;
+		let updating_content_4;
+		let current;
+
+		function textinput0_content_binding(value) {
+			/*textinput0_content_binding*/ ctx[1](value);
+		}
+
+		let textinput0_props = {
+			$$slots: { default: [create_default_slot_4$2] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].name !== void 0) {
+			textinput0_props.content = /*model*/ ctx[0].name;
+		}
+
+		textinput0 = new TextInput({ props: textinput0_props });
+		binding_callbacks.push(() => bind(textinput0, 'content', textinput0_content_binding));
+
+		function textinput1_content_binding(value) {
+			/*textinput1_content_binding*/ ctx[2](value);
+		}
+
+		let textinput1_props = {
+			$$slots: { default: [create_default_slot_3$2] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].className !== void 0) {
+			textinput1_props.content = /*model*/ ctx[0].className;
+		}
+
+		textinput1 = new TextInput({ props: textinput1_props });
+		binding_callbacks.push(() => bind(textinput1, 'content', textinput1_content_binding));
+
+		function textinput2_content_binding(value) {
+			/*textinput2_content_binding*/ ctx[3](value);
+		}
+
+		let textinput2_props = {
+			$$slots: { default: [create_default_slot_2$2] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].creds !== void 0) {
+			textinput2_props.content = /*model*/ ctx[0].creds;
+		}
+
+		textinput2 = new TextInput({ props: textinput2_props });
+		binding_callbacks.push(() => bind(textinput2, 'content', textinput2_content_binding));
+
+		function textinput3_content_binding(value) {
+			/*textinput3_content_binding*/ ctx[4](value);
+		}
+
+		let textinput3_props = {
+			$$slots: { default: [create_default_slot_1$2] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].debt !== void 0) {
+			textinput3_props.content = /*model*/ ctx[0].debt;
+		}
+
+		textinput3 = new TextInput({ props: textinput3_props });
+		binding_callbacks.push(() => bind(textinput3, 'content', textinput3_content_binding));
+
+		function textarea_content_binding(value) {
+			/*textarea_content_binding*/ ctx[5](value);
+		}
+
+		let textarea_props = {
+			$$slots: { default: [create_default_slot$7] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].info !== void 0) {
+			textarea_props.content = /*model*/ ctx[0].info;
+		}
+
+		textarea = new TextArea({ props: textarea_props });
+		binding_callbacks.push(() => bind(textarea, 'content', textarea_content_binding));
+
+		return {
+			c() {
+				create_component(textinput0.$$.fragment);
+				t0 = space();
+				create_component(textinput1.$$.fragment);
+				t1 = space();
+				create_component(textinput2.$$.fragment);
+				t2 = space();
+				create_component(textinput3.$$.fragment);
+				t3 = space();
+				hr = element("hr");
+				t4 = space();
+				create_component(textarea.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(textinput0, target, anchor);
+				insert(target, t0, anchor);
+				mount_component(textinput1, target, anchor);
+				insert(target, t1, anchor);
+				mount_component(textinput2, target, anchor);
+				insert(target, t2, anchor);
+				mount_component(textinput3, target, anchor);
+				insert(target, t3, anchor);
+				insert(target, hr, anchor);
+				insert(target, t4, anchor);
+				mount_component(textarea, target, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				const textinput0_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					textinput0_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_content && dirty & /*model*/ 1) {
+					updating_content = true;
+					textinput0_changes.content = /*model*/ ctx[0].name;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textinput0.$set(textinput0_changes);
+				const textinput1_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					textinput1_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_content_1 && dirty & /*model*/ 1) {
+					updating_content_1 = true;
+					textinput1_changes.content = /*model*/ ctx[0].className;
+					add_flush_callback(() => updating_content_1 = false);
+				}
+
+				textinput1.$set(textinput1_changes);
+				const textinput2_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					textinput2_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_content_2 && dirty & /*model*/ 1) {
+					updating_content_2 = true;
+					textinput2_changes.content = /*model*/ ctx[0].creds;
+					add_flush_callback(() => updating_content_2 = false);
+				}
+
+				textinput2.$set(textinput2_changes);
+				const textinput3_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					textinput3_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_content_3 && dirty & /*model*/ 1) {
+					updating_content_3 = true;
+					textinput3_changes.content = /*model*/ ctx[0].debt;
+					add_flush_callback(() => updating_content_3 = false);
+				}
+
+				textinput3.$set(textinput3_changes);
+				const textarea_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					textarea_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_content_4 && dirty & /*model*/ 1) {
+					updating_content_4 = true;
+					textarea_changes.content = /*model*/ ctx[0].info;
+					add_flush_callback(() => updating_content_4 = false);
+				}
+
+				textarea.$set(textarea_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textinput0.$$.fragment, local);
+				transition_in(textinput1.$$.fragment, local);
+				transition_in(textinput2.$$.fragment, local);
+				transition_in(textinput3.$$.fragment, local);
+				transition_in(textarea.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textinput0.$$.fragment, local);
+				transition_out(textinput1.$$.fragment, local);
+				transition_out(textinput2.$$.fragment, local);
+				transition_out(textinput3.$$.fragment, local);
+				transition_out(textarea.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t0);
+					detach(t1);
+					detach(t2);
+					detach(t3);
+					detach(hr);
+					detach(t4);
+				}
+
+				destroy_component(textinput0, detaching);
+				destroy_component(textinput1, detaching);
+				destroy_component(textinput2, detaching);
+				destroy_component(textinput3, detaching);
+				destroy_component(textarea, detaching);
+			}
+		};
+	}
+
+	function instance$m($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function textinput0_content_binding(value) {
+			if ($$self.$$.not_equal(model.name, value)) {
+				model.name = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function textinput1_content_binding(value) {
+			if ($$self.$$.not_equal(model.className, value)) {
+				model.className = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function textinput2_content_binding(value) {
+			if ($$self.$$.not_equal(model.creds, value)) {
+				model.creds = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function textinput3_content_binding(value) {
+			if ($$self.$$.not_equal(model.debt, value)) {
+				model.debt = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function textarea_content_binding(value) {
+			if ($$self.$$.not_equal(model.info, value)) {
+				model.info = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [
+			model,
+			textinput0_content_binding,
+			textinput1_content_binding,
+			textinput2_content_binding,
+			textinput3_content_binding,
+			textarea_content_binding
+		];
+	}
+
+	class Bio extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$m, create_fragment$m, safe_not_equal, { model: 0 });
+		}
+	}
+
+	/* src\components\Details.svelte generated by Svelte v4.2.19 */
+
+	function create_if_block$a(ctx) {
+		let div2;
+		let div1;
+		let div0;
+		let current;
+		const default_slot_template = /*#slots*/ ctx[3].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[2], null);
+
+		return {
+			c() {
+				div2 = element("div");
+				div1 = element("div");
+				div0 = element("div");
+				if (default_slot) default_slot.c();
+				attr(div0, "class", "card-body");
+				attr(div1, "class", "card");
+				attr(div2, "class", "container-fluid m-0 p-0");
+			},
+			m(target, anchor) {
+				insert(target, div2, anchor);
+				append(div2, div1);
+				append(div1, div0);
+
+				if (default_slot) {
+					default_slot.m(div0, null);
+				}
+
+				current = true;
+			},
+			p(ctx, dirty) {
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 4)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[2],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[2])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[2], dirty, null),
+							null
+						);
+					}
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div2);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+			}
+		};
+	}
+
+	function create_fragment$l(ctx) {
+		let div;
+		let button;
+		let t0;
+		let t1;
+		let current;
+		let mounted;
+		let dispose;
+		let if_block = /*open*/ ctx[0] && create_if_block$a(ctx);
+
+		return {
+			c() {
+				div = element("div");
+				button = element("button");
+				t0 = text(/*title*/ ctx[1]);
+				t1 = space();
+				if (if_block) if_block.c();
+				attr(button, "class", "btn btn-light border w-100 text-left align-top");
+				attr(div, "class", "col-lg-6 col-12 p-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, button);
+				append(button, t0);
+				append(div, t1);
+				if (if_block) if_block.m(div, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler*/ ctx[4]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (!current || dirty & /*title*/ 2) set_data(t0, /*title*/ ctx[1]);
+
+				if (/*open*/ ctx[0]) {
+					if (if_block) {
+						if_block.p(ctx, dirty);
+
+						if (dirty & /*open*/ 1) {
+							transition_in(if_block, 1);
+						}
+					} else {
+						if_block = create_if_block$a(ctx);
+						if_block.c();
+						transition_in(if_block, 1);
+						if_block.m(div, null);
+					}
+				} else if (if_block) {
+					group_outros();
+
+					transition_out(if_block, 1, 1, () => {
+						if_block = null;
+					});
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if (if_block) if_block.d();
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$l($$self, $$props, $$invalidate) {
+		let { $$slots: slots = {}, $$scope } = $$props;
+		let { title } = $$props;
+		let { open = false } = $$props;
+		const click_handler = () => $$invalidate(0, open = !open);
+
+		$$self.$$set = $$props => {
+			if ('title' in $$props) $$invalidate(1, title = $$props.title);
+			if ('open' in $$props) $$invalidate(0, open = $$props.open);
+			if ('$$scope' in $$props) $$invalidate(2, $$scope = $$props.$$scope);
+		};
+
+		return [open, title, $$scope, slots, click_handler];
+	}
+
+	class Details extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$l, create_fragment$l, safe_not_equal, { title: 1, open: 0 });
+		}
+	}
+
+	/* src\components\Armor.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$9(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[8] = list[i];
+		return child_ctx;
+	}
+
+	// (21:4) {:else}
+	function create_else_block$8(ctx) {
+		let button0;
+		let t0_value = /*model*/ ctx[0].armor + "";
+		let t0;
+		let t1;
+		let button1;
+		let t2_value = /*model*/ ctx[0].armorValue + "";
+		let t2;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				button1 = element("button");
+				t2 = text(t2_value);
+				attr(button0, "class", "btn btn-light border text-left flex-grow-1");
+				attr(button1, "class", "btn btn-light border text-left ml-1");
+			},
+			m(target, anchor) {
+				insert(target, button0, anchor);
+				append(button0, t0);
+				insert(target, t1, anchor);
+				insert(target, button1, anchor);
+				append(button1, t2);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler_1*/ ctx[6]),
+						listen(button1, "click", /*click_handler_2*/ ctx[7])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*model*/ 1 && t0_value !== (t0_value = /*model*/ ctx[0].armor + "")) set_data(t0, t0_value);
+				if (dirty & /*model*/ 1 && t2_value !== (t2_value = /*model*/ ctx[0].armorValue + "")) set_data(t2, t2_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button0);
+					detach(t1);
+					detach(button1);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (11:4) {#if isEditingArmor}
+	function create_if_block$9(ctx) {
+		let input;
+		let t0;
+		let div;
+		let select;
+		let t1;
+		let button;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*armorValues*/ ctx[2]);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$9(get_each_context$9(ctx, each_value, i));
+		}
+
+		return {
+			c() {
+				input = element("input");
+				t0 = space();
+				div = element("div");
+				select = element("select");
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				t1 = space();
+				button = element("button");
+				button.textContent = "Done";
+				attr(input, "class", "form-control flex-grow-1");
+				attr(select, "class", "form-control");
+				if (/*model*/ ctx[0].armorValue === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
+				attr(div, "class", "pl-1 pr-1");
+				attr(button, "class", "btn btn-light ml-1 border-dark");
+			},
+			m(target, anchor) {
+				insert(target, input, anchor);
+				set_input_value(input, /*model*/ ctx[0].armor);
+				insert(target, t0, anchor);
+				insert(target, div, anchor);
+				append(div, select);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(select, null);
+					}
+				}
+
+				select_option(select, /*model*/ ctx[0].armorValue, true);
+				insert(target, t1, anchor);
+				insert(target, button, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[3]),
+						listen(select, "change", /*select_change_handler*/ ctx[4]),
+						listen(button, "click", /*click_handler*/ ctx[5])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*model, armorValues*/ 5 && input.value !== /*model*/ ctx[0].armor) {
+					set_input_value(input, /*model*/ ctx[0].armor);
+				}
+
+				if (dirty & /*armorValues*/ 4) {
+					each_value = ensure_array_like(/*armorValues*/ ctx[2]);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$9(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+						} else {
+							each_blocks[i] = create_each_block$9(child_ctx);
+							each_blocks[i].c();
+							each_blocks[i].m(select, null);
+						}
+					}
+
+					for (; i < each_blocks.length; i += 1) {
+						each_blocks[i].d(1);
+					}
+
+					each_blocks.length = each_value.length;
+				}
+
+				if (dirty & /*model, armorValues*/ 5) {
+					select_option(select, /*model*/ ctx[0].armorValue);
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(input);
+					detach(t0);
+					detach(div);
+					detach(t1);
+					detach(button);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (15:16) {#each armorValues as a}
+	function create_each_block$9(ctx) {
+		let option;
+		let t_value = /*a*/ ctx[8] + "";
+		let t;
+
+		return {
+			c() {
+				option = element("option");
+				t = text(t_value);
+				option.__value = /*a*/ ctx[8];
+				set_input_value(option, option.__value);
+			},
+			m(target, anchor) {
+				insert(target, option, anchor);
+				append(option, t);
+			},
+			p: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(option);
+				}
+			}
+		};
+	}
+
+	function create_fragment$k(ctx) {
+		let span;
+		let t1;
+		let div;
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditingArmor*/ ctx[1]) return create_if_block$9;
+			return create_else_block$8;
+		}
+
+		let current_block_type = select_block_type(ctx);
+		let if_block = current_block_type(ctx);
+
+		return {
+			c() {
+				span = element("span");
+				span.textContent = "Armor";
+				t1 = space();
+				div = element("div");
+				if_block.c();
+				attr(div, "class", "d-flex mb-1");
+			},
+			m(target, anchor) {
+				insert(target, span, anchor);
+				insert(target, t1, anchor);
+				insert(target, div, anchor);
+				if_block.m(div, null);
+			},
+			p(ctx, [dirty]) {
+				if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block.d(1);
+					if_block = current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(div, null);
+					}
+				}
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+					detach(t1);
+					detach(div);
+				}
+
+				if_block.d();
+			}
+		};
+	}
+
+	function instance$k($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+		const armorValues = ['-', '-d2', '-d4', '-d6', '-d8'];
+		let isEditingArmor;
+
+		function input_input_handler() {
+			model.armor = this.value;
+			$$invalidate(0, model);
+			$$invalidate(2, armorValues);
+		}
+
+		function select_change_handler() {
+			model.armorValue = select_value(this);
+			$$invalidate(0, model);
+			$$invalidate(2, armorValues);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditingArmor = false);
+		const click_handler_1 = () => $$invalidate(1, isEditingArmor = true);
+		const click_handler_2 = () => $$invalidate(1, isEditingArmor = true);
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [
+			model,
+			isEditingArmor,
+			armorValues,
+			input_input_handler,
+			select_change_handler,
+			click_handler,
+			click_handler_1,
+			click_handler_2
+		];
+	}
+
+	class Armor extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$k, create_fragment$k, safe_not_equal, { model: 0 });
+		}
+	}
+
+	/* src\components\Item.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$7(ctx) {
+		let button0;
+		let t0_value = /*item*/ ctx[0].name + "";
+		let t0;
+		let t1;
+		let button1;
+		let t2_value = /*item*/ ctx[0].size + "";
+		let t2;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				button1 = element("button");
+				t2 = text(t2_value);
+				attr(button0, "class", "btn btn-light border text-left flex-grow-1");
+				attr(button1, "class", "btn btn-dark border ml-1");
+			},
+			m(target, anchor) {
+				insert(target, button0, anchor);
+				append(button0, t0);
+				insert(target, t1, anchor);
+				insert(target, button1, anchor);
+				append(button1, t2);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler_1*/ ctx[6]),
+						listen(button1, "click", /*click_handler_2*/ ctx[7])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*item*/ 1 && t0_value !== (t0_value = /*item*/ ctx[0].name + "")) set_data(t0, t0_value);
+				if (dirty & /*item*/ 1 && t2_value !== (t2_value = /*item*/ ctx[0].size + "")) set_data(t2, t2_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button0);
+					detach(t1);
+					detach(button1);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (7:0) {#if isEditing}
+	function create_if_block$8(ctx) {
+		let input0;
+		let t0;
+		let div;
+		let input1;
+		let t1;
+		let button;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				input0 = element("input");
+				t0 = space();
+				div = element("div");
+				input1 = element("input");
+				t1 = space();
+				button = element("button");
+				button.textContent = "Close";
+				attr(input0, "class", "form-control flex-grow-1");
+				attr(input1, "class", "form-control ml-1");
+				attr(input1, "type", "number");
+				attr(input1, "min", "0");
+				attr(button, "class", "btn btn-light border-dark ml-1");
+			},
+			m(target, anchor) {
+				insert(target, input0, anchor);
+				set_input_value(input0, /*item*/ ctx[0].name);
+				insert(target, t0, anchor);
+				insert(target, div, anchor);
+				append(div, input1);
+				set_input_value(input1, /*item*/ ctx[0].size);
+				insert(target, t1, anchor);
+				insert(target, button, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(input0, "input", /*input0_input_handler*/ ctx[3]),
+						listen(input1, "input", /*input1_input_handler*/ ctx[4]),
+						listen(button, "click", /*click_handler*/ ctx[5])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*item*/ 1 && input0.value !== /*item*/ ctx[0].name) {
+					set_input_value(input0, /*item*/ ctx[0].name);
+				}
+
+				if (dirty & /*item*/ 1 && to_number(input1.value) !== /*item*/ ctx[0].size) {
+					set_input_value(input1, /*item*/ ctx[0].size);
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(input0);
+					detach(t0);
+					detach(div);
+					detach(t1);
+					detach(button);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$j(ctx) {
+		let if_block_anchor;
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return create_if_block$8;
+			return create_else_block$7;
+		}
+
+		let current_block_type = select_block_type(ctx);
+		let if_block = current_block_type(ctx);
+
+		return {
+			c() {
+				if_block.c();
+				if_block_anchor = empty();
+			},
+			m(target, anchor) {
+				if_block.m(target, anchor);
+				insert(target, if_block_anchor, anchor);
+			},
+			p(ctx, [dirty]) {
+				if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block.d(1);
+					if_block = current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(if_block_anchor.parentNode, if_block_anchor);
+					}
+				}
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(if_block_anchor);
+				}
+
+				if_block.d(detaching);
+			}
+		};
+	}
+
+	function instance$j($$self, $$props, $$invalidate) {
+		let { item } = $$props;
+		let { isEditing } = $$props;
+		let { update } = $$props;
+
+		function input0_input_handler() {
+			item.name = this.value;
+			$$invalidate(0, item);
+		}
+
+		function input1_input_handler() {
+			item.size = to_number(this.value);
+			$$invalidate(0, item);
+		}
+
+		const click_handler = () => {
+			$$invalidate(1, isEditing = false);
+			update();
+		};
+
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+		const click_handler_2 = () => $$invalidate(1, isEditing = true);
+
+		$$self.$$set = $$props => {
+			if ('item' in $$props) $$invalidate(0, item = $$props.item);
+			if ('isEditing' in $$props) $$invalidate(1, isEditing = $$props.isEditing);
+			if ('update' in $$props) $$invalidate(2, update = $$props.update);
+		};
+
+		return [
+			item,
+			isEditing,
+			update,
+			input0_input_handler,
+			input1_input_handler,
+			click_handler,
+			click_handler_1,
+			click_handler_2
+		];
+	}
+
+	class Item extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$j, create_fragment$j, safe_not_equal, { item: 0, isEditing: 1, update: 2 });
+		}
+	}
+
+	var listActions = {
+	    move: (collection, n, item) => {
+	        let index = collection.indexOf(item);
+	        collection.splice(index, 1);
+
+	        index += n;
+	        if (index < 0) index = collection.length;
+	        else if (index > collection.length) index = 0;
+
+	        collection.splice(index, 0, item);
+	        collection = collection;
+	    },
+	    remove: (collection, item) => {
+	        let index = collection.indexOf(item);
+	        collection.splice(index, 1);
+	        collection = collection;
+	    }
+	};
+
+	/* src\components\Equipment.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$8(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[6] = list[i];
+		child_ctx[7] = list;
+		child_ctx[8] = i;
+		return child_ctx;
+	}
+
+	// (32:4) <ListItem item={item} move={moveEquipment} remove={removeEquipment}>
+	function create_default_slot$6(ctx) {
+		let item_1;
+		let updating_item;
+		let t;
+		let current;
+
+		function item_1_item_binding(value) {
+			/*item_1_item_binding*/ ctx[5](value, /*item*/ ctx[6], /*each_value*/ ctx[7], /*item_index*/ ctx[8]);
+		}
+
+		let item_1_props = { update: /*update*/ ctx[1] };
+
+		if (/*item*/ ctx[6] !== void 0) {
+			item_1_props.item = /*item*/ ctx[6];
+		}
+
+		item_1 = new Item({ props: item_1_props });
+		binding_callbacks.push(() => bind(item_1, 'item', item_1_item_binding));
+
+		return {
+			c() {
+				create_component(item_1.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(item_1, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(new_ctx, dirty) {
+				ctx = new_ctx;
+				const item_1_changes = {};
+				if (dirty & /*update*/ 2) item_1_changes.update = /*update*/ ctx[1];
+
+				if (!updating_item && dirty & /*model*/ 1) {
+					updating_item = true;
+					item_1_changes.item = /*item*/ ctx[6];
+					add_flush_callback(() => updating_item = false);
+				}
+
+				item_1.$set(item_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(item_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(item_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(item_1, detaching);
+			}
+		};
+	}
+
+	// (31:0) {#each model.equipment as item}
+	function create_each_block$8(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*item*/ ctx[6],
+					move: /*moveEquipment*/ ctx[3],
+					remove: /*removeEquipment*/ ctx[4],
+					$$slots: { default: [create_default_slot$6] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*item*/ ctx[6];
+
+				if (dirty & /*$$scope, update, model*/ 515) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$i(ctx) {
+		let div;
+		let span;
+		let t1;
+		let button;
+		let t3;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].equipment);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$8(get_each_context$8(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				div = element("div");
+				span = element("span");
+				span.textContent = "Equipment";
+				t1 = space();
+				button = element("button");
+				button.textContent = "Add";
+				t3 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "ml-auto btn btn-dark");
+				attr(div, "class", "d-flex align-items-end");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, span);
+				append(div, t1);
+				append(div, button);
+				insert(target, t3, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*addEquipment*/ ctx[2]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, moveEquipment, removeEquipment, update*/ 27) {
+					each_value = ensure_array_like(/*model*/ ctx[0].equipment);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$8(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$8(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+					detach(t3);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$i($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+		let { update } = $$props;
+
+		function addEquipment() {
+			model.equipment.push({ name: '', size: 1 });
+			$$invalidate(0, model);
+			update();
+		}
+
+		function moveEquipment(n, item) {
+			listActions.move(model.equipment, n, item);
+			$$invalidate(0, model);
+		}
+
+		function removeEquipment(item) {
+			listActions.remove(model.equipment, item);
+			$$invalidate(0, model);
+			update();
+		}
+
+		function item_1_item_binding(value, item, each_value, item_index) {
+			each_value[item_index] = value;
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+			if ('update' in $$props) $$invalidate(1, update = $$props.update);
+		};
+
+		return [
+			model,
+			update,
+			addEquipment,
+			moveEquipment,
+			removeEquipment,
+			item_1_item_binding
+		];
+	}
+
+	class Equipment extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$i, create_fragment$i, safe_not_equal, { model: 0, update: 1 });
+		}
+	}
+
+	/* src\components\Weapon.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$7(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[11] = list[i];
+		return child_ctx;
+	}
+
+	// (23:8) {:else}
+	function create_else_block_1$1(ctx) {
+		let button;
+		let t_value = /*weapon*/ ctx[0].name + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "flex-grow-1 btn btn-light text-left border");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_1*/ ctx[6]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*weapon*/ 1 && t_value !== (t_value = /*weapon*/ ctx[0].name + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (20:8) {#if isEditing}
+	function create_if_block_4(ctx) {
+		let input;
+		let t0;
+		let button;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				input = element("input");
+				t0 = space();
+				button = element("button");
+				button.textContent = "Close";
+				attr(input, "class", "form-control flex-grow-1");
+				attr(button, "class", "btn btn-light border-dark ml-auto");
+			},
+			m(target, anchor) {
+				insert(target, input, anchor);
+				set_input_value(input, /*weapon*/ ctx[0].name);
+				insert(target, t0, anchor);
+				insert(target, button, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[4]),
+						listen(button, "click", /*click_handler*/ ctx[5])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*weapon, damage*/ 5 && input.value !== /*weapon*/ ctx[0].name) {
+					set_input_value(input, /*weapon*/ ctx[0].name);
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(input);
+					detach(t0);
+					detach(button);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (51:8) {:else}
+	function create_else_block$6(ctx) {
+		let t0;
+		let span;
+		let t1_value = /*weapon*/ ctx[0].damage + "";
+		let t1;
+		let t2;
+		let t3;
+		let t4;
+		let if_block2_anchor;
+		let if_block0 = !/*weapon*/ ctx[0].melee && create_if_block_3(ctx);
+		let if_block1 = /*weapon*/ ctx[0].automatic && !/*weapon*/ ctx[0].melee && create_if_block_2();
+		let if_block2 = /*weapon*/ ctx[0].melee && create_if_block_1$2();
+
+		return {
+			c() {
+				if (if_block0) if_block0.c();
+				t0 = space();
+				span = element("span");
+				t1 = text(t1_value);
+				t2 = text(" damage");
+				t3 = space();
+				if (if_block1) if_block1.c();
+				t4 = space();
+				if (if_block2) if_block2.c();
+				if_block2_anchor = empty();
+				attr(span, "class", "btn btn-dark badge ml-1");
+			},
+			m(target, anchor) {
+				if (if_block0) if_block0.m(target, anchor);
+				insert(target, t0, anchor);
+				insert(target, span, anchor);
+				append(span, t1);
+				append(span, t2);
+				insert(target, t3, anchor);
+				if (if_block1) if_block1.m(target, anchor);
+				insert(target, t4, anchor);
+				if (if_block2) if_block2.m(target, anchor);
+				insert(target, if_block2_anchor, anchor);
+			},
+			p(ctx, dirty) {
+				if (!/*weapon*/ ctx[0].melee) {
+					if (if_block0) {
+						if_block0.p(ctx, dirty);
+					} else {
+						if_block0 = create_if_block_3(ctx);
+						if_block0.c();
+						if_block0.m(t0.parentNode, t0);
+					}
+				} else if (if_block0) {
+					if_block0.d(1);
+					if_block0 = null;
+				}
+
+				if (dirty & /*weapon*/ 1 && t1_value !== (t1_value = /*weapon*/ ctx[0].damage + "")) set_data(t1, t1_value);
+
+				if (/*weapon*/ ctx[0].automatic && !/*weapon*/ ctx[0].melee) {
+					if (if_block1) ; else {
+						if_block1 = create_if_block_2();
+						if_block1.c();
+						if_block1.m(t4.parentNode, t4);
+					}
+				} else if (if_block1) {
+					if_block1.d(1);
+					if_block1 = null;
+				}
+
+				if (/*weapon*/ ctx[0].melee) {
+					if (if_block2) ; else {
+						if_block2 = create_if_block_1$2();
+						if_block2.c();
+						if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
+					}
+				} else if (if_block2) {
+					if_block2.d(1);
+					if_block2 = null;
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t0);
+					detach(span);
+					detach(t3);
+					detach(t4);
+					detach(if_block2_anchor);
+				}
+
+				if (if_block0) if_block0.d(detaching);
+				if (if_block1) if_block1.d(detaching);
+				if (if_block2) if_block2.d(detaching);
+			}
+		};
+	}
+
+	// (28:8) {#if isEditing}
+	function create_if_block$7(ctx) {
+		let div0;
+		let input0;
+		let t0;
+		let div1;
+		let select;
+		let t1;
+		let div2;
+		let label0;
+		let input1;
+		let t2;
+		let span0;
+		let t4;
+		let div3;
+		let label1;
+		let input2;
+		let t5;
+		let span1;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*damage*/ ctx[2]);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
+		}
+
+		return {
+			c() {
+				div0 = element("div");
+				input0 = element("input");
+				t0 = space();
+				div1 = element("div");
+				select = element("select");
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				t1 = space();
+				div2 = element("div");
+				label0 = element("label");
+				input1 = element("input");
+				t2 = space();
+				span0 = element("span");
+				span0.textContent = "Auto";
+				t4 = space();
+				div3 = element("div");
+				label1 = element("label");
+				input2 = element("input");
+				t5 = space();
+				span1 = element("span");
+				span1.textContent = "Melee";
+				attr(input0, "type", "number");
+				attr(input0, "min", 0);
+				attr(input0, "class", "form-control");
+				attr(div0, "class", "border-right d-flex");
+				attr(select, "class", "form-control");
+				if (/*weapon*/ ctx[0].damage === void 0) add_render_callback(() => /*select_change_handler*/ ctx[8].call(select));
+				attr(div1, "class", "border-right d-flex ml-1");
+				attr(input1, "type", "checkbox");
+				attr(span0, "class", "ml-1 mr-1");
+				attr(label0, "class", "align-self-center d-flex align-items-center m-0");
+				attr(div2, "class", "border-right d-flex ml-1");
+				attr(input2, "type", "checkbox");
+				attr(span1, "class", "ml-1 mr-1");
+				attr(label1, "class", "align-self-center d-flex align-items-center m-0");
+				attr(div3, "class", "d-flex ml-1");
+			},
+			m(target, anchor) {
+				insert(target, div0, anchor);
+				append(div0, input0);
+				set_input_value(input0, /*weapon*/ ctx[0].mags);
+				insert(target, t0, anchor);
+				insert(target, div1, anchor);
+				append(div1, select);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(select, null);
+					}
+				}
+
+				select_option(select, /*weapon*/ ctx[0].damage, true);
+				insert(target, t1, anchor);
+				insert(target, div2, anchor);
+				append(div2, label0);
+				append(label0, input1);
+				input1.checked = /*weapon*/ ctx[0].automatic;
+				append(label0, t2);
+				append(label0, span0);
+				insert(target, t4, anchor);
+				insert(target, div3, anchor);
+				append(div3, label1);
+				append(label1, input2);
+				input2.checked = /*weapon*/ ctx[0].melee;
+				append(label1, t5);
+				append(label1, span1);
+
+				if (!mounted) {
+					dispose = [
+						listen(input0, "input", /*input0_input_handler*/ ctx[7]),
+						listen(select, "change", /*select_change_handler*/ ctx[8]),
+						listen(input1, "change", /*input1_change_handler*/ ctx[9]),
+						listen(input2, "change", /*input2_change_handler*/ ctx[10])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*weapon, damage*/ 5 && to_number(input0.value) !== /*weapon*/ ctx[0].mags) {
+					set_input_value(input0, /*weapon*/ ctx[0].mags);
+				}
+
+				if (dirty & /*damage*/ 4) {
+					each_value = ensure_array_like(/*damage*/ ctx[2]);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$7(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+						} else {
+							each_blocks[i] = create_each_block$7(child_ctx);
+							each_blocks[i].c();
+							each_blocks[i].m(select, null);
+						}
+					}
+
+					for (; i < each_blocks.length; i += 1) {
+						each_blocks[i].d(1);
+					}
+
+					each_blocks.length = each_value.length;
+				}
+
+				if (dirty & /*weapon, damage*/ 5) {
+					select_option(select, /*weapon*/ ctx[0].damage);
+				}
+
+				if (dirty & /*weapon, damage*/ 5) {
+					input1.checked = /*weapon*/ ctx[0].automatic;
+				}
+
+				if (dirty & /*weapon, damage*/ 5) {
+					input2.checked = /*weapon*/ ctx[0].melee;
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div0);
+					detach(t0);
+					detach(div1);
+					detach(t1);
+					detach(div2);
+					detach(t4);
+					detach(div3);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (52:12) {#if !weapon.melee}
+	function create_if_block_3(ctx) {
+		let button;
+		let t0_value = /*weapon*/ ctx[0].mags + "";
+		let t0;
+		let t1;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t0 = text(t0_value);
+				t1 = text(" mags");
+				attr(button, "class", "btn btn-dark badge");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t0);
+				append(button, t1);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*magsClick*/ ctx[3]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*weapon*/ 1 && t0_value !== (t0_value = /*weapon*/ ctx[0].mags + "")) set_data(t0, t0_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (54:12) {#if weapon.automatic && !weapon.melee}
+	function create_if_block_2(ctx) {
+		let span;
+
+		return {
+			c() {
+				span = element("span");
+				span.textContent = "auto";
+				attr(span, "class", "btn btn-dark badge ml-1");
+			},
+			m(target, anchor) {
+				insert(target, span, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+				}
+			}
+		};
+	}
+
+	// (55:12) {#if weapon.melee}
+	function create_if_block_1$2(ctx) {
+		let span;
+
+		return {
+			c() {
+				span = element("span");
+				span.textContent = "melee";
+				attr(span, "class", "btn btn-dark badge ml-1");
+			},
+			m(target, anchor) {
+				insert(target, span, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(span);
+				}
+			}
+		};
+	}
+
+	// (34:20) {#each damage as d}
+	function create_each_block$7(ctx) {
+		let option;
+		let t_value = /*d*/ ctx[11] + "";
+		let t;
+
+		return {
+			c() {
+				option = element("option");
+				t = text(t_value);
+				option.__value = /*d*/ ctx[11];
+				set_input_value(option, option.__value);
+			},
+			m(target, anchor) {
+				insert(target, option, anchor);
+				append(option, t);
+			},
+			p: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(option);
+				}
+			}
+		};
+	}
+
+	function create_fragment$h(ctx) {
+		let div2;
+		let div0;
+		let t;
+		let div1;
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return create_if_block_4;
+			return create_else_block_1$1;
+		}
+
+		let current_block_type = select_block_type(ctx);
+		let if_block0 = current_block_type(ctx);
+
+		function select_block_type_1(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return create_if_block$7;
+			return create_else_block$6;
+		}
+
+		let current_block_type_1 = select_block_type_1(ctx);
+		let if_block1 = current_block_type_1(ctx);
+
+		return {
+			c() {
+				div2 = element("div");
+				div0 = element("div");
+				if_block0.c();
+				t = space();
+				div1 = element("div");
+				if_block1.c();
+				attr(div0, "class", "d-flex");
+				attr(div1, "class", "d-flex mt-1");
+				attr(div2, "class", "d-flex flex-column flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div2, anchor);
+				append(div2, div0);
+				if_block0.m(div0, null);
+				append(div2, t);
+				append(div2, div1);
+				if_block1.m(div1, null);
+			},
+			p(ctx, [dirty]) {
+				if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
+					if_block0.p(ctx, dirty);
+				} else {
+					if_block0.d(1);
+					if_block0 = current_block_type(ctx);
+
+					if (if_block0) {
+						if_block0.c();
+						if_block0.m(div0, null);
+					}
+				}
+
+				if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block1) {
+					if_block1.p(ctx, dirty);
+				} else {
+					if_block1.d(1);
+					if_block1 = current_block_type_1(ctx);
+
+					if (if_block1) {
+						if_block1.c();
+						if_block1.m(div1, null);
+					}
+				}
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(div2);
+				}
+
+				if_block0.d();
+				if_block1.d();
+			}
+		};
+	}
+
+	function instance$h($$self, $$props, $$invalidate) {
+		let { weapon } = $$props;
+		const damage = ['1', 'd2', 'd3', 'd4', 'd6', 'd8', 'd10', 'd12'];
+
+		function magsClick(e) {
+			let value = e.shiftKey ? 1 : -1;
+			$$invalidate(0, weapon.mags += value, weapon);
+			if (weapon.mags < 0) $$invalidate(0, weapon.mags = 0, weapon);
+		}
+
+		let isEditing = false;
+		if (!weapon.name) weapon.name = "New Weapon";
+		if (weapon.mags == null) weapon.mags = 0;
+
+		function input_input_handler() {
+			weapon.name = this.value;
+			$$invalidate(0, weapon);
+			$$invalidate(2, damage);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+
+		function input0_input_handler() {
+			weapon.mags = to_number(this.value);
+			$$invalidate(0, weapon);
+			$$invalidate(2, damage);
+		}
+
+		function select_change_handler() {
+			weapon.damage = select_value(this);
+			$$invalidate(0, weapon);
+			$$invalidate(2, damage);
+		}
+
+		function input1_change_handler() {
+			weapon.automatic = this.checked;
+			$$invalidate(0, weapon);
+			$$invalidate(2, damage);
+		}
+
+		function input2_change_handler() {
+			weapon.melee = this.checked;
+			$$invalidate(0, weapon);
+			$$invalidate(2, damage);
+		}
+
+		$$self.$$set = $$props => {
+			if ('weapon' in $$props) $$invalidate(0, weapon = $$props.weapon);
+		};
+
+		return [
+			weapon,
+			isEditing,
+			damage,
+			magsClick,
+			input_input_handler,
+			click_handler,
+			click_handler_1,
+			input0_input_handler,
+			select_change_handler,
+			input1_change_handler,
+			input2_change_handler
+		];
+	}
+
+	class Weapon extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$h, create_fragment$h, safe_not_equal, { weapon: 0 });
+		}
+	}
+
+	const weapon = () => ({
+	    name: '',
+	    mags: 0,
+	    damage: 'd4',
+	    automatic: false,
+	    melee: false,
+	    notes: ''
+	});
+
+	/* src\components\Weapons.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$6(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[5] = list[i];
+		return child_ctx;
+	}
+
+	// (33:4) <ListItem item={weapon} move={moveWeapon} remove={removeWeapon}>
+	function create_default_slot$5(ctx) {
+		let weapon_1;
+		let t;
+		let current;
+		weapon_1 = new Weapon({ props: { weapon: /*weapon*/ ctx[5] } });
+
+		return {
+			c() {
+				create_component(weapon_1.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(weapon_1, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const weapon_1_changes = {};
+				if (dirty & /*model*/ 1) weapon_1_changes.weapon = /*weapon*/ ctx[5];
+				weapon_1.$set(weapon_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(weapon_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(weapon_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(weapon_1, detaching);
+			}
+		};
+	}
+
+	// (32:0) {#each model.weapons as weapon}
+	function create_each_block$6(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*weapon*/ ctx[5],
+					move: /*moveWeapon*/ ctx[2],
+					remove: /*removeWeapon*/ ctx[3],
+					$$slots: { default: [create_default_slot$5] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*weapon*/ ctx[5];
+
+				if (dirty & /*$$scope, model*/ 257) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$g(ctx) {
+		let div;
+		let span;
+		let t1;
+		let button;
+		let t3;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].weapons);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				div = element("div");
+				span = element("span");
+				span.textContent = "Weapons";
+				t1 = space();
+				button = element("button");
+				button.textContent = "Add";
+				t3 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "ml-auto btn btn-dark");
+				attr(div, "class", "d-flex align-items-end");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, span);
+				append(div, t1);
+				append(div, button);
+				insert(target, t3, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*addWeapon*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, moveWeapon, removeWeapon*/ 13) {
+					each_value = ensure_array_like(/*model*/ ctx[0].weapons);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$6(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$6(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+					detach(t3);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$g($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+		let { update } = $$props;
+
+		function addWeapon() {
+			model.weapons.push(weapon());
+			$$invalidate(0, model);
+			update();
+		}
+
+		function moveWeapon(n, weapon) {
+			listActions.move(model.weapons, n, weapon);
+			$$invalidate(0, model);
+		}
+
+		function removeWeapon(weapon) {
+			listActions.remove(model.weapons, weapon);
+			$$invalidate(0, model);
+			update();
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+			if ('update' in $$props) $$invalidate(4, update = $$props.update);
+		};
+
+		return [model, addWeapon, moveWeapon, removeWeapon, update];
+	}
+
+	class Weapons extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$g, create_fragment$g, safe_not_equal, { model: 0, update: 4 });
+		}
+	}
+
+	/* src\components\Inventory.svelte generated by Svelte v4.2.19 */
+
+	function create_fragment$f(ctx) {
+		let div;
+		let span;
+		let t0;
+		let t1;
+		let t2_value = /*model*/ ctx[0].abilities.strength + 8 + "";
+		let t2;
+		let span_class_value;
+		let t3;
+		let armor;
+		let t4;
+		let hr0;
+		let t5;
+		let weapons;
+		let t6;
+		let hr1;
+		let t7;
+		let equipment;
+		let current;
+		armor = new Armor({ props: { model: /*model*/ ctx[0] } });
+
+		weapons = new Weapons({
+				props: {
+					model: /*model*/ ctx[0],
+					update: /*update*/ ctx[3]
+				}
+			});
+
+		equipment = new Equipment({
+				props: {
+					model: /*model*/ ctx[0],
+					update: /*update*/ ctx[3]
+				}
+			});
+
+		return {
+			c() {
+				div = element("div");
+				span = element("span");
+				t0 = text(/*itemCount*/ ctx[1]);
+				t1 = text(" / ");
+				t2 = text(t2_value);
+				t3 = space();
+				create_component(armor.$$.fragment);
+				t4 = space();
+				hr0 = element("hr");
+				t5 = space();
+				create_component(weapons.$$.fragment);
+				t6 = space();
+				hr1 = element("hr");
+				t7 = space();
+				create_component(equipment.$$.fragment);
+				attr(span, "class", span_class_value = "badge " + /*itemCountStyle*/ ctx[2]);
+				attr(div, "class", "position-topright");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, span);
+				append(span, t0);
+				append(span, t1);
+				append(span, t2);
+				insert(target, t3, anchor);
+				mount_component(armor, target, anchor);
+				insert(target, t4, anchor);
+				insert(target, hr0, anchor);
+				insert(target, t5, anchor);
+				mount_component(weapons, target, anchor);
+				insert(target, t6, anchor);
+				insert(target, hr1, anchor);
+				insert(target, t7, anchor);
+				mount_component(equipment, target, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				if (!current || dirty & /*itemCount*/ 2) set_data(t0, /*itemCount*/ ctx[1]);
+				if ((!current || dirty & /*model*/ 1) && t2_value !== (t2_value = /*model*/ ctx[0].abilities.strength + 8 + "")) set_data(t2, t2_value);
+
+				if (!current || dirty & /*itemCountStyle*/ 4 && span_class_value !== (span_class_value = "badge " + /*itemCountStyle*/ ctx[2])) {
+					attr(span, "class", span_class_value);
+				}
+
+				const armor_changes = {};
+				if (dirty & /*model*/ 1) armor_changes.model = /*model*/ ctx[0];
+				armor.$set(armor_changes);
+				const weapons_changes = {};
+				if (dirty & /*model*/ 1) weapons_changes.model = /*model*/ ctx[0];
+				weapons.$set(weapons_changes);
+				const equipment_changes = {};
+				if (dirty & /*model*/ 1) equipment_changes.model = /*model*/ ctx[0];
+				equipment.$set(equipment_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(armor.$$.fragment, local);
+				transition_in(weapons.$$.fragment, local);
+				transition_in(equipment.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(armor.$$.fragment, local);
+				transition_out(weapons.$$.fragment, local);
+				transition_out(equipment.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+					detach(t3);
+					detach(t4);
+					detach(hr0);
+					detach(t5);
+					detach(t6);
+					detach(hr1);
+					detach(t7);
+				}
+
+				destroy_component(armor, detaching);
+				destroy_component(weapons, detaching);
+				destroy_component(equipment, detaching);
+			}
+		};
+	}
+
+	function instance$f($$self, $$props, $$invalidate) {
+		let itemCount;
+		let itemCountStyle;
+		let { model } = $$props;
+
+		model.equipment = model.equipment.map(i => {
+			if (typeof i != 'string') return i;
+			return { name: i, size: 1 };
+		});
+
+		function update() {
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		$$self.$$.update = () => {
+			if ($$self.$$.dirty & /*model*/ 1) {
+				$$invalidate(1, itemCount = model.weapons.length + model.equipment.reduce((a, b) => a + b.size, 0));
+			}
+
+			if ($$self.$$.dirty & /*itemCount, model*/ 3) {
+				$$invalidate(2, itemCountStyle = itemCount > (model.abilities.strength + 8) * 2
+				? 'badge-danger'
+				: itemCount > model.abilities.strength + 8
+					? 'badge-warning'
+					: 'badge-dark');
+			}
+		};
+
+		return [model, itemCount, itemCountStyle, update];
+	}
+
+	class Inventory extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$f, create_fragment$f, safe_not_equal, { model: 0 });
+		}
+	}
+
+	const infestation = () => ({
+	    name: 'Infestation',
+	    persistent: '',
+	    trigger: ''
+	});
+
+	const nano = () => ({
+	    name: 'Nano power',
+	    description: '',
+	    used: 0,
+	    infestation: infestation()
+	});
+
+	/* src\components\Infestation.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$5(ctx) {
+		let button;
+		let t_value = /*infestation*/ ctx[0].name + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "btn btn-light border text-left flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_1*/ ctx[6]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*infestation*/ 1 && t_value !== (t_value = /*infestation*/ ctx[0].name + "")) set_data(t, t_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (10:4) {#if isEditing}
+	function create_if_block$6(ctx) {
+		let div0;
+		let input;
+		let t0;
+		let button;
+		let t2;
+		let span0;
+		let t4;
+		let div1;
+		let textarea0;
+		let updating_content;
+		let t5;
+		let span1;
+		let t7;
+		let div2;
+		let textarea1;
+		let updating_content_1;
+		let current;
+		let mounted;
+		let dispose;
+
+		function textarea0_content_binding(value) {
+			/*textarea0_content_binding*/ ctx[4](value);
+		}
+
+		let textarea0_props = {};
+
+		if (/*infestation*/ ctx[0].persistent !== void 0) {
+			textarea0_props.content = /*infestation*/ ctx[0].persistent;
+		}
+
+		textarea0 = new TextArea({ props: textarea0_props });
+		binding_callbacks.push(() => bind(textarea0, 'content', textarea0_content_binding));
+
+		function textarea1_content_binding(value) {
+			/*textarea1_content_binding*/ ctx[5](value);
+		}
+
+		let textarea1_props = {};
+
+		if (/*infestation*/ ctx[0].trigger !== void 0) {
+			textarea1_props.content = /*infestation*/ ctx[0].trigger;
+		}
+
+		textarea1 = new TextArea({ props: textarea1_props });
+		binding_callbacks.push(() => bind(textarea1, 'content', textarea1_content_binding));
+
+		return {
+			c() {
+				div0 = element("div");
+				input = element("input");
+				t0 = space();
+				button = element("button");
+				button.textContent = "Close";
+				t2 = space();
+				span0 = element("span");
+				span0.textContent = "Persistent";
+				t4 = space();
+				div1 = element("div");
+				create_component(textarea0.$$.fragment);
+				t5 = space();
+				span1 = element("span");
+				span1.textContent = "Trigger";
+				t7 = space();
+				div2 = element("div");
+				create_component(textarea1.$$.fragment);
+				attr(input, "class", "flex-grow-1 form-control");
+				attr(button, "class", "btn btn-light border");
+				attr(div0, "class", "d-flex flex-grow-1");
+				attr(div1, "class", "d-flex");
+				attr(div2, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div0, anchor);
+				append(div0, input);
+				set_input_value(input, /*infestation*/ ctx[0].name);
+				append(div0, t0);
+				append(div0, button);
+				insert(target, t2, anchor);
+				insert(target, span0, anchor);
+				insert(target, t4, anchor);
+				insert(target, div1, anchor);
+				mount_component(textarea0, div1, null);
+				insert(target, t5, anchor);
+				insert(target, span1, anchor);
+				insert(target, t7, anchor);
+				insert(target, div2, anchor);
+				mount_component(textarea1, div2, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[2]),
+						listen(button, "click", /*click_handler*/ ctx[3])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*infestation*/ 1 && input.value !== /*infestation*/ ctx[0].name) {
+					set_input_value(input, /*infestation*/ ctx[0].name);
+				}
+
+				const textarea0_changes = {};
+
+				if (!updating_content && dirty & /*infestation*/ 1) {
+					updating_content = true;
+					textarea0_changes.content = /*infestation*/ ctx[0].persistent;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textarea0.$set(textarea0_changes);
+				const textarea1_changes = {};
+
+				if (!updating_content_1 && dirty & /*infestation*/ 1) {
+					updating_content_1 = true;
+					textarea1_changes.content = /*infestation*/ ctx[0].trigger;
+					add_flush_callback(() => updating_content_1 = false);
+				}
+
+				textarea1.$set(textarea1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textarea0.$$.fragment, local);
+				transition_in(textarea1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textarea0.$$.fragment, local);
+				transition_out(textarea1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div0);
+					detach(t2);
+					detach(span0);
+					detach(t4);
+					detach(div1);
+					detach(t5);
+					detach(span1);
+					detach(t7);
+					detach(div2);
+				}
+
+				destroy_component(textarea0);
+				destroy_component(textarea1);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$e(ctx) {
+		let div;
+		let current_block_type_index;
+		let if_block;
+		let current;
+		const if_block_creators = [create_if_block$6, create_else_block$5];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				div = element("div");
+				if_block.c();
+				attr(div, "class", "d-flex flex-column flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				if_blocks[current_block_type_index].m(div, null);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if_blocks[current_block_type_index].d();
+			}
+		};
+	}
+
+	function instance$e($$self, $$props, $$invalidate) {
+		let { infestation } = $$props;
+		let isEditing = false;
+
+		function input_input_handler() {
+			infestation.name = this.value;
+			$$invalidate(0, infestation);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+
+		function textarea0_content_binding(value) {
+			if ($$self.$$.not_equal(infestation.persistent, value)) {
+				infestation.persistent = value;
+				$$invalidate(0, infestation);
+			}
+		}
+
+		function textarea1_content_binding(value) {
+			if ($$self.$$.not_equal(infestation.trigger, value)) {
+				infestation.trigger = value;
+				$$invalidate(0, infestation);
+			}
+		}
+
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+
+		$$self.$$set = $$props => {
+			if ('infestation' in $$props) $$invalidate(0, infestation = $$props.infestation);
+		};
+
+		return [
+			infestation,
+			isEditing,
+			input_input_handler,
+			click_handler,
+			textarea0_content_binding,
+			textarea1_content_binding,
+			click_handler_1
+		];
+	}
+
+	class Infestation extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$e, create_fragment$e, safe_not_equal, { infestation: 0 });
+		}
+	}
+
+	/* src\components\NanoPower.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$4(ctx) {
+		let button0;
+		let t0_value = /*nano*/ ctx[0].name + "";
+		let t0;
+		let t1;
+		let button1;
+		let t2_value = /*nano*/ ctx[0].used + "";
+		let t2;
+		let t3;
+		let button2;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				button1 = element("button");
+				t2 = text(t2_value);
+				t3 = space();
+				button2 = element("button");
+				button2.textContent = "Reset";
+				attr(button0, "class", "btn btn-light border text-left flex-grow-1");
+				attr(button1, "class", "btn btn-dark ml-1");
+				attr(button2, "class", "btn btn-light border ml-1");
+			},
+			m(target, anchor) {
+				insert(target, button0, anchor);
+				append(button0, t0);
+				insert(target, t1, anchor);
+				insert(target, button1, anchor);
+				append(button1, t2);
+				insert(target, t3, anchor);
+				insert(target, button2, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler_2*/ ctx[7]),
+						listen(button1, "click", /*handleUsed*/ ctx[2]),
+						listen(button2, "click", /*click_handler_3*/ ctx[8])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*nano*/ 1 && t0_value !== (t0_value = /*nano*/ ctx[0].name + "")) set_data(t0, t0_value);
+				if (dirty & /*nano*/ 1 && t2_value !== (t2_value = /*nano*/ ctx[0].used + "")) set_data(t2, t2_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(button0);
+					detach(t1);
+					detach(button1);
+					detach(t3);
+					detach(button2);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (18:4) {#if isEditing}
+	function create_if_block$5(ctx) {
+		let div3;
+		let div0;
+		let input;
+		let t0;
+		let button0;
+		let t2;
+		let button1;
+		let t3_value = /*nano*/ ctx[0].used + "";
+		let t3;
+		let t4;
+		let button2;
+		let t6;
+		let div1;
+		let textarea;
+		let updating_content;
+		let t7;
+		let span;
+		let t9;
+		let div2;
+		let infestation_1;
+		let current;
+		let mounted;
+		let dispose;
+
+		function textarea_content_binding(value) {
+			/*textarea_content_binding*/ ctx[6](value);
+		}
+
+		let textarea_props = {};
+
+		if (/*nano*/ ctx[0].description !== void 0) {
+			textarea_props.content = /*nano*/ ctx[0].description;
+		}
+
+		textarea = new TextArea({ props: textarea_props });
+		binding_callbacks.push(() => bind(textarea, 'content', textarea_content_binding));
+
+		infestation_1 = new Infestation({
+				props: { infestation: /*nano*/ ctx[0].infestation }
+			});
+
+		return {
+			c() {
+				div3 = element("div");
+				div0 = element("div");
+				input = element("input");
+				t0 = space();
+				button0 = element("button");
+				button0.textContent = "Close";
+				t2 = space();
+				button1 = element("button");
+				t3 = text(t3_value);
+				t4 = space();
+				button2 = element("button");
+				button2.textContent = "Reset";
+				t6 = space();
+				div1 = element("div");
+				create_component(textarea.$$.fragment);
+				t7 = space();
+				span = element("span");
+				span.textContent = "Linked Infestation";
+				t9 = space();
+				div2 = element("div");
+				create_component(infestation_1.$$.fragment);
+				attr(input, "class", "flex-grow-1 form-control");
+				attr(button0, "class", "btn btn-light border");
+				attr(button1, "class", "btn btn-dark ml-1");
+				attr(button2, "class", "btn btn-light border ml-1");
+				attr(div0, "class", "d-flex flex-grow-1");
+				attr(div1, "class", "d-flex");
+				attr(div2, "class", "pl-3");
+				attr(div3, "class", "d-flex flex-column flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div3, anchor);
+				append(div3, div0);
+				append(div0, input);
+				set_input_value(input, /*nano*/ ctx[0].name);
+				append(div0, t0);
+				append(div0, button0);
+				append(div0, t2);
+				append(div0, button1);
+				append(button1, t3);
+				append(div0, t4);
+				append(div0, button2);
+				append(div3, t6);
+				append(div3, div1);
+				mount_component(textarea, div1, null);
+				append(div3, t7);
+				append(div3, span);
+				append(div3, t9);
+				append(div3, div2);
+				mount_component(infestation_1, div2, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[3]),
+						listen(button0, "click", /*click_handler*/ ctx[4]),
+						listen(button1, "click", /*handleUsed*/ ctx[2]),
+						listen(button2, "click", /*click_handler_1*/ ctx[5])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*nano*/ 1 && input.value !== /*nano*/ ctx[0].name) {
+					set_input_value(input, /*nano*/ ctx[0].name);
+				}
+
+				if ((!current || dirty & /*nano*/ 1) && t3_value !== (t3_value = /*nano*/ ctx[0].used + "")) set_data(t3, t3_value);
+				const textarea_changes = {};
+
+				if (!updating_content && dirty & /*nano*/ 1) {
+					updating_content = true;
+					textarea_changes.content = /*nano*/ ctx[0].description;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textarea.$set(textarea_changes);
+				const infestation_1_changes = {};
+				if (dirty & /*nano*/ 1) infestation_1_changes.infestation = /*nano*/ ctx[0].infestation;
+				infestation_1.$set(infestation_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textarea.$$.fragment, local);
+				transition_in(infestation_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textarea.$$.fragment, local);
+				transition_out(infestation_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div3);
+				}
+
+				destroy_component(textarea);
+				destroy_component(infestation_1);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$d(ctx) {
+		let div;
+		let current_block_type_index;
+		let if_block;
+		let current;
+		const if_block_creators = [create_if_block$5, create_else_block$4];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				div = element("div");
+				if_block.c();
+				attr(div, "class", "d-flex flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				if_blocks[current_block_type_index].m(div, null);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if_blocks[current_block_type_index].d();
+			}
+		};
+	}
+
+	function instance$d($$self, $$props, $$invalidate) {
+		let { nano } = $$props;
+
+		function handleUsed(e) {
+			let value = e.shiftKey ? -1 : 1;
+			$$invalidate(0, nano.used += value, nano);
+			if (nano.used < 0) $$invalidate(0, nano.used = 0, nano);
+		}
+
+		let isEditing;
+
+		function input_input_handler() {
+			nano.name = this.value;
+			$$invalidate(0, nano);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+		const click_handler_1 = () => $$invalidate(0, nano.used = 0, nano);
+
+		function textarea_content_binding(value) {
+			if ($$self.$$.not_equal(nano.description, value)) {
+				nano.description = value;
+				$$invalidate(0, nano);
+			}
+		}
+
+		const click_handler_2 = () => $$invalidate(1, isEditing = true);
+		const click_handler_3 = () => $$invalidate(0, nano.used = 0, nano);
+
+		$$self.$$set = $$props => {
+			if ('nano' in $$props) $$invalidate(0, nano = $$props.nano);
+		};
+
+		return [
+			nano,
+			isEditing,
+			handleUsed,
+			input_input_handler,
+			click_handler,
+			click_handler_1,
+			textarea_content_binding,
+			click_handler_2,
+			click_handler_3
+		];
+	}
+
+	class NanoPower extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$d, create_fragment$d, safe_not_equal, { nano: 0 });
+		}
+	}
+
+	/* src\components\Nano.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$5(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[4] = list[i];
+		return child_ctx;
+	}
+
+	// (35:4) <ListItem item={n} {move} {remove}>
+	function create_default_slot$4(ctx) {
+		let nanopower;
+		let t;
+		let current;
+		nanopower = new NanoPower({ props: { nano: /*n*/ ctx[4] } });
+
+		return {
+			c() {
+				create_component(nanopower.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(nanopower, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const nanopower_changes = {};
+				if (dirty & /*model*/ 1) nanopower_changes.nano = /*n*/ ctx[4];
+				nanopower.$set(nanopower_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(nanopower.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(nanopower.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(nanopower, detaching);
+			}
+		};
+	}
+
+	// (34:0) {#each model.nano as n}
+	function create_each_block$5(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*n*/ ctx[4],
+					move: /*move*/ ctx[2],
+					remove: /*remove*/ ctx[3],
+					$$slots: { default: [create_default_slot$4] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*n*/ ctx[4];
+
+				if (dirty & /*$$scope, model*/ 129) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$c(ctx) {
+		let button;
+		let t1;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].nano);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				button = element("button");
+				button.textContent = "Add";
+				t1 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "btn btn-dark");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				insert(target, t1, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*add*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, move, remove*/ 13) {
+					each_value = ensure_array_like(/*model*/ ctx[0].nano);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$5(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$5(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+					detach(t1);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$c($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function add() {
+			model.nano.push(nano());
+			$$invalidate(0, model);
+		}
+
+		function move(n, item) {
+			let index = model.nano.indexOf(item);
+			model.nano.splice(index, 1);
+			index += n;
+			if (index < 0) index = model.nano.length; else if (index > model.nano.length) index = 0;
+			model.nano.splice(index, 0, item);
+			$$invalidate(0, model);
+		}
+
+		function remove(item) {
+			let index = model.nano.indexOf(item);
+			model.nano.splice(index, 1);
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [model, add, move, remove];
+	}
+
+	class Nano extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$c, create_fragment$c, safe_not_equal, { model: 0 });
+		}
+	}
+
+	const patch = (a, b) => {
+	    for(let key in b) {
+	        if(!a[key]) a[key] = b[key];
+	        if(typeof(a[key]) == 'object') {
+	            patch(a[key], b[key]);
+	        }
+	    }
+	};
+
+	var actions = {
+	    delete: (model) => {
+	        if(!confirm(`Delete ${model.name}?`)) return;
+
+	        localStorage.removeItem(model.name);
+	        return { success: `${model.name} deleted from character storage` };
+	    },
+	    deleteAll: () => {
+	        if(!confirm('Delete all saved characters?')) return;
+
+	        localStorage.clear();
+	        return { success: 'All characters deleted from character storage' };
+	    },
+	    export: (model) => {
+	        let href = URL.createObjectURL(new Blob([JSON.stringify(model)]));
+	        let a = document.createElement('a');
+	        a.href = href;
+	        a.download = `${model.name}.cybrg`;
+	        a.click();
+	    },
+	    import: (done) => {
+	        let file = document.createElement('input');
+	        file.type = 'file';
+	        file.accept = '.cybrg';
+	        file.onchange = (e) => {
+	            e.target.files[0].text().then((t) => {
+	                let key = JSON.parse(t).name;
+	                localStorage.setItem(key, t);
+	                done(`${key} added to character storage`);
+	            });
+	        };
+	        file.click();
+	    },
+	    load: (model, key) => {
+	        let name = key;
+	        if(name == `${model.name}.cybrg`) return { model };
+
+	        let alert = '';
+	        if(model.name && confirm(`Save ${model.name} before changing characters?`)) {
+	            localStorage.setItem(model.name, JSON.stringify(model));
+	            alert += `${model.name} saved, `;
+	        }
+
+	        model = JSON.parse(localStorage.getItem(name));
+	        
+	        patch(model, character());
+	        return { model, alert: { success: `${alert}${model.name} opened` }};
+	    },
+	    loadList: () => {
+	        let characters = [...new Array(window.localStorage.length)].map((x,i) => window.localStorage.key(i));
+	        characters = characters.filter(c => c.endsWith('.cybrg'));
+	        characters.sort((a,b) => a.localeCompare(b));
+	        return characters;
+	    },
+	    save: (model) => {
+	        if(!model.name)
+	            return { error: 'Cannot save an unnamed character' };
+
+	        localStorage.setItem(`${model.name}.cybrg`, JSON.stringify(model));
+	        return { success: `${model.name} saved` };
+	    }
+	};
+
+	/* src\components\Navbar.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$4(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[27] = list[i];
+		return child_ctx;
+	}
+
+	// (101:20) {#each characters as character}
+	function create_each_block$4(ctx) {
+		let button;
+		let t_value = /*character*/ ctx[27] + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		function click_handler_1() {
+			return /*click_handler_1*/ ctx[16](/*character*/ ctx[27]);
+		}
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "dropdown-item");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = [
+						listen(button, "blur", /*clearMenu*/ ctx[6]),
+						listen(button, "click", click_handler_1)
+					];
+
+					mounted = true;
+				}
+			},
+			p(new_ctx, dirty) {
+				ctx = new_ctx;
+				if (dirty & /*characters*/ 4 && t_value !== (t_value = /*character*/ ctx[27] + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (126:23) 
+	function create_if_block_1$1(ctx) {
+		let button;
+		let strong;
+		let t_value = /*alert*/ ctx[3].error + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				strong = element("strong");
+				t = text(t_value);
+				attr(button, "class", "alert alert-static alert-danger btn text-center w-100");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, strong);
+				append(strong, t);
+				/*button_binding_1*/ ctx[22](button);
+
+				if (!mounted) {
+					dispose = [
+						listen(button, "blur", /*blur_handler_1*/ ctx[23]),
+						listen(button, "click", /*click_handler_5*/ ctx[24])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*alert*/ 8 && t_value !== (t_value = /*alert*/ ctx[3].error + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				/*button_binding_1*/ ctx[22](null);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (122:0) {#if alert?.success}
+	function create_if_block$4(ctx) {
+		let button;
+		let strong;
+		let t_value = /*alert*/ ctx[3].success + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				strong = element("strong");
+				t = text(t_value);
+				attr(button, "class", "alert alert-static alert-success btn text-center w-100");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, strong);
+				append(strong, t);
+				/*button_binding*/ ctx[19](button);
+
+				if (!mounted) {
+					dispose = [
+						listen(button, "blur", /*blur_handler*/ ctx[20]),
+						listen(button, "click", /*click_handler_4*/ ctx[21])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*alert*/ 8 && t_value !== (t_value = /*alert*/ ctx[3].success + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				/*button_binding*/ ctx[19](null);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$b(ctx) {
+		let nav;
+		let button0;
+		let t0;
+		let div4;
+		let ul;
+		let li;
+		let a;
+		let t2;
+		let div0;
+		let div0_style_value;
+		let t3;
+		let div3;
+		let div2;
+		let button1;
+		let t5;
+		let div1;
+		let button2;
+		let t7;
+		let button3;
+		let t9;
+		let button4;
+		let t11;
+		let button5;
+		let t13;
+		let button6;
+		let t15;
+		let button7;
+		let div1_style_value;
+		let t18;
+		let if_block_anchor;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*characters*/ ctx[2]);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+		}
+
+		function select_block_type(ctx, dirty) {
+			if (/*alert*/ ctx[3]?.success) return create_if_block$4;
+			if (/*alert*/ ctx[3]?.error) return create_if_block_1$1;
+		}
+
+		let current_block_type = select_block_type(ctx);
+		let if_block = current_block_type && current_block_type(ctx);
+
+		return {
+			c() {
+				nav = element("nav");
+				button0 = element("button");
+				button0.innerHTML = `<span class="navbar-toggler-icon"></span>`;
+				t0 = space();
+				div4 = element("div");
+				ul = element("ul");
+				li = element("li");
+				a = element("a");
+				a.textContent = "Characters";
+				t2 = space();
+				div0 = element("div");
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				t3 = space();
+				div3 = element("div");
+				div2 = element("div");
+				button1 = element("button");
+				button1.textContent = "Options";
+				t5 = space();
+				div1 = element("div");
+				button2 = element("button");
+				button2.textContent = "Save";
+				t7 = space();
+				button3 = element("button");
+				button3.textContent = "Export";
+				t9 = space();
+				button4 = element("button");
+				button4.textContent = "Import";
+				t11 = space();
+				button5 = element("button");
+				button5.textContent = "Delete";
+				t13 = space();
+				button6 = element("button");
+				button6.textContent = "Delete all";
+				t15 = space();
+				button7 = element("button");
+				button7.textContent = `${theme == 'dark' ? 'Light' : 'Dark'} mode`;
+				t18 = space();
+				if (if_block) if_block.c();
+				if_block_anchor = empty();
+				attr(button0, "class", "navbar-toggler");
+				attr(button0, "type", "button");
+				attr(a, "href", "#");
+				attr(a, "class", "nav-link dropdown-toggle");
+				toggle_class(a, "disabled", !/*characters*/ ctx[2].length);
+				attr(div0, "class", "dropdown-menu");
+				attr(div0, "style", div0_style_value = `display: ${/*menu*/ ctx[1] == 'characters' ? 'block' : 'none'}`);
+				attr(li, "class", "nav-item dropdown");
+				attr(ul, "class", "navbar-nav mr-auto");
+				attr(button1, "href", "#");
+				attr(button1, "class", "dropdown-toggle btn btn-light border border-dark");
+				attr(button2, "class", "dropdown-item");
+				attr(button3, "class", "dropdown-item");
+				attr(button4, "class", "dropdown-item");
+				attr(button5, "class", "dropdown-item");
+				attr(button6, "class", "dropdown-item");
+				attr(button7, "class", "dropdown-item");
+				attr(div1, "class", "dropdown-menu");
+				attr(div1, "style", div1_style_value = `display: ${/*menu*/ ctx[1] == 'options' ? 'block' : 'none'}`);
+				attr(div2, "class", "nav-item dropdown");
+				attr(div3, "class", "navbar-nav");
+				attr(div4, "class", "collapse navbar-collapse");
+				set_style(div4, "display", /*navDisplay*/ ctx[0]);
+				attr(nav, "class", "navbar navbar-expand-md navbar-light bg-light");
+			},
+			m(target, anchor) {
+				insert(target, nav, anchor);
+				append(nav, button0);
+				append(nav, t0);
+				append(nav, div4);
+				append(div4, ul);
+				append(ul, li);
+				append(li, a);
+				append(li, t2);
+				append(li, div0);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				append(div4, t3);
+				append(div4, div3);
+				append(div3, div2);
+				append(div2, button1);
+				append(div2, t5);
+				append(div2, div1);
+				append(div1, button2);
+				append(div1, t7);
+				append(div1, button3);
+				append(div1, t9);
+				append(div1, button4);
+				append(div1, t11);
+				append(div1, button5);
+				append(div1, t13);
+				append(div1, button6);
+				append(div1, t15);
+				append(div1, button7);
+				insert(target, t18, anchor);
+				if (if_block) if_block.m(target, anchor);
+				insert(target, if_block_anchor, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*toggleNav*/ ctx[12]),
+						listen(a, "blur", /*clearMenu*/ ctx[6]),
+						listen(a, "click", /*click_handler*/ ctx[15]),
+						listen(button1, "blur", /*clearMenu*/ ctx[6]),
+						listen(button1, "click", /*click_handler_2*/ ctx[17]),
+						listen(button2, "click", /*saveClick*/ ctx[10]),
+						listen(button2, "blur", /*clearMenu*/ ctx[6]),
+						listen(button3, "click", /*exportClick*/ ctx[9]),
+						listen(button3, "blur", /*clearMenu*/ ctx[6]),
+						listen(button4, "click", /*importClick*/ ctx[13]),
+						listen(button4, "blur", /*clearMenu*/ ctx[6]),
+						listen(button5, "click", /*deleteClick*/ ctx[7]),
+						listen(button5, "blur", /*clearMenu*/ ctx[6]),
+						listen(button6, "click", /*deleteAllClick*/ ctx[8]),
+						listen(button6, "blur", /*clearMenu*/ ctx[6]),
+						listen(button7, "click", /*click_handler_3*/ ctx[18])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*characters*/ 4) {
+					toggle_class(a, "disabled", !/*characters*/ ctx[2].length);
+				}
+
+				if (dirty & /*clearMenu, changeCharacter, characters*/ 100) {
+					each_value = ensure_array_like(/*characters*/ ctx[2]);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$4(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+						} else {
+							each_blocks[i] = create_each_block$4(child_ctx);
+							each_blocks[i].c();
+							each_blocks[i].m(div0, null);
+						}
+					}
+
+					for (; i < each_blocks.length; i += 1) {
+						each_blocks[i].d(1);
+					}
+
+					each_blocks.length = each_value.length;
+				}
+
+				if (dirty & /*menu*/ 2 && div0_style_value !== (div0_style_value = `display: ${/*menu*/ ctx[1] == 'characters' ? 'block' : 'none'}`)) {
+					attr(div0, "style", div0_style_value);
+				}
+
+				if (dirty & /*menu*/ 2 && div1_style_value !== (div1_style_value = `display: ${/*menu*/ ctx[1] == 'options' ? 'block' : 'none'}`)) {
+					attr(div1, "style", div1_style_value);
+				}
+
+				if (dirty & /*navDisplay*/ 1) {
+					set_style(div4, "display", /*navDisplay*/ ctx[0]);
+				}
+
+				if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if (if_block) if_block.d(1);
+					if_block = current_block_type && current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(if_block_anchor.parentNode, if_block_anchor);
+					}
+				}
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(nav);
+					detach(t18);
+					detach(if_block_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+
+				if (if_block) {
+					if_block.d(detaching);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	const autosaveInterval = 10000; // 10s
+
+	function instance$b($$self, $$props, $$invalidate) {
+		let { model = character() } = $$props;
+		let navDisplay = 'none';
+		let menu = '';
+		let characters = [];
+		let alert;
+		let dismiss;
+
+		function changeCharacter(character) {
+			let result = actions.load(model, character);
+			$$invalidate(14, model = result.model);
+			$$invalidate(3, alert = result.alert);
+			toggleNav();
+		}
+
+		function clearMenu(e) {
+			if (e.relatedTarget?.className.includes('dropdown-item')) return;
+			$$invalidate(1, menu = '');
+		}
+
+		function deleteClick() {
+			$$invalidate(3, alert = actions.delete(model));
+			loadCharacterList();
+			toggleNav();
+		}
+
+		function deleteAllClick() {
+			$$invalidate(3, alert = actions.deleteAll());
+			loadCharacterList();
+			toggleNav();
+		}
+
+		function exportClick() {
+			actions.export(model);
+			toggleNav();
+		}
+
+		function loadCharacterList() {
+			$$invalidate(2, characters = actions.loadList());
+		}
+
+		function saveClick() {
+			$$invalidate(3, alert = actions.save(model));
+			$$invalidate(2, characters = actions.loadList());
+			toggleNav();
+		}
+
+		function setMenu(item) {
+			$$invalidate(1, menu = item);
+		}
+
+		function toggleNav() {
+			$$invalidate(0, navDisplay = navDisplay == 'none' ? 'block' : 'none');
+		}
+
+		function importClick() {
+			actions.import(msg => {
+				$$invalidate(3, alert = { success: msg });
+				$$invalidate(2, characters = actions.loadList());
+			});
+
+			toggleNav();
+		}
+
+		loadCharacterList();
+
+		let autoSave = window.setInterval(
+			() => {
+				console.log(`Autosave (${model.name})`);
+				let saved = characters.find(x => x == model.name) != null;
+				if (saved) actions.save(model);
+			},
+			autosaveInterval
+		);
+
+		afterUpdate(() => {
+			if (dismiss) dismiss.focus();
+		});
+
+		onDestroy(() => {
+			clearInterval(autoSave);
+		});
+
+		const click_handler = () => setMenu('characters');
+		const click_handler_1 = character => changeCharacter(character);
+		const click_handler_2 = () => setMenu('options');
+		const click_handler_3 = () => setTheme(theme == 'dark' ? 'light' : 'dark');
+
+		function button_binding($$value) {
+			binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+				dismiss = $$value;
+				$$invalidate(4, dismiss);
+			});
+		}
+
+		const blur_handler = () => $$invalidate(3, alert = null);
+		const click_handler_4 = () => $$invalidate(3, alert = null);
+
+		function button_binding_1($$value) {
+			binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+				dismiss = $$value;
+				$$invalidate(4, dismiss);
+			});
+		}
+
+		const blur_handler_1 = () => $$invalidate(3, alert = null);
+		const click_handler_5 = () => $$invalidate(3, alert = null);
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(14, model = $$props.model);
+		};
+
+		return [
+			navDisplay,
+			menu,
+			characters,
+			alert,
+			dismiss,
+			changeCharacter,
+			clearMenu,
+			deleteClick,
+			deleteAllClick,
+			exportClick,
+			saveClick,
+			setMenu,
+			toggleNav,
+			importClick,
+			model,
+			click_handler,
+			click_handler_1,
+			click_handler_2,
+			click_handler_3,
+			button_binding,
+			blur_handler,
+			click_handler_4,
+			button_binding_1,
+			blur_handler_1,
+			click_handler_5
+		];
+	}
+
+	class Navbar extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$b, create_fragment$b, safe_not_equal, { model: 14 });
+		}
+	}
+
+	/* src\components\Ability.svelte generated by Svelte v4.2.19 */
+
+	function create_fragment$a(ctx) {
+		let div;
+		let h4;
+		let button;
+		let t0;
+		let t1;
+		let span;
+		let current;
+		let mounted;
+		let dispose;
+		const default_slot_template = /*#slots*/ ctx[4].default;
+		const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
+
+		return {
+			c() {
+				div = element("div");
+				h4 = element("h4");
+				button = element("button");
+				t0 = text(/*scoreText*/ ctx[0]);
+				t1 = space();
+				span = element("span");
+				if (default_slot) default_slot.c();
+				attr(button, "class", "btn btn-dark badge");
+				set_style(button, "width", "2.0em");
+				attr(span, "class", "align-self-center ml-1");
+				attr(div, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, h4);
+				append(h4, button);
+				append(button, t0);
+				append(div, t1);
+				append(div, span);
+
+				if (default_slot) {
+					default_slot.m(span, null);
+				}
+
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*handleClick*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (!current || dirty & /*scoreText*/ 1) set_data(t0, /*scoreText*/ ctx[0]);
+
+				if (default_slot) {
+					if (default_slot.p && (!current || dirty & /*$$scope*/ 8)) {
+						update_slot_base(
+							default_slot,
+							default_slot_template,
+							ctx,
+							/*$$scope*/ ctx[3],
+							!current
+							? get_all_dirty_from_scope(/*$$scope*/ ctx[3])
+							: get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null),
+							null
+						);
+					}
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(default_slot, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(default_slot, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if (default_slot) default_slot.d(detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$a($$self, $$props, $$invalidate) {
+		let scoreText;
+		let { $$slots: slots = {}, $$scope } = $$props;
+		let { score } = $$props;
+
+		function handleClick(e) {
+			$$invalidate(2, score += e.shiftKey ? -1 : 1);
+			if (score < -3) $$invalidate(2, score = 3);
+			if (score > 3) $$invalidate(2, score = -3);
+		}
+
+		$$self.$$set = $$props => {
+			if ('score' in $$props) $$invalidate(2, score = $$props.score);
+			if ('$$scope' in $$props) $$invalidate(3, $$scope = $$props.$$scope);
+		};
+
+		$$self.$$.update = () => {
+			if ($$self.$$.dirty & /*score*/ 4) {
+				$$invalidate(0, scoreText = score > 0 ? `+${score}` : `${score}`);
+			}
+		};
+
+		return [scoreText, handleClick, score, $$scope, slots];
+	}
+
+	class Ability extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$a, create_fragment$a, safe_not_equal, { score: 2 });
+		}
+	}
+
+	/* src\components\Abilities.svelte generated by Svelte v4.2.19 */
+
+	function create_default_slot_4$1(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Strength");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (8:0) <Ability bind:score={model.abilities.agility}>
+	function create_default_slot_3$1(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Agility");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (9:0) <Ability bind:score={model.abilities.presence}>
+	function create_default_slot_2$1(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Presence");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (10:0) <Ability bind:score={model.abilities.toughness}>
+	function create_default_slot_1$1(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Toughness");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	// (11:0) <Ability bind:score={model.abilities.knowledge}>
+	function create_default_slot$3(ctx) {
+		let t;
+
+		return {
+			c() {
+				t = text("Knowledge");
+			},
+			m(target, anchor) {
+				insert(target, t, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	function create_fragment$9(ctx) {
+		let ability0;
+		let updating_score;
+		let t0;
+		let ability1;
+		let updating_score_1;
+		let t1;
+		let ability2;
+		let updating_score_2;
+		let t2;
+		let ability3;
+		let updating_score_3;
+		let t3;
+		let ability4;
+		let updating_score_4;
+		let current;
+
+		function ability0_score_binding(value) {
+			/*ability0_score_binding*/ ctx[1](value);
+		}
+
+		let ability0_props = {
+			$$slots: { default: [create_default_slot_4$1] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].abilities.strength !== void 0) {
+			ability0_props.score = /*model*/ ctx[0].abilities.strength;
+		}
+
+		ability0 = new Ability({ props: ability0_props });
+		binding_callbacks.push(() => bind(ability0, 'score', ability0_score_binding));
+
+		function ability1_score_binding(value) {
+			/*ability1_score_binding*/ ctx[2](value);
+		}
+
+		let ability1_props = {
+			$$slots: { default: [create_default_slot_3$1] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].abilities.agility !== void 0) {
+			ability1_props.score = /*model*/ ctx[0].abilities.agility;
+		}
+
+		ability1 = new Ability({ props: ability1_props });
+		binding_callbacks.push(() => bind(ability1, 'score', ability1_score_binding));
+
+		function ability2_score_binding(value) {
+			/*ability2_score_binding*/ ctx[3](value);
+		}
+
+		let ability2_props = {
+			$$slots: { default: [create_default_slot_2$1] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].abilities.presence !== void 0) {
+			ability2_props.score = /*model*/ ctx[0].abilities.presence;
+		}
+
+		ability2 = new Ability({ props: ability2_props });
+		binding_callbacks.push(() => bind(ability2, 'score', ability2_score_binding));
+
+		function ability3_score_binding(value) {
+			/*ability3_score_binding*/ ctx[4](value);
+		}
+
+		let ability3_props = {
+			$$slots: { default: [create_default_slot_1$1] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].abilities.toughness !== void 0) {
+			ability3_props.score = /*model*/ ctx[0].abilities.toughness;
+		}
+
+		ability3 = new Ability({ props: ability3_props });
+		binding_callbacks.push(() => bind(ability3, 'score', ability3_score_binding));
+
+		function ability4_score_binding(value) {
+			/*ability4_score_binding*/ ctx[5](value);
+		}
+
+		let ability4_props = {
+			$$slots: { default: [create_default_slot$3] },
+			$$scope: { ctx }
+		};
+
+		if (/*model*/ ctx[0].abilities.knowledge !== void 0) {
+			ability4_props.score = /*model*/ ctx[0].abilities.knowledge;
+		}
+
+		ability4 = new Ability({ props: ability4_props });
+		binding_callbacks.push(() => bind(ability4, 'score', ability4_score_binding));
+
+		return {
+			c() {
+				create_component(ability0.$$.fragment);
+				t0 = space();
+				create_component(ability1.$$.fragment);
+				t1 = space();
+				create_component(ability2.$$.fragment);
+				t2 = space();
+				create_component(ability3.$$.fragment);
+				t3 = space();
+				create_component(ability4.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(ability0, target, anchor);
+				insert(target, t0, anchor);
+				mount_component(ability1, target, anchor);
+				insert(target, t1, anchor);
+				mount_component(ability2, target, anchor);
+				insert(target, t2, anchor);
+				mount_component(ability3, target, anchor);
+				insert(target, t3, anchor);
+				mount_component(ability4, target, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				const ability0_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					ability0_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_score && dirty & /*model*/ 1) {
+					updating_score = true;
+					ability0_changes.score = /*model*/ ctx[0].abilities.strength;
+					add_flush_callback(() => updating_score = false);
+				}
+
+				ability0.$set(ability0_changes);
+				const ability1_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					ability1_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_score_1 && dirty & /*model*/ 1) {
+					updating_score_1 = true;
+					ability1_changes.score = /*model*/ ctx[0].abilities.agility;
+					add_flush_callback(() => updating_score_1 = false);
+				}
+
+				ability1.$set(ability1_changes);
+				const ability2_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					ability2_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_score_2 && dirty & /*model*/ 1) {
+					updating_score_2 = true;
+					ability2_changes.score = /*model*/ ctx[0].abilities.presence;
+					add_flush_callback(() => updating_score_2 = false);
+				}
+
+				ability2.$set(ability2_changes);
+				const ability3_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					ability3_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_score_3 && dirty & /*model*/ 1) {
+					updating_score_3 = true;
+					ability3_changes.score = /*model*/ ctx[0].abilities.toughness;
+					add_flush_callback(() => updating_score_3 = false);
+				}
+
+				ability3.$set(ability3_changes);
+				const ability4_changes = {};
+
+				if (dirty & /*$$scope*/ 64) {
+					ability4_changes.$$scope = { dirty, ctx };
+				}
+
+				if (!updating_score_4 && dirty & /*model*/ 1) {
+					updating_score_4 = true;
+					ability4_changes.score = /*model*/ ctx[0].abilities.knowledge;
+					add_flush_callback(() => updating_score_4 = false);
+				}
+
+				ability4.$set(ability4_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(ability0.$$.fragment, local);
+				transition_in(ability1.$$.fragment, local);
+				transition_in(ability2.$$.fragment, local);
+				transition_in(ability3.$$.fragment, local);
+				transition_in(ability4.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(ability0.$$.fragment, local);
+				transition_out(ability1.$$.fragment, local);
+				transition_out(ability2.$$.fragment, local);
+				transition_out(ability3.$$.fragment, local);
+				transition_out(ability4.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t0);
+					detach(t1);
+					detach(t2);
+					detach(t3);
+				}
+
+				destroy_component(ability0, detaching);
+				destroy_component(ability1, detaching);
+				destroy_component(ability2, detaching);
+				destroy_component(ability3, detaching);
+				destroy_component(ability4, detaching);
+			}
+		};
+	}
+
+	function instance$9($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function ability0_score_binding(value) {
+			if ($$self.$$.not_equal(model.abilities.strength, value)) {
+				model.abilities.strength = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function ability1_score_binding(value) {
+			if ($$self.$$.not_equal(model.abilities.agility, value)) {
+				model.abilities.agility = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function ability2_score_binding(value) {
+			if ($$self.$$.not_equal(model.abilities.presence, value)) {
+				model.abilities.presence = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function ability3_score_binding(value) {
+			if ($$self.$$.not_equal(model.abilities.toughness, value)) {
+				model.abilities.toughness = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		function ability4_score_binding(value) {
+			if ($$self.$$.not_equal(model.abilities.knowledge, value)) {
+				model.abilities.knowledge = value;
+				$$invalidate(0, model);
+			}
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [
+			model,
+			ability0_score_binding,
+			ability1_score_binding,
+			ability2_score_binding,
+			ability3_score_binding,
+			ability4_score_binding
+		];
+	}
+
+	class Abilities extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$9, create_fragment$9, safe_not_equal, { model: 0 });
+		}
+	}
+
+	/* src\components\Glitches.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$3(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[9] = list[i];
+		return child_ctx;
+	}
+
+	// (28:4) {:else}
+	function create_else_block$3(ctx) {
+		let button;
+		let t_value = /*glitches*/ ctx[0].die + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "btn btn-light border ml-1");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_1*/ ctx[6]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*glitches*/ 1 && t_value !== (t_value = /*glitches*/ ctx[0].die + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (19:4) {#if isEditing}
+	function create_if_block$3(ctx) {
+		let div;
+		let select;
+		let t0;
+		let button;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*dice*/ ctx[2]);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+		}
+
+		return {
+			c() {
+				div = element("div");
+				select = element("select");
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				t0 = space();
+				button = element("button");
+				button.textContent = "Close";
+				attr(select, "class", "form-control");
+				if (/*glitches*/ ctx[0].die === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
+				attr(div, "class", "ml-1");
+				attr(button, "class", "btn btn-light border ml-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, select);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(select, null);
+					}
+				}
+
+				select_option(select, /*glitches*/ ctx[0].die, true);
+				insert(target, t0, anchor);
+				insert(target, button, anchor);
+
+				if (!mounted) {
+					dispose = [
+						listen(select, "change", /*select_change_handler*/ ctx[4]),
+						listen(button, "click", /*click_handler*/ ctx[5])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*dice*/ 4) {
+					each_value = ensure_array_like(/*dice*/ ctx[2]);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$3(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+						} else {
+							each_blocks[i] = create_each_block$3(child_ctx);
+							each_blocks[i].c();
+							each_blocks[i].m(select, null);
+						}
+					}
+
+					for (; i < each_blocks.length; i += 1) {
+						each_blocks[i].d(1);
+					}
+
+					each_blocks.length = each_value.length;
+				}
+
+				if (dirty & /*glitches, dice*/ 5) {
+					select_option(select, /*glitches*/ ctx[0].die);
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+					detach(t0);
+					detach(button);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (22:16) {#each dice as d}
+	function create_each_block$3(ctx) {
+		let option;
+		let t_value = /*d*/ ctx[9] + "";
+		let t;
+
+		return {
+			c() {
+				option = element("option");
+				t = text(t_value);
+				option.__value = /*d*/ ctx[9];
+				set_input_value(option, option.__value);
+			},
+			m(target, anchor) {
+				insert(target, option, anchor);
+				append(option, t);
+			},
+			p: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(option);
+				}
+			}
+		};
+	}
+
+	function create_fragment$8(ctx) {
+		let div1;
+		let button0;
+		let t0_value = /*glitches*/ ctx[0].current + "";
+		let t0;
+		let t1;
+		let span0;
+		let t3;
+		let span1;
+		let t5;
+		let t6;
+		let div0;
+		let button1;
+		let t8;
+		let button2;
+		let mounted;
+		let dispose;
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return create_if_block$3;
+			return create_else_block$3;
+		}
+
+		let current_block_type = select_block_type(ctx);
+		let if_block = current_block_type(ctx);
+
+		return {
+			c() {
+				div1 = element("div");
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				span0 = element("span");
+				span0.textContent = "Glitches";
+				t3 = space();
+				span1 = element("span");
+				span1.textContent = "Die";
+				t5 = space();
+				if_block.c();
+				t6 = space();
+				div0 = element("div");
+				button1 = element("button");
+				button1.textContent = "+";
+				t8 = space();
+				button2 = element("button");
+				button2.textContent = "-";
+				attr(button0, "class", "btn btn-dark");
+				attr(span0, "class", "align-self-center ml-1");
+				attr(span1, "class", "align-self-center ml-auto");
+				attr(button1, "class", "btn btn-dark");
+				attr(button2, "class", "btn btn-dark");
+				attr(div0, "class", "btn-group ml-1");
+				attr(div1, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div1, anchor);
+				append(div1, button0);
+				append(button0, t0);
+				append(div1, t1);
+				append(div1, span0);
+				append(div1, t3);
+				append(div1, span1);
+				append(div1, t5);
+				if_block.m(div1, null);
+				append(div1, t6);
+				append(div1, div0);
+				append(div0, button1);
+				append(div0, t8);
+				append(div0, button2);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*handleClick*/ ctx[3]),
+						listen(button1, "click", /*click_handler_2*/ ctx[7]),
+						listen(button2, "click", /*click_handler_3*/ ctx[8])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*glitches*/ 1 && t0_value !== (t0_value = /*glitches*/ ctx[0].current + "")) set_data(t0, t0_value);
+
+				if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block.d(1);
+					if_block = current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(div1, t6);
+					}
+				}
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(div1);
+				}
+
+				if_block.d();
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function instance$8($$self, $$props, $$invalidate) {
+		let { glitches } = $$props;
+		const dice = ['d2', 'd3', 'd4'];
+
+		function handleClick(e) {
+			let value = e.shiftKey ? 1 : -1;
+			$$invalidate(0, glitches.current += value, glitches);
+			if (glitches.current < 0) $$invalidate(0, glitches.current = 0, glitches);
+		}
+
+		let isEditing = false;
+
+		function select_change_handler() {
+			glitches.die = select_value(this);
+			$$invalidate(0, glitches);
+			$$invalidate(2, dice);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+		const click_handler_2 = () => handleClick({ shiftKey: true });
+		const click_handler_3 = () => handleClick({ shiftKey: false });
+
+		$$self.$$set = $$props => {
+			if ('glitches' in $$props) $$invalidate(0, glitches = $$props.glitches);
+		};
+
+		return [
+			glitches,
+			isEditing,
+			dice,
+			handleClick,
+			select_change_handler,
+			click_handler,
+			click_handler_1,
+			click_handler_2,
+			click_handler_3
+		];
+	}
+
+	class Glitches extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$8, create_fragment$8, safe_not_equal, { glitches: 0 });
+		}
+	}
+
+	/* src\components\HitPoints.svelte generated by Svelte v4.2.19 */
+
+	function create_fragment$7(ctx) {
+		let div2;
+		let h30;
+		let button0;
+		let t0_value = /*hp*/ ctx[0].current + "";
+		let t0;
+		let t1;
+		let span0;
+		let t3;
+		let h31;
+		let button1;
+		let t4_value = /*hp*/ ctx[0].max + "";
+		let t4;
+		let t5;
+		let span1;
+		let t7;
+		let div0;
+		let button2;
+		let t9;
+		let button3;
+		let t11;
+		let div1;
+		let button4;
+		let t13;
+		let button5;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				div2 = element("div");
+				h30 = element("h3");
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				span0 = element("span");
+				span0.textContent = "/";
+				t3 = space();
+				h31 = element("h3");
+				button1 = element("button");
+				t4 = text(t4_value);
+				t5 = space();
+				span1 = element("span");
+				span1.textContent = "Hit Points";
+				t7 = space();
+				div0 = element("div");
+				button2 = element("button");
+				button2.textContent = "+";
+				t9 = space();
+				button3 = element("button");
+				button3.textContent = "-";
+				t11 = space();
+				div1 = element("div");
+				button4 = element("button");
+				button4.textContent = "+max";
+				t13 = space();
+				button5 = element("button");
+				button5.textContent = "-max";
+				attr(button0, "class", "btn-dark badge");
+				attr(span0, "class", "ml-2 mr-2 align-self-center");
+				attr(button1, "class", "btn-dark badge");
+				attr(span1, "class", "ml-2 align-self-center");
+				attr(button2, "class", "btn btn-dark align-self-center");
+				attr(button3, "class", "btn btn-dark align-self-center");
+				attr(div0, "class", "btn-group ml-auto");
+				attr(button4, "class", "btn btn-dark align-self-center");
+				attr(button5, "class", "btn btn-dark align-self-center");
+				attr(div1, "class", "btn-group ml-1");
+				attr(div2, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div2, anchor);
+				append(div2, h30);
+				append(h30, button0);
+				append(button0, t0);
+				append(div2, t1);
+				append(div2, span0);
+				append(div2, t3);
+				append(div2, h31);
+				append(h31, button1);
+				append(button1, t4);
+				append(div2, t5);
+				append(div2, span1);
+				append(div2, t7);
+				append(div2, div0);
+				append(div0, button2);
+				append(div0, t9);
+				append(div0, button3);
+				append(div2, t11);
+				append(div2, div1);
+				append(div1, button4);
+				append(div1, t13);
+				append(div1, button5);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*handleCurrent*/ ctx[1]),
+						listen(button1, "click", /*handleMax*/ ctx[2]),
+						listen(button2, "click", /*click_handler*/ ctx[3]),
+						listen(button3, "click", /*click_handler_1*/ ctx[4]),
+						listen(button4, "click", /*click_handler_2*/ ctx[5]),
+						listen(button5, "click", /*click_handler_3*/ ctx[6])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*hp*/ 1 && t0_value !== (t0_value = /*hp*/ ctx[0].current + "")) set_data(t0, t0_value);
+				if (dirty & /*hp*/ 1 && t4_value !== (t4_value = /*hp*/ ctx[0].max + "")) set_data(t4, t4_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(div2);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function instance$7($$self, $$props, $$invalidate) {
+		let { hp } = $$props;
+
+		function handleCurrent(e) {
+			$$invalidate(0, hp.current += e.shiftKey ? 1 : -1, hp);
+		}
+
+		function handleMax(e) {
+			$$invalidate(0, hp.max += e.shiftKey ? -1 : 1, hp);
+		}
+
+		const click_handler = () => handleCurrent({ shiftKey: true });
+		const click_handler_1 = () => handleCurrent({ shiftKey: false });
+		const click_handler_2 = () => handleMax({ shiftKey: false });
+		const click_handler_3 = () => handleMax({ shiftKey: true });
+
+		$$self.$$set = $$props => {
+			if ('hp' in $$props) $$invalidate(0, hp = $$props.hp);
+		};
+
+		return [
+			hp,
+			handleCurrent,
+			handleMax,
+			click_handler,
+			click_handler_1,
+			click_handler_2,
+			click_handler_3
+		];
+	}
+
+	class HitPoints extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$7, create_fragment$7, safe_not_equal, { hp: 0 });
+		}
+	}
+
+	/* src\components\Status.svelte generated by Svelte v4.2.19 */
+
+	function create_fragment$6(ctx) {
+		let hitpoints;
+		let t0;
+		let glitches;
+		let t1;
+		let hr;
+		let t2;
+		let abilities;
+		let current;
+		hitpoints = new HitPoints({ props: { hp: /*model*/ ctx[0].hp } });
+
+		glitches = new Glitches({
+				props: { glitches: /*model*/ ctx[0].glitches }
+			});
+
+		abilities = new Abilities({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(hitpoints.$$.fragment);
+				t0 = space();
+				create_component(glitches.$$.fragment);
+				t1 = space();
+				hr = element("hr");
+				t2 = space();
+				create_component(abilities.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(hitpoints, target, anchor);
+				insert(target, t0, anchor);
+				mount_component(glitches, target, anchor);
+				insert(target, t1, anchor);
+				insert(target, hr, anchor);
+				insert(target, t2, anchor);
+				mount_component(abilities, target, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				const hitpoints_changes = {};
+				if (dirty & /*model*/ 1) hitpoints_changes.hp = /*model*/ ctx[0].hp;
+				hitpoints.$set(hitpoints_changes);
+				const glitches_changes = {};
+				if (dirty & /*model*/ 1) glitches_changes.glitches = /*model*/ ctx[0].glitches;
+				glitches.$set(glitches_changes);
+				const abilities_changes = {};
+				if (dirty & /*model*/ 1) abilities_changes.model = /*model*/ ctx[0];
+				abilities.$set(abilities_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(hitpoints.$$.fragment, local);
+				transition_in(glitches.$$.fragment, local);
+				transition_in(abilities.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(hitpoints.$$.fragment, local);
+				transition_out(glitches.$$.fragment, local);
+				transition_out(abilities.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t0);
+					detach(t1);
+					detach(hr);
+					detach(t2);
+				}
+
+				destroy_component(hitpoints, detaching);
+				destroy_component(glitches, detaching);
+				destroy_component(abilities, detaching);
+			}
+		};
+	}
+
+	function instance$6($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [model];
+	}
+
+	class Status extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$6, create_fragment$6, safe_not_equal, { model: 0 });
+		}
+	}
+
+	/* src\components\Infestations.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$2(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[4] = list[i];
+		return child_ctx;
+	}
+
+	// (34:4) <ListItem item={infestation} {move} {remove}>
+	function create_default_slot$2(ctx) {
+		let infestation_1;
+		let t;
+		let current;
+
+		infestation_1 = new Infestation({
+				props: { infestation: /*infestation*/ ctx[4] }
+			});
+
+		return {
+			c() {
+				create_component(infestation_1.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(infestation_1, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const infestation_1_changes = {};
+				if (dirty & /*model*/ 1) infestation_1_changes.infestation = /*infestation*/ ctx[4];
+				infestation_1.$set(infestation_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(infestation_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(infestation_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(infestation_1, detaching);
+			}
+		};
+	}
+
+	// (33:0) {#each model.infestations as infestation}
+	function create_each_block$2(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*infestation*/ ctx[4],
+					move: /*move*/ ctx[2],
+					remove: /*remove*/ ctx[3],
+					$$slots: { default: [create_default_slot$2] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*infestation*/ ctx[4];
+
+				if (dirty & /*$$scope, model*/ 129) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$5(ctx) {
+		let button;
+		let t1;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].infestations);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				button = element("button");
+				button.textContent = "Add";
+				t1 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "btn btn-dark");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				insert(target, t1, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*add*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, move, remove*/ 13) {
+					each_value = ensure_array_like(/*model*/ ctx[0].infestations);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$2(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$2(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+					detach(t1);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$5($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function add() {
+			model.infestations.push(infestation());
+			$$invalidate(0, model);
+		}
+
+		function move(n, item) {
+			let index = model.infestations.indexOf(item);
+			model.infestations.splice(index, 1);
+			index += n;
+			if (index < 0) index = model.infestations.length; else if (index > model.infestations.length) index = 0;
+			model.infestations.splice(index, 0, item);
+			$$invalidate(0, model);
+		}
+
+		function remove(item) {
+			let index = model.infestations.indexOf(item);
+			model.infestations.splice(index, 1);
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [model, add, move, remove];
+	}
+
+	class Infestations extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$5, create_fragment$5, safe_not_equal, { model: 0 });
+		}
+	}
+
+	const cyberware = () => ({
+	    name: 'Cyberware',
+	    description: ''
+	});
+
+	/* src\components\Cyberware.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$2(ctx) {
+		let button;
+		let t_value = /*cyberware*/ ctx[0].name + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "btn btn-light border text-left flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_1*/ ctx[5]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*cyberware*/ 1 && t_value !== (t_value = /*cyberware*/ ctx[0].name + "")) set_data(t, t_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (10:4) {#if isEditing}
+	function create_if_block$2(ctx) {
+		let div0;
+		let input;
+		let t0;
+		let button;
+		let t2;
+		let div1;
+		let textarea;
+		let updating_content;
+		let current;
+		let mounted;
+		let dispose;
+
+		function textarea_content_binding(value) {
+			/*textarea_content_binding*/ ctx[4](value);
+		}
+
+		let textarea_props = {};
+
+		if (/*cyberware*/ ctx[0].description !== void 0) {
+			textarea_props.content = /*cyberware*/ ctx[0].description;
+		}
+
+		textarea = new TextArea({ props: textarea_props });
+		binding_callbacks.push(() => bind(textarea, 'content', textarea_content_binding));
+
+		return {
+			c() {
+				div0 = element("div");
+				input = element("input");
+				t0 = space();
+				button = element("button");
+				button.textContent = "Close";
+				t2 = space();
+				div1 = element("div");
+				create_component(textarea.$$.fragment);
+				attr(input, "class", "flex-grow-1 form-control");
+				attr(button, "class", "btn btn-light border");
+				attr(div0, "class", "d-flex flex-grow-1");
+				attr(div1, "class", "d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div0, anchor);
+				append(div0, input);
+				set_input_value(input, /*cyberware*/ ctx[0].name);
+				append(div0, t0);
+				append(div0, button);
+				insert(target, t2, anchor);
+				insert(target, div1, anchor);
+				mount_component(textarea, div1, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(input, "input", /*input_input_handler*/ ctx[2]),
+						listen(button, "click", /*click_handler*/ ctx[3])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*cyberware*/ 1 && input.value !== /*cyberware*/ ctx[0].name) {
+					set_input_value(input, /*cyberware*/ ctx[0].name);
+				}
+
+				const textarea_changes = {};
+
+				if (!updating_content && dirty & /*cyberware*/ 1) {
+					updating_content = true;
+					textarea_changes.content = /*cyberware*/ ctx[0].description;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textarea.$set(textarea_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textarea.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textarea.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div0);
+					detach(t2);
+					detach(div1);
+				}
+
+				destroy_component(textarea);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$4(ctx) {
+		let div;
+		let current_block_type_index;
+		let if_block;
+		let current;
+		const if_block_creators = [create_if_block$2, create_else_block$2];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*isEditing*/ ctx[1]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				div = element("div");
+				if_block.c();
+				attr(div, "class", "d-flex flex-column flex-grow-1");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				if_blocks[current_block_type_index].m(div, null);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				if_blocks[current_block_type_index].d();
+			}
+		};
+	}
+
+	function instance$4($$self, $$props, $$invalidate) {
+		let { cyberware } = $$props;
+		let isEditing;
+
+		function input_input_handler() {
+			cyberware.name = this.value;
+			$$invalidate(0, cyberware);
+		}
+
+		const click_handler = () => $$invalidate(1, isEditing = false);
+
+		function textarea_content_binding(value) {
+			if ($$self.$$.not_equal(cyberware.description, value)) {
+				cyberware.description = value;
+				$$invalidate(0, cyberware);
+			}
+		}
+
+		const click_handler_1 = () => $$invalidate(1, isEditing = true);
+
+		$$self.$$set = $$props => {
+			if ('cyberware' in $$props) $$invalidate(0, cyberware = $$props.cyberware);
+		};
+
+		return [
+			cyberware,
+			isEditing,
+			input_input_handler,
+			click_handler,
+			textarea_content_binding,
+			click_handler_1
+		];
+	}
+
+	class Cyberware extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$4, create_fragment$4, safe_not_equal, { cyberware: 0 });
+		}
+	}
+
+	/* src\components\Cybertech.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context$1(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[4] = list[i];
+		return child_ctx;
+	}
+
+	// (34:4) <ListItem item={cyberware} {move} {remove}>
+	function create_default_slot$1(ctx) {
+		let cyberware_1;
+		let t;
+		let current;
+
+		cyberware_1 = new Cyberware({
+				props: { cyberware: /*cyberware*/ ctx[4] }
+			});
+
+		return {
+			c() {
+				create_component(cyberware_1.$$.fragment);
+				t = space();
+			},
+			m(target, anchor) {
+				mount_component(cyberware_1, target, anchor);
+				insert(target, t, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const cyberware_1_changes = {};
+				if (dirty & /*model*/ 1) cyberware_1_changes.cyberware = /*cyberware*/ ctx[4];
+				cyberware_1.$set(cyberware_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(cyberware_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(cyberware_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+
+				destroy_component(cyberware_1, detaching);
+			}
+		};
+	}
+
+	// (33:0) {#each model.cybertech as cyberware}
+	function create_each_block$1(ctx) {
+		let listitem;
+		let current;
+
+		listitem = new ListItem({
+				props: {
+					item: /*cyberware*/ ctx[4],
+					move: /*move*/ ctx[2],
+					remove: /*remove*/ ctx[3],
+					$$slots: { default: [create_default_slot$1] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				create_component(listitem.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(listitem, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const listitem_changes = {};
+				if (dirty & /*model*/ 1) listitem_changes.item = /*cyberware*/ ctx[4];
+
+				if (dirty & /*$$scope, model*/ 129) {
+					listitem_changes.$$scope = { dirty, ctx };
+				}
+
+				listitem.$set(listitem_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(listitem.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(listitem.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(listitem, detaching);
+			}
+		};
+	}
+
+	function create_fragment$3(ctx) {
+		let button;
+		let t1;
+		let each_1_anchor;
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*model*/ ctx[0].cybertech);
+		let each_blocks = [];
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+		}
+
+		const out = i => transition_out(each_blocks[i], 1, 1, () => {
+			each_blocks[i] = null;
+		});
+
+		return {
+			c() {
+				button = element("button");
+				button.textContent = "Add";
+				t1 = space();
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				each_1_anchor = empty();
+				attr(button, "class", "btn btn-dark");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				insert(target, t1, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(target, anchor);
+					}
+				}
+
+				insert(target, each_1_anchor, anchor);
+				current = true;
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*add*/ ctx[1]);
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (dirty & /*model, move, remove*/ 13) {
+					each_value = ensure_array_like(/*model*/ ctx[0].cybertech);
+					let i;
+
+					for (i = 0; i < each_value.length; i += 1) {
+						const child_ctx = get_each_context$1(ctx, each_value, i);
+
+						if (each_blocks[i]) {
+							each_blocks[i].p(child_ctx, dirty);
+							transition_in(each_blocks[i], 1);
+						} else {
+							each_blocks[i] = create_each_block$1(child_ctx);
+							each_blocks[i].c();
+							transition_in(each_blocks[i], 1);
+							each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						}
+					}
+
+					group_outros();
+
+					for (i = each_value.length; i < each_blocks.length; i += 1) {
+						out(i);
+					}
+
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				each_blocks = each_blocks.filter(Boolean);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+					detach(t1);
+					detach(each_1_anchor);
+				}
+
+				destroy_each(each_blocks, detaching);
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	function instance$3($$self, $$props, $$invalidate) {
+		let { model } = $$props;
+
+		function add() {
+			model.cybertech.push(cyberware());
+			$$invalidate(0, model);
+		}
+
+		function move(n, item) {
+			let index = model.cybertech.indexOf(item);
+			model.cybertech.splice(index, 1);
+			index += n;
+			if (index < 0) index = model.cybertech.length; else if (index > model.cybertech.length) index = 0;
+			model.cybertech.splice(index, 0, item);
+			$$invalidate(0, model);
+		}
+
+		function remove(item) {
+			let index = model.cybertech.indexOf(item);
+			model.cybertech.splice(index, 1);
+			$$invalidate(0, model);
+		}
+
+		$$self.$$set = $$props => {
+			if ('model' in $$props) $$invalidate(0, model = $$props.model);
+		};
+
+		return [model, add, move, remove];
+	}
+
+	class Cybertech extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$3, create_fragment$3, safe_not_equal, { model: 0 });
+		}
+	}
+
+	var dateUtil = {
+	    shortDate: (dte = new Date()) => {
+	        let dd = dte.getDate().toString();
+	        if(dd.length == 1) dd = `0${dd}`;
+
+	        let mm = (dte.getMonth() + 1).toString();
+	        if(mm.length == 1) mm = `0${mm}`;
+
+	        let yyyy = dte.getFullYear();
+	        while(yyyy.length < 4) yyyy = `0${yyyy}`;
+
+	        return `${yyyy}-${mm}-${dd}`
+	    }
+	};
+
+	/* src\components\Note.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block$1(ctx) {
+		let div4;
+		let div3;
+		let div2;
+		let div0;
+		let t0;
+		let button0;
+		let t2;
+		let button1;
+		let t4;
+		let div1;
+		let textarea;
+		let updating_content;
+		let current;
+		let mounted;
+		let dispose;
+
+		function select_block_type_1(ctx, dirty) {
+			if (/*editTitle*/ ctx[3]) return create_if_block_1;
+			return create_else_block_1;
+		}
+
+		let current_block_type = select_block_type_1(ctx);
+		let if_block = current_block_type(ctx);
+
+		function textarea_content_binding(value) {
+			/*textarea_content_binding*/ ctx[15](value);
+		}
+
+		let textarea_props = { highlight: /*highlight*/ ctx[2] };
+
+		if (/*note*/ ctx[0].content !== void 0) {
+			textarea_props.content = /*note*/ ctx[0].content;
+		}
+
+		textarea = new TextArea({ props: textarea_props });
+		binding_callbacks.push(() => bind(textarea, 'content', textarea_content_binding));
+
+		return {
+			c() {
+				div4 = element("div");
+				div3 = element("div");
+				div2 = element("div");
+				div0 = element("div");
+				if_block.c();
+				t0 = space();
+				button0 = element("button");
+				button0.textContent = "hide";
+				t2 = space();
+				button1 = element("button");
+				button1.textContent = "delete";
+				t4 = space();
+				div1 = element("div");
+				create_component(textarea.$$.fragment);
+				attr(button0, "class", "badge btn btn-light border ml-1 p-2");
+				attr(button1, "class", "badge btn btn-light border ml-1 p-2");
+				attr(div0, "class", "d-flex");
+				attr(div1, "class", "d-flex");
+				attr(div2, "class", "card-body");
+				attr(div3, "class", "card");
+				attr(div4, "class", "col-12");
+			},
+			m(target, anchor) {
+				insert(target, div4, anchor);
+				append(div4, div3);
+				append(div3, div2);
+				append(div2, div0);
+				if_block.m(div0, null);
+				append(div0, t0);
+				append(div0, button0);
+				append(div0, t2);
+				append(div0, button1);
+				append(div2, t4);
+				append(div2, div1);
+				mount_component(textarea, div1, null);
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler_3*/ ctx[13]),
+						listen(button1, "click", /*click_handler_4*/ ctx[14])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block.d(1);
+					if_block = current_block_type(ctx);
+
+					if (if_block) {
+						if_block.c();
+						if_block.m(div0, t0);
+					}
+				}
+
+				const textarea_changes = {};
+				if (dirty & /*highlight*/ 4) textarea_changes.highlight = /*highlight*/ ctx[2];
+
+				if (!updating_content && dirty & /*note*/ 1) {
+					updating_content = true;
+					textarea_changes.content = /*note*/ ctx[0].content;
+					add_flush_callback(() => updating_content = false);
+				}
+
+				textarea.$set(textarea_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(textarea.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(textarea.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div4);
+				}
+
+				if_block.d();
+				destroy_component(textarea);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (20:0) {#if collapse}
+	function create_if_block$1(ctx) {
+		let div;
+		let h4;
+		let button0;
+		let t0_value = /*note*/ ctx[0].title + "";
+		let t0;
+		let t1;
+		let button1;
+		let t2_value = dateUtil.shortDate(/*dateValue*/ ctx[5]) + "";
+		let t2;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				div = element("div");
+				h4 = element("h4");
+				button0 = element("button");
+				t0 = text(t0_value);
+				t1 = space();
+				button1 = element("button");
+				t2 = text(t2_value);
+				attr(button0, "class", "badge btn btn-light w-100 text-left");
+				set_style(button0, "min-height", "2.2em");
+				attr(h4, "class", "flex-grow-1 m-0");
+				attr(button1, "class", "badge btn btn-light border ml-1 p-2");
+				attr(div, "class", "col-12 d-flex");
+			},
+			m(target, anchor) {
+				insert(target, div, anchor);
+				append(div, h4);
+				append(h4, button0);
+				append(button0, t0);
+				append(div, t1);
+				append(div, button1);
+				append(button1, t2);
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*click_handler*/ ctx[7]),
+						listen(button1, "click", /*click_handler_1*/ ctx[8])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*note*/ 1 && t0_value !== (t0_value = /*note*/ ctx[0].title + "")) set_data(t0, t0_value);
+				if (dirty & /*dateValue*/ 32 && t2_value !== (t2_value = dateUtil.shortDate(/*dateValue*/ ctx[5]) + "")) set_data(t2, t2_value);
+			},
+			i: noop,
+			o: noop,
+			d(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	// (32:16) {:else}
+	function create_else_block_1(ctx) {
+		let button;
+		let t_value = /*note*/ ctx[0].title + "";
+		let t;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				button = element("button");
+				t = text(t_value);
+				attr(button, "class", "btn btn-light w-100 text-left font-weight-bold");
+				set_style(button, "min-height", "2.2em");
+			},
+			m(target, anchor) {
+				insert(target, button, anchor);
+				append(button, t);
+
+				if (!mounted) {
+					dispose = listen(button, "click", /*click_handler_2*/ ctx[12]);
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*note*/ 1 && t_value !== (t_value = /*note*/ ctx[0].title + "")) set_data(t, t_value);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				mounted = false;
+				dispose();
+			}
+		};
+	}
+
+	// (30:16) {#if editTitle}
+	function create_if_block_1(ctx) {
+		let input_1;
+		let mounted;
+		let dispose;
+
+		return {
+			c() {
+				input_1 = element("input");
+				attr(input_1, "class", "form-control");
+			},
+			m(target, anchor) {
+				insert(target, input_1, anchor);
+				/*input_1_binding*/ ctx[10](input_1);
+				set_input_value(input_1, /*note*/ ctx[0].title);
+
+				if (!mounted) {
+					dispose = [
+						listen(input_1, "blur", /*blur_handler*/ ctx[9]),
+						listen(input_1, "input", /*input_1_input_handler*/ ctx[11])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, dirty) {
+				if (dirty & /*note*/ 1 && input_1.value !== /*note*/ ctx[0].title) {
+					set_input_value(input_1, /*note*/ ctx[0].title);
+				}
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(input_1);
+				}
+
+				/*input_1_binding*/ ctx[10](null);
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function create_fragment$2(ctx) {
+		let current_block_type_index;
+		let if_block;
+		let if_block_anchor;
+		let current;
+		const if_block_creators = [create_if_block$1, create_else_block$1];
+		const if_blocks = [];
+
+		function select_block_type(ctx, dirty) {
+			if (/*collapse*/ ctx[6]) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c() {
+				if_block.c();
+				if_block_anchor = empty();
+			},
+			m(target, anchor) {
+				if_blocks[current_block_type_index].m(target, anchor);
+				insert(target, if_block_anchor, anchor);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				let previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(ctx, dirty);
+				} else {
+					group_outros();
+
+					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+						if_blocks[previous_block_index] = null;
+					});
+
+					check_outros();
+					if_block = if_blocks[current_block_type_index];
+
+					if (!if_block) {
+						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block.c();
+					} else {
+						if_block.p(ctx, dirty);
+					}
+
+					transition_in(if_block, 1);
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			},
+			i(local) {
+				if (current) return;
+				transition_in(if_block);
+				current = true;
+			},
+			o(local) {
+				transition_out(if_block);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(if_block_anchor);
+				}
+
+				if_blocks[current_block_type_index].d(detaching);
+			}
+		};
+	}
+
+	function instance$2($$self, $$props, $$invalidate) {
+		let collapse;
+		let dateValue;
+		let { actions } = $$props;
+		let { note } = $$props;
+		let { highlight } = $$props;
+		let editTitle = false;
+		let input;
+
+		afterUpdate(() => {
+			if (input) input.focus();
+		});
+
+		const click_handler = () => $$invalidate(6, collapse = false);
+		const click_handler_1 = () => $$invalidate(6, collapse = false);
+		const blur_handler = () => $$invalidate(3, editTitle = false);
+
+		function input_1_binding($$value) {
+			binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+				input = $$value;
+				$$invalidate(4, input);
+			});
+		}
+
+		function input_1_input_handler() {
+			note.title = this.value;
+			$$invalidate(0, note);
+		}
+
+		const click_handler_2 = () => $$invalidate(3, editTitle = true);
+		const click_handler_3 = () => $$invalidate(6, collapse = true);
+		const click_handler_4 = () => actions.delete(note);
+
+		function textarea_content_binding(value) {
+			if ($$self.$$.not_equal(note.content, value)) {
+				note.content = value;
+				$$invalidate(0, note);
+			}
+		}
+
+		$$self.$$set = $$props => {
+			if ('actions' in $$props) $$invalidate(1, actions = $$props.actions);
+			if ('note' in $$props) $$invalidate(0, note = $$props.note);
+			if ('highlight' in $$props) $$invalidate(2, highlight = $$props.highlight);
+		};
+
+		$$self.$$.update = () => {
+			if ($$self.$$.dirty & /*highlight*/ 4) {
+				$$invalidate(6, collapse = highlight == '');
+			}
+
+			if ($$self.$$.dirty & /*note*/ 1) {
+				$$invalidate(5, dateValue = new Date(note.date));
+			}
+		};
+
+		return [
+			note,
+			actions,
+			highlight,
+			editTitle,
+			input,
+			dateValue,
+			collapse,
+			click_handler,
+			click_handler_1,
+			blur_handler,
+			input_1_binding,
+			input_1_input_handler,
+			click_handler_2,
+			click_handler_3,
+			click_handler_4,
+			textarea_content_binding
+		];
+	}
+
+	class Note extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$2, create_fragment$2, safe_not_equal, { actions: 1, note: 0, highlight: 2 });
+		}
+	}
+
+	/* src\components\Notes.svelte generated by Svelte v4.2.19 */
+
+	function get_each_context(ctx, list, i) {
+		const child_ctx = ctx.slice();
+		child_ctx[14] = list[i];
+		return child_ctx;
+	}
+
+	// (71:4) {#each filtered as note (note.id)}
+	function create_each_block(key_1, ctx) {
+		let first;
+		let note_1;
+		let current;
+
+		note_1 = new Note({
+				props: {
+					note: /*note*/ ctx[14],
+					actions: /*actions*/ ctx[3],
+					highlight: /*filter*/ ctx[0]
+				}
+			});
+
+		return {
+			key: key_1,
+			first: null,
+			c() {
+				first = empty();
+				create_component(note_1.$$.fragment);
+				this.first = first;
+			},
+			m(target, anchor) {
+				insert(target, first, anchor);
+				mount_component(note_1, target, anchor);
+				current = true;
+			},
+			p(new_ctx, dirty) {
+				ctx = new_ctx;
+				const note_1_changes = {};
+				if (dirty & /*filtered*/ 4) note_1_changes.note = /*note*/ ctx[14];
+				if (dirty & /*filter*/ 1) note_1_changes.highlight = /*filter*/ ctx[0];
+				note_1.$set(note_1_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(note_1.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(note_1.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(first);
+				}
+
+				destroy_component(note_1, detaching);
+			}
+		};
+	}
+
+	function create_fragment$1(ctx) {
+		let div2;
+		let button0;
+		let t1;
+		let div1;
+		let button1;
+		let t3;
+		let div0;
+		let button2;
+		let t5;
+		let button3;
+		let t7;
+		let button4;
+		let t9;
+		let button5;
+		let div0_style_value;
+		let t11;
+		let div3;
+		let input;
+		let t12;
+		let div4;
+		let each_blocks = [];
+		let each_1_lookup = new Map();
+		let current;
+		let mounted;
+		let dispose;
+		let each_value = ensure_array_like(/*filtered*/ ctx[2]);
+		const get_key = ctx => /*note*/ ctx[14].id;
+
+		for (let i = 0; i < each_value.length; i += 1) {
+			let child_ctx = get_each_context(ctx, each_value, i);
+			let key = get_key(child_ctx);
+			each_1_lookup.set(key, each_blocks[i] = create_each_block(key, child_ctx));
+		}
+
+		return {
+			c() {
+				div2 = element("div");
+				button0 = element("button");
+				button0.textContent = "Add note";
+				t1 = space();
+				div1 = element("div");
+				button1 = element("button");
+				button1.textContent = "Sort";
+				t3 = space();
+				div0 = element("div");
+				button2 = element("button");
+				button2.textContent = "Newest";
+				t5 = space();
+				button3 = element("button");
+				button3.textContent = "Oldest";
+				t7 = space();
+				button4 = element("button");
+				button4.textContent = "A → Z";
+				t9 = space();
+				button5 = element("button");
+				button5.textContent = "Z → A";
+				t11 = space();
+				div3 = element("div");
+				input = element("input");
+				t12 = space();
+				div4 = element("div");
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].c();
+				}
+
+				attr(button0, "class", "btn btn-light border mb-1 mr-1");
+				attr(button1, "class", "dropdown-toggle btn btn-light border mb-1");
+				attr(button2, "class", "dropdown-item");
+				attr(button3, "class", "dropdown-item");
+				attr(button4, "class", "dropdown-item");
+				attr(button5, "class", "dropdown-item");
+				attr(div0, "class", "dropdown-menu");
+				attr(div0, "style", div0_style_value = `display: ${/*menu*/ ctx[1] == 'sort' ? 'block' : 'none'}`);
+				attr(div1, "class", "dropdown");
+				attr(div2, "class", "d-flex");
+				attr(input, "class", "form-control");
+				attr(input, "placeholder", "filter");
+				attr(div3, "class", "d-flex");
+				attr(div4, "class", "row mt-2");
+			},
+			m(target, anchor) {
+				insert(target, div2, anchor);
+				append(div2, button0);
+				append(div2, t1);
+				append(div2, div1);
+				append(div1, button1);
+				append(div1, t3);
+				append(div1, div0);
+				append(div0, button2);
+				append(div0, t5);
+				append(div0, button3);
+				append(div0, t7);
+				append(div0, button4);
+				append(div0, t9);
+				append(div0, button5);
+				insert(target, t11, anchor);
+				insert(target, div3, anchor);
+				append(div3, input);
+				set_input_value(input, /*filter*/ ctx[0]);
+				insert(target, t12, anchor);
+				insert(target, div4, anchor);
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					if (each_blocks[i]) {
+						each_blocks[i].m(div4, null);
+					}
+				}
+
+				current = true;
+
+				if (!mounted) {
+					dispose = [
+						listen(button0, "click", /*add*/ ctx[4]),
+						listen(button1, "blur", /*clearMenu*/ ctx[5]),
+						listen(button1, "click", /*click_handler*/ ctx[8]),
+						listen(button2, "blur", /*clearMenu*/ ctx[5]),
+						listen(button2, "click", /*click_handler_1*/ ctx[9]),
+						listen(button3, "blur", /*clearMenu*/ ctx[5]),
+						listen(button3, "click", /*click_handler_2*/ ctx[10]),
+						listen(button4, "blur", /*clearMenu*/ ctx[5]),
+						listen(button4, "click", /*click_handler_3*/ ctx[11]),
+						listen(button5, "blur", /*clearMenu*/ ctx[5]),
+						listen(button5, "click", /*click_handler_4*/ ctx[12]),
+						listen(input, "input", /*input_input_handler*/ ctx[13])
+					];
+
+					mounted = true;
+				}
+			},
+			p(ctx, [dirty]) {
+				if (!current || dirty & /*menu*/ 2 && div0_style_value !== (div0_style_value = `display: ${/*menu*/ ctx[1] == 'sort' ? 'block' : 'none'}`)) {
+					attr(div0, "style", div0_style_value);
+				}
+
+				if (dirty & /*filter*/ 1 && input.value !== /*filter*/ ctx[0]) {
+					set_input_value(input, /*filter*/ ctx[0]);
+				}
+
+				if (dirty & /*filtered, actions, filter*/ 13) {
+					each_value = ensure_array_like(/*filtered*/ ctx[2]);
+					group_outros();
+					each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, div4, outro_and_destroy_block, create_each_block, null, get_each_context);
+					check_outros();
+				}
+			},
+			i(local) {
+				if (current) return;
+
+				for (let i = 0; i < each_value.length; i += 1) {
+					transition_in(each_blocks[i]);
+				}
+
+				current = true;
+			},
+			o(local) {
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					transition_out(each_blocks[i]);
+				}
+
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(div2);
+					detach(t11);
+					detach(div3);
+					detach(t12);
+					detach(div4);
+				}
+
+				for (let i = 0; i < each_blocks.length; i += 1) {
+					each_blocks[i].d();
+				}
+
+				mounted = false;
+				run_all(dispose);
+			}
+		};
+	}
+
+	function instance$1($$self, $$props, $$invalidate) {
+		let filtered;
+		let { notes } = $$props;
+
+		const actions = {
+			delete: note => {
+				if (!confirm(`Delete ${note.title}?`)) return;
+				let i = notes.indexOf(note);
+				notes.splice(i, 1);
+				$$invalidate(7, notes);
+			}
+		};
+
+		let filter = '';
+		let menu = '';
+
+		function add() {
+			notes.splice(0, 0, {
+				id: crypto.randomUUID(),
+				title: 'New note',
+				date: new Date().toISOString(),
+				content: 'Enter your notes here'
+			});
+
+			$$invalidate(7, notes);
+		}
+
+		function clearMenu(e) {
+			if (e.relatedTarget?.className.includes('dropdown-item')) return;
+			$$invalidate(1, menu = '');
+		}
+
+		function sort(method) {
+			if (method == 'alpha') notes.sort((a, b) => a.title.localeCompare(b.title)); else if (method == 'ralpha') notes.sort((a, b) => b.title.localeCompare(a.title)); else if (method == 'oldest') notes.sort((a, b) => a.date > b.date); else if (method == 'newest') notes.sort((a, b) => a.date < b.date);
+			$$invalidate(7, notes);
+		}
+
+		const click_handler = () => $$invalidate(1, menu = 'sort');
+		const click_handler_1 = () => sort("newest");
+		const click_handler_2 = () => sort("oldest");
+		const click_handler_3 = () => sort("alpha");
+		const click_handler_4 = () => sort("ralpha");
+
+		function input_input_handler() {
+			filter = this.value;
+			$$invalidate(0, filter);
+		}
+
+		$$self.$$set = $$props => {
+			if ('notes' in $$props) $$invalidate(7, notes = $$props.notes);
+		};
+
+		$$self.$$.update = () => {
+			if ($$self.$$.dirty & /*notes, filter*/ 129) {
+				$$invalidate(2, filtered = notes.filter(x => !filter || x.title.toLowerCase().includes(filter.toLowerCase()) || x.content.toLowerCase().includes(filter.toLowerCase())));
+			}
+
+			if ($$self.$$.dirty & /*notes*/ 128) {
+				{
+					notes.forEach(note => {
+						if (!note.id) note.id = crypto.randomUUID();
+					});
+				}
+			}
+		};
+
+		return [
+			filter,
+			menu,
+			filtered,
+			actions,
+			add,
+			clearMenu,
+			sort,
+			notes,
+			click_handler,
+			click_handler_1,
+			click_handler_2,
+			click_handler_3,
+			click_handler_4,
+			input_input_handler
+		];
+	}
+
+	class Notes extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance$1, create_fragment$1, safe_not_equal, { notes: 7 });
+		}
+	}
+
+	/* src\App.svelte generated by Svelte v4.2.19 */
+
+	function create_else_block(ctx) {
+		let link;
+
+		return {
+			c() {
+				link = element("link");
+				attr(link, "rel", "stylesheet");
+				attr(link, "href", "https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css");
+				attr(link, "integrity", "sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn");
+				attr(link, "crossorigin", "anonymous");
+			},
+			m(target, anchor) {
+				insert(target, link, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(link);
+				}
+			}
+		};
+	}
+
+	// (21:1) {#if theme == 'dark'}
+	function create_if_block(ctx) {
+		let link;
+
+		return {
+			c() {
+				link = element("link");
+				attr(link, "rel", "stylesheet");
+				attr(link, "href", "https://cdn.jsdelivr.net/gh/vinorodrigues/bootstrap-dark@0.6.1/dist/bootstrap-dark.min.css");
+			},
+			m(target, anchor) {
+				insert(target, link, anchor);
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(link);
+				}
+			}
+		};
+	}
+
+	// (31:2) <Details title="Bio" open="open">
+	function create_default_slot_7(ctx) {
+		let bio;
+		let current;
+		bio = new Bio({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(bio.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(bio, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const bio_changes = {};
+				if (dirty & /*model*/ 1) bio_changes.model = /*model*/ ctx[0];
+				bio.$set(bio_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(bio.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(bio.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(bio, detaching);
+			}
+		};
+	}
+
+	// (32:2) <Details title="Status" open="open">
+	function create_default_slot_6(ctx) {
+		let status;
+		let current;
+		status = new Status({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(status.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(status, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const status_changes = {};
+				if (dirty & /*model*/ 1) status_changes.model = /*model*/ ctx[0];
+				status.$set(status_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(status.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(status.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(status, detaching);
+			}
+		};
+	}
+
+	// (33:2) <Details title="Inventory">
+	function create_default_slot_5(ctx) {
+		let inventory;
+		let current;
+		inventory = new Inventory({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(inventory.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(inventory, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const inventory_changes = {};
+				if (dirty & /*model*/ 1) inventory_changes.model = /*model*/ ctx[0];
+				inventory.$set(inventory_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(inventory.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(inventory.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(inventory, detaching);
+			}
+		};
+	}
+
+	// (34:2) <Details title="Apps">
+	function create_default_slot_4(ctx) {
+		let apps;
+		let current;
+		apps = new Apps({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(apps.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(apps, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const apps_changes = {};
+				if (dirty & /*model*/ 1) apps_changes.model = /*model*/ ctx[0];
+				apps.$set(apps_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(apps.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(apps.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(apps, detaching);
+			}
+		};
+	}
+
+	// (35:2) <Details title="Nano">
+	function create_default_slot_3(ctx) {
+		let nano;
+		let current;
+		nano = new Nano({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(nano.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(nano, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const nano_changes = {};
+				if (dirty & /*model*/ 1) nano_changes.model = /*model*/ ctx[0];
+				nano.$set(nano_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(nano.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(nano.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(nano, detaching);
+			}
+		};
+	}
+
+	// (36:2) <Details title="Infestations">
+	function create_default_slot_2(ctx) {
+		let infestations;
+		let current;
+		infestations = new Infestations({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(infestations.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(infestations, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const infestations_changes = {};
+				if (dirty & /*model*/ 1) infestations_changes.model = /*model*/ ctx[0];
+				infestations.$set(infestations_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(infestations.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(infestations.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(infestations, detaching);
+			}
+		};
+	}
+
+	// (37:2) <Details title="Cybertech">
+	function create_default_slot_1(ctx) {
+		let cybertech;
+		let current;
+		cybertech = new Cybertech({ props: { model: /*model*/ ctx[0] } });
+
+		return {
+			c() {
+				create_component(cybertech.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(cybertech, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const cybertech_changes = {};
+				if (dirty & /*model*/ 1) cybertech_changes.model = /*model*/ ctx[0];
+				cybertech.$set(cybertech_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(cybertech.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(cybertech.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(cybertech, detaching);
+			}
+		};
+	}
+
+	// (38:2) <Details title="Notes">
+	function create_default_slot(ctx) {
+		let notes;
+		let current;
+		notes = new Notes({ props: { notes: /*model*/ ctx[0].notes } });
+
+		return {
+			c() {
+				create_component(notes.$$.fragment);
+			},
+			m(target, anchor) {
+				mount_component(notes, target, anchor);
+				current = true;
+			},
+			p(ctx, dirty) {
+				const notes_changes = {};
+				if (dirty & /*model*/ 1) notes_changes.notes = /*model*/ ctx[0].notes;
+				notes.$set(notes_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(notes.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(notes.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				destroy_component(notes, detaching);
+			}
+		};
+	}
+
+	function create_fragment(ctx) {
+		let if_block_anchor;
+		let t0;
+		let main;
+		let navbar;
+		let updating_model;
+		let t1;
+		let div;
+		let details0;
+		let t2;
+		let details1;
+		let t3;
+		let details2;
+		let t4;
+		let details3;
+		let t5;
+		let details4;
+		let t6;
+		let details5;
+		let t7;
+		let details6;
+		let t8;
+		let details7;
+		let current;
+
+		function select_block_type(ctx, dirty) {
+			if (theme == 'dark') return create_if_block;
+			return create_else_block;
+		}
+
+		let current_block_type = select_block_type();
+		let if_block = current_block_type(ctx);
+
+		function navbar_model_binding(value) {
+			/*navbar_model_binding*/ ctx[1](value);
+		}
+
+		let navbar_props = {};
+
+		if (/*model*/ ctx[0] !== void 0) {
+			navbar_props.model = /*model*/ ctx[0];
+		}
+
+		navbar = new Navbar({ props: navbar_props });
+		binding_callbacks.push(() => bind(navbar, 'model', navbar_model_binding));
+
+		details0 = new Details({
+				props: {
+					title: "Bio",
+					open: "open",
+					$$slots: { default: [create_default_slot_7] },
+					$$scope: { ctx }
+				}
+			});
+
+		details1 = new Details({
+				props: {
+					title: "Status",
+					open: "open",
+					$$slots: { default: [create_default_slot_6] },
+					$$scope: { ctx }
+				}
+			});
+
+		details2 = new Details({
+				props: {
+					title: "Inventory",
+					$$slots: { default: [create_default_slot_5] },
+					$$scope: { ctx }
+				}
+			});
+
+		details3 = new Details({
+				props: {
+					title: "Apps",
+					$$slots: { default: [create_default_slot_4] },
+					$$scope: { ctx }
+				}
+			});
+
+		details4 = new Details({
+				props: {
+					title: "Nano",
+					$$slots: { default: [create_default_slot_3] },
+					$$scope: { ctx }
+				}
+			});
+
+		details5 = new Details({
+				props: {
+					title: "Infestations",
+					$$slots: { default: [create_default_slot_2] },
+					$$scope: { ctx }
+				}
+			});
+
+		details6 = new Details({
+				props: {
+					title: "Cybertech",
+					$$slots: { default: [create_default_slot_1] },
+					$$scope: { ctx }
+				}
+			});
+
+		details7 = new Details({
+				props: {
+					title: "Notes",
+					$$slots: { default: [create_default_slot] },
+					$$scope: { ctx }
+				}
+			});
+
+		return {
+			c() {
+				if_block.c();
+				if_block_anchor = empty();
+				t0 = space();
+				main = element("main");
+				create_component(navbar.$$.fragment);
+				t1 = space();
+				div = element("div");
+				create_component(details0.$$.fragment);
+				t2 = space();
+				create_component(details1.$$.fragment);
+				t3 = space();
+				create_component(details2.$$.fragment);
+				t4 = space();
+				create_component(details3.$$.fragment);
+				t5 = space();
+				create_component(details4.$$.fragment);
+				t6 = space();
+				create_component(details5.$$.fragment);
+				t7 = space();
+				create_component(details6.$$.fragment);
+				t8 = space();
+				create_component(details7.$$.fragment);
+				attr(div, "class", "row m-2");
+				attr(main, "id", "app");
+			},
+			m(target, anchor) {
+				if_block.m(document.head, null);
+				append(document.head, if_block_anchor);
+				insert(target, t0, anchor);
+				insert(target, main, anchor);
+				mount_component(navbar, main, null);
+				append(main, t1);
+				append(main, div);
+				mount_component(details0, div, null);
+				append(div, t2);
+				mount_component(details1, div, null);
+				append(div, t3);
+				mount_component(details2, div, null);
+				append(div, t4);
+				mount_component(details3, div, null);
+				append(div, t5);
+				mount_component(details4, div, null);
+				append(div, t6);
+				mount_component(details5, div, null);
+				append(div, t7);
+				mount_component(details6, div, null);
+				append(div, t8);
+				mount_component(details7, div, null);
+				current = true;
+			},
+			p(ctx, [dirty]) {
+				const navbar_changes = {};
+
+				if (!updating_model && dirty & /*model*/ 1) {
+					updating_model = true;
+					navbar_changes.model = /*model*/ ctx[0];
+					add_flush_callback(() => updating_model = false);
+				}
+
+				navbar.$set(navbar_changes);
+				const details0_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details0_changes.$$scope = { dirty, ctx };
+				}
+
+				details0.$set(details0_changes);
+				const details1_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details1_changes.$$scope = { dirty, ctx };
+				}
+
+				details1.$set(details1_changes);
+				const details2_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details2_changes.$$scope = { dirty, ctx };
+				}
+
+				details2.$set(details2_changes);
+				const details3_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details3_changes.$$scope = { dirty, ctx };
+				}
+
+				details3.$set(details3_changes);
+				const details4_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details4_changes.$$scope = { dirty, ctx };
+				}
+
+				details4.$set(details4_changes);
+				const details5_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details5_changes.$$scope = { dirty, ctx };
+				}
+
+				details5.$set(details5_changes);
+				const details6_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details6_changes.$$scope = { dirty, ctx };
+				}
+
+				details6.$set(details6_changes);
+				const details7_changes = {};
+
+				if (dirty & /*$$scope, model*/ 5) {
+					details7_changes.$$scope = { dirty, ctx };
+				}
+
+				details7.$set(details7_changes);
+			},
+			i(local) {
+				if (current) return;
+				transition_in(navbar.$$.fragment, local);
+				transition_in(details0.$$.fragment, local);
+				transition_in(details1.$$.fragment, local);
+				transition_in(details2.$$.fragment, local);
+				transition_in(details3.$$.fragment, local);
+				transition_in(details4.$$.fragment, local);
+				transition_in(details5.$$.fragment, local);
+				transition_in(details6.$$.fragment, local);
+				transition_in(details7.$$.fragment, local);
+				current = true;
+			},
+			o(local) {
+				transition_out(navbar.$$.fragment, local);
+				transition_out(details0.$$.fragment, local);
+				transition_out(details1.$$.fragment, local);
+				transition_out(details2.$$.fragment, local);
+				transition_out(details3.$$.fragment, local);
+				transition_out(details4.$$.fragment, local);
+				transition_out(details5.$$.fragment, local);
+				transition_out(details6.$$.fragment, local);
+				transition_out(details7.$$.fragment, local);
+				current = false;
+			},
+			d(detaching) {
+				if (detaching) {
+					detach(t0);
+					detach(main);
+				}
+
+				if_block.d(detaching);
+				detach(if_block_anchor);
+				destroy_component(navbar);
+				destroy_component(details0);
+				destroy_component(details1);
+				destroy_component(details2);
+				destroy_component(details3);
+				destroy_component(details4);
+				destroy_component(details5);
+				destroy_component(details6);
+				destroy_component(details7);
+			}
+		};
+	}
+
+	function instance($$self, $$props, $$invalidate) {
+		let model = character();
+
+		function navbar_model_binding(value) {
+			model = value;
+			$$invalidate(0, model);
+		}
+
+		return [model, navbar_model_binding];
+	}
+
+	class App extends SvelteComponent {
+		constructor(options) {
+			super();
+			init(this, options, instance, create_fragment, safe_not_equal, {});
+		}
+	}
+
+	const app = new App({
+		target: document.body,
+		props: { }
+	});
+
+	return app;
+
+})();
